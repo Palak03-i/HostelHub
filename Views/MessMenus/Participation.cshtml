@@ -1,0 +1,493 @@
+﻿@model Hostel_hub.ViewModels.MessParticipationViewModel
+
+@{
+    ViewData["Title"] = "Meal Participation";
+
+    int availableMeals =
+        Model.Rows.Count(r => r.IsAvailable);
+}
+
+<style>
+    .participation-page {
+        padding: 35px 0 60px;
+    }
+
+    .participation-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .participation-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .participation-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .date-badge {
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .hostel-summary {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        border-radius: 16px;
+        padding: 26px;
+        box-shadow: 0 10px 28px rgba(79, 70, 229,0.18);
+        margin-bottom: 26px;
+    }
+
+    .hostel-label {
+        color: rgba(255,255,255,0.72);
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .hostel-name {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 5px;
+        margin-bottom: 22px;
+    }
+
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+
+    .summary-box {
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 12px;
+        padding: 16px;
+    }
+
+    .summary-box-label {
+        color: rgba(255,255,255,0.72);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .summary-box-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+
+    .participation-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .participation-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .participation-card-header h5 {
+        margin-bottom: 3px;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .participation-table {
+        margin-bottom: 0;
+    }
+
+    .participation-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .participation-table tbody td {
+        padding: 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .meal-name {
+        font-weight: 700;
+        color: #172033;
+        font-size: 1rem;
+    }
+
+    .meal-status {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+    .meal-open {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .meal-closed {
+        background: #eceff3;
+        color: #6c757d;
+    }
+
+    .count-box {
+        min-width: 110px;
+    }
+
+    .count-number {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #273142;
+    }
+
+    .count-label {
+        display: block;
+        color: #8a94a3;
+        font-size: 0.75rem;
+        margin-top: 2px;
+    }
+
+    .participation-bar {
+        width: 120px;
+        height: 6px;
+        background: #edf0f5;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-top: 7px;
+    }
+
+    .taking-fill {
+        height: 100%;
+        background: #198754;
+        border-radius: 20px;
+    }
+
+    .skip-fill {
+        height: 100%;
+        background: #6c757d;
+        border-radius: 20px;
+    }
+
+    .response-fill {
+        height: 100%;
+        background: #ffc107;
+        border-radius: 20px;
+    }
+
+    .back-btn {
+        margin-top: 26px;
+        padding: 9px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    @@media (max-width: 767px) {
+        .participation-page {
+            padding-top: 20px;
+        }
+
+        .participation-header h2 {
+            font-size: 1.7rem;
+        }
+
+        .summary-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+
+<div class="participation-page">
+
+    <!-- HEADER -->
+    <div class="participation-header">
+
+        <div>
+
+            <h2>Meal Participation</h2>
+
+            <p>
+                Monitor student TAKE, SKIP and pending meal responses.
+            </p>
+
+        </div>
+
+
+        <span class="date-badge">
+
+            @(Model.MenuDate.ToString("dd MMM yyyy"))
+
+        </span>
+
+    </div>
+
+
+    <!-- HOSTEL SUMMARY -->
+    <div class="hostel-summary">
+
+        <div class="hostel-label">
+            Hostel
+        </div>
+
+        <div class="hostel-name">
+            @Model.HostelName
+        </div>
+
+
+        <div class="summary-grid">
+
+            <div class="summary-box">
+
+                <div class="summary-box-label">
+                    Total Students
+                </div>
+
+                <div class="summary-box-value">
+                    @Model.TotalStudents
+                </div>
+
+            </div>
+
+
+            <div class="summary-box">
+
+                <div class="summary-box-label">
+                    Menu Date
+                </div>
+
+                <div class="summary-box-value">
+
+                    @(Model.MenuDate.ToString("dd MMM"))
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-box">
+
+                <div class="summary-box-label">
+                    Available Meals
+                </div>
+
+                <div class="summary-box-value">
+                    @availableMeals / @Model.Rows.Count
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PARTICIPATION TABLE -->
+    <div class="participation-card">
+
+        <div class="participation-card-header">
+
+            <h5>
+                Meal-wise Participation
+            </h5>
+
+            <span class="text-muted small">
+                Student responses for each meal
+            </span>
+
+        </div>
+
+
+        <div class="table-responsive">
+
+            <table class="table table-hover participation-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Meal</th>
+                        <th>Status</th>
+                        <th>Taking</th>
+                        <th>Skipping</th>
+                        <th>No Response</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    @foreach (var row in Model.Rows)
+                    {
+                        int takingPercent =
+                            Model.TotalStudents > 0
+                                ? (int)(((double)row.Taking /
+                                    Model.TotalStudents) * 100)
+                                : 0;
+
+                        int skippingPercent =
+                            Model.TotalStudents > 0
+                                ? (int)(((double)row.Skipping /
+                                    Model.TotalStudents) * 100)
+                                : 0;
+
+                        int noResponsePercent =
+                            Model.TotalStudents > 0
+                                ? (int)(((double)row.NoResponse /
+                                    Model.TotalStudents) * 100)
+                                : 0;
+
+
+                        <tr>
+
+                            <!-- MEAL -->
+                            <td>
+
+                                <span class="meal-name">
+                                    @row.MealType
+                                </span>
+
+                            </td>
+
+
+                            <!-- STATUS -->
+                            <td>
+
+                                <span class="meal-status
+                                             @(row.IsAvailable
+                                                 ? "meal-open"
+                                                 : "meal-closed")">
+
+                                    @(row.IsAvailable
+                                        ? "Available"
+                                        : "Closed")
+
+                                </span>
+
+                            </td>
+
+
+                            <!-- TAKING -->
+                            <td>
+
+                                <div class="count-box">
+
+                                    <span class="count-number text-success">
+                                        @row.Taking
+                                    </span>
+
+                                    <span class="count-label">
+                                        @takingPercent% of students
+                                    </span>
+
+
+                                    <div class="participation-bar">
+
+                                        <div class="taking-fill"
+                                             style="width: @takingPercent%">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <!-- SKIPPING -->
+                            <td>
+
+                                <div class="count-box">
+
+                                    <span class="count-number">
+                                        @row.Skipping
+                                    </span>
+
+                                    <span class="count-label">
+                                        @skippingPercent% of students
+                                    </span>
+
+
+                                    <div class="participation-bar">
+
+                                        <div class="skip-fill"
+                                             style="width: @skippingPercent%">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <!-- NO RESPONSE -->
+                            <td>
+
+                                <div class="count-box">
+
+                                    <span class="count-number text-warning">
+                                        @row.NoResponse
+                                    </span>
+
+                                    <span class="count-label">
+                                        @noResponsePercent% pending
+                                    </span>
+
+
+                                    <div class="participation-bar">
+
+                                        <div class="response-fill"
+                                             style="width: @noResponsePercent%">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- BACK -->
+    <a asp-action="Index"
+       class="btn btn-outline-secondary back-btn">
+
+        ← Back to Mess Menus
+
+    </a>
+
+</div>

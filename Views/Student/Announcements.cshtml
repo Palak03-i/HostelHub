@@ -1,0 +1,241 @@
+﻿@model List<Hostel_hub.Models.Announcement>
+
+@{
+    ViewData["Title"] = "Announcements";
+}
+
+<style>
+    .announcements-page {
+        padding: 35px 0 60px;
+    }
+
+    .announcements-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .announcements-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .announcements-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .announcement-count {
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .announcement-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        margin-bottom: 20px;
+        border-left: 4px solid #4f46e5;
+    }
+
+    .announcement-card.important {
+        border-left-color: #dc3545;
+    }
+
+    .announcement-card-header {
+        padding: 20px 24px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .announcement-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .announcement-date {
+        color: #8a94a3;
+        font-size: 0.84rem;
+    }
+
+    .important-badge {
+        background: #f8d7da;
+        color: #b02a37;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+
+    .normal-badge {
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .announcement-body {
+        padding: 10px 24px 22px;
+    }
+
+    .announcement-content {
+        color: #4f5968;
+        line-height: 1.7;
+        margin-bottom: 0;
+        white-space: pre-line;
+    }
+
+    .empty-state {
+        background: white;
+        border-radius: 16px;
+        padding: 55px 20px;
+        text-align: center;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+    }
+
+    .empty-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    @@media (max-width: 767px) {
+        .announcements-page {
+            padding-top: 20px;
+        }
+
+        .announcements-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="announcements-page">
+
+    <!-- HEADER -->
+    <div class="announcements-header">
+
+        <div>
+
+            <h2>Announcements</h2>
+
+            <p>
+                Stay updated with important hostel notices and information.
+            </p>
+
+        </div>
+
+        <span class="announcement-count">
+            @Model.Count Active
+        </span>
+
+    </div>
+
+
+    @if (!Model.Any())
+    {
+
+        <div class="empty-state">
+
+            <div class="empty-icon">
+                A
+            </div>
+
+            <h5>No active announcements</h5>
+
+            <p>
+                There are currently no announcements for your hostel.
+            </p>
+
+        </div>
+
+    }
+    else
+    {
+
+        @foreach (var a in Model)
+        {
+
+            <div class="announcement-card @(a.IsImportant ? "important" : "")">
+
+                <div class="announcement-card-header">
+
+                    <div>
+
+                        <div class="announcement-title">
+                            @a.Title
+                        </div>
+
+                        <div class="announcement-date">
+                            Posted on @a.PostedAt.ToString("dd MMM yyyy")
+                        </div>
+
+                    </div>
+
+
+                    @if (a.IsImportant)
+                    {
+                        <span class="important-badge">
+                            Important
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="normal-badge">
+                            Notice
+                        </span>
+                    }
+
+                </div>
+
+
+                <div class="announcement-body">
+
+                    <p class="announcement-content">
+                        @a.Content
+                    </p>
+
+                </div>
+
+            </div>
+
+        }
+
+    }
+
+</div>

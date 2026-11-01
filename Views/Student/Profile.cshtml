@@ -1,0 +1,402 @@
+@model Hostel_hub.ViewModels.StudentProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<style>
+    .profile-page {
+        padding: 35px 0 60px;
+    }
+
+    .profile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .profile-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #172033;
+    }
+
+    .profile-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .student-badge {
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .profile-page .profile-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        height: auto;
+    }
+
+    .profile-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .profile-card-header h5 {
+        margin: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .profile-card-body {
+        padding: 24px;
+    }
+
+    .profile-item {
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f2f5;
+    }
+
+    .profile-item:last-child {
+        border-bottom: none;
+    }
+
+    .profile-label {
+        display: block;
+        color: #8a94a3;
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 5px;
+    }
+
+    .profile-value {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #2b3445;
+        margin-bottom: 0;
+    }
+
+    .profile-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .profile-stack > * {
+        flex: 0 0 auto;
+    }
+
+    .hostel-summary {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 0;
+    }
+
+    .hostel-summary-label {
+        color: rgba(255,255,255,0.72);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .hostel-summary h3 {
+        font-weight: 700;
+        margin-top: 6px;
+        margin-bottom: 22px;
+    }
+
+    .room-box {
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 12px;
+        padding: 18px;
+    }
+
+    .room-number {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 2px;
+    }
+
+    .edit-profile-btn {
+        padding: 10px 20px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .unassigned {
+        color: #6c757d;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    @@media (max-width: 767px) {
+        .profile-page {
+            padding-top: 20px;
+        }
+
+        .profile-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="profile-page">
+
+    <!-- HEADER -->
+    <div class="profile-header">
+
+        <div>
+            <h2>My Profile</h2>
+            <p>
+                View your personal and hostel information.
+            </p>
+        </div>
+
+        <span class="student-badge">
+            Student
+        </span>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- =========================
+             STUDENT INFORMATION
+             ========================= -->
+        <div class="col-lg-6">
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <h5>
+                        Student Information
+                    </h5>
+
+                </div>
+
+
+                <div class="profile-card-body">
+
+                    <!-- NAME -->
+                    <div class="profile-item">
+
+                        <span class="profile-label">
+                            Full Name
+                        </span>
+
+                        <p class="profile-value">
+                            @Model.FullName
+                        </p>
+
+                    </div>
+
+
+                    <!-- ROLL NUMBER -->
+                    <div class="profile-item">
+
+                        <span class="profile-label">
+                            Roll Number
+                        </span>
+
+                        <p class="profile-value">
+                            @Model.RollNumber
+                        </p>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+                    <div class="profile-item">
+
+                        <span class="profile-label">
+                            Phone Number
+                        </span>
+
+                        @if (!string.IsNullOrWhiteSpace(Model.PhoneNumber))
+                        {
+                            <p class="profile-value">
+                                @Model.PhoneNumber
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="profile-value unassigned">
+                                Not provided
+                            </p>
+                        }
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <a asp-action="EditProfile"
+                           class="btn btn-primary edit-profile-btn">
+
+                            Edit Profile
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             HOSTEL INFORMATION
+             ========================= -->
+        <div class="col-lg-6 profile-stack">
+
+
+            @if (!string.IsNullOrWhiteSpace(Model.HostelName))
+            {
+
+                <div class="hostel-summary">
+
+                    <span class="hostel-summary-label">
+                        Assigned Hostel
+                    </span>
+
+                    <h3>
+                        @Model.HostelName
+                    </h3>
+
+
+                    <div class="room-box">
+
+                        <span class="hostel-summary-label">
+                            Room Number
+                        </span>
+
+
+                        @if (!string.IsNullOrWhiteSpace(Model.RoomNumber))
+                        {
+
+                            <div class="room-number">
+                                @Model.RoomNumber
+                            </div>
+
+                            <div style="color: rgba(255,255,255,0.75);">
+                                Currently allocated room
+                            </div>
+
+                        }
+                        else
+                        {
+
+                            <div class="mt-2 fw-semibold">
+                                Room not yet assigned
+                            </div>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            }
+            else
+            {
+
+                <div class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <h5>
+                            Hostel Information
+                        </h5>
+
+                    </div>
+
+                    <div class="profile-card-body">
+
+                        <div class="alert alert-light border mb-0">
+
+                            You have not been assigned to a hostel yet.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            }
+
+
+            <!-- QUICK NOTE -->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <h5>
+                        Hostel Services
+                    </h5>
+
+                </div>
+
+                <div class="profile-card-body">
+
+                    <p class="text-muted mb-3">
+                        Use HostelHub services to manage your stay and
+                        communicate with hostel administration.
+                    </p>
+
+
+                    <div class="d-flex flex-wrap gap-2">
+
+                        <a asp-action="RoomChangeRequests"
+                           class="btn btn-outline-primary">
+
+                            Room Change
+
+                        </a>
+
+                        <a asp-action="Complaints"
+                           class="btn btn-outline-primary">
+
+                            Complaints
+
+                        </a>
+
+                        <a asp-action="Mess"
+                           class="btn btn-outline-primary">
+
+                            Mess Menu
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

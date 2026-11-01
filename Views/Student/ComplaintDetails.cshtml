@@ -1,0 +1,568 @@
+@model Hostel_hub.Models.Complaint
+
+@{
+    ViewData["Title"] = "Complaint Details";
+
+    string statusClass =
+        Model.Status.ToString() switch
+        {
+            "Pending" => "status-pending",
+            "Assigned" => "status-assigned",
+            "InProgress" => "status-progress",
+            "Resolved" => "status-resolved",
+            _ => "status-default"
+        };
+
+    string priorityClass =
+        Model.Priority.ToString() switch
+        {
+            "High" => "priority-high",
+            "Medium" => "priority-medium",
+            "Low" => "priority-low",
+            _ => "priority-default"
+        };
+
+    var history =
+        (List<Hostel_hub.Models.ComplaintStatusHistory>)ViewBag.History;
+}
+
+<style>
+    .details-page {
+        padding: 35px 0 60px;
+    }
+
+    .details-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .details-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .details-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .status-badge,
+    .priority-badge {
+        display: inline-block;
+        padding: 7px 13px;
+        border-radius: 30px;
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+
+    .status-pending {
+        background: #fff3cd;
+        color: #997404;
+    }
+
+    .status-assigned {
+        background: #eef2ff;
+        color: #4f46e5;
+    }
+
+    .status-progress {
+        background: #cff4fc;
+        color: #087990;
+    }
+
+    .status-resolved {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .status-default {
+        background: #eceff3;
+        color: #495057;
+    }
+
+    .priority-high {
+        background: #f8d7da;
+        color: #b02a37;
+    }
+
+    .priority-medium {
+        background: #fff3cd;
+        color: #997404;
+    }
+
+    .priority-low {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .priority-default {
+        background: #eceff3;
+        color: #495057;
+    }
+
+    .details-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .details-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .details-card-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .details-card-body {
+        padding: 24px;
+    }
+
+    .detail-item {
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f2f5;
+    }
+
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+
+    .detail-label {
+        display: block;
+        color: #8a94a3;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 6px;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #273142;
+        margin-bottom: 0;
+    }
+
+    .description-box {
+        background: #f8f9fc;
+        border-radius: 10px;
+        padding: 18px;
+        color: #49566a;
+        line-height: 1.7;
+    }
+
+    .staff-box {
+        background: #eef5ff;
+        border-radius: 12px;
+        padding: 18px;
+        margin-top: 18px;
+    }
+
+    .staff-label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #6f7b8e;
+        margin-bottom: 5px;
+    }
+
+    .staff-name {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .history-card {
+        margin-top: 26px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .history-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .history-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .timeline {
+        padding: 28px;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-left: 34px;
+        padding-bottom: 28px;
+    }
+
+    .timeline-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 18px;
+        width: 2px;
+        height: calc(100% - 4px);
+        background: #e2e6ec;
+    }
+
+    .timeline-item:last-child::before {
+        display: none;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #4f46e5;
+        border: 4px solid #eaf2ff;
+    }
+
+    .timeline-title {
+        font-weight: 700;
+        color: #273142;
+        margin-bottom: 4px;
+    }
+
+    .timeline-meta {
+        color: #7c8798;
+        font-size: 0.86rem;
+        margin-bottom: 6px;
+    }
+
+    .timeline-remarks {
+        background: #f8f9fc;
+        padding: 10px 12px;
+        border-radius: 8px;
+        color: #5d6878;
+        font-size: 0.9rem;
+        display: inline-block;
+    }
+
+    .empty-history {
+        padding: 35px;
+        text-align: center;
+        color: #6c757d;
+    }
+
+    .back-btn {
+        margin-top: 26px;
+        padding: 9px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    @@media (max-width: 767px) {
+        .details-page {
+            padding-top: 20px;
+        }
+
+        .details-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="details-page">
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- HEADER -->
+    <div class="details-header">
+
+        <div>
+
+            <h2>@Model.Title</h2>
+
+            <p>
+                Complaint details and status history.
+            </p>
+
+        </div>
+
+
+        <div class="d-flex gap-2 flex-wrap align-items-center">
+
+            <span class="priority-badge @priorityClass">
+                @Model.Priority Priority
+            </span>
+
+            <span class="status-badge @statusClass">
+
+                @(Model.Status.ToString() == "InProgress"
+                    ? "In Progress"
+                    : Model.Status.ToString())
+
+            </span>
+
+            @if (Model.Status == Hostel_hub.Models.ComplaintStatus.Pending)
+            {
+                <a asp-action="EditComplaint"
+                   asp-route-id="@Model.ComplaintId"
+                   class="btn btn-outline-primary btn-sm"
+                   style="border-radius: 30px; font-weight: 600; padding: 7px 16px;">
+                    Edit Complaint
+                </a>
+            }
+
+        </div>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- COMPLAINT INFORMATION -->
+        <div class="col-lg-5">
+
+            <div class="details-card">
+
+                <div class="details-card-header">
+
+                    <h5>
+                        Complaint Information
+                    </h5>
+
+                </div>
+
+
+                <div class="details-card-body">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Category
+                        </span>
+
+                        <p class="detail-value">
+                            @Model.Category
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Priority
+                        </span>
+
+                        <span class="priority-badge @priorityClass">
+                            @Model.Priority
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Current Status
+                        </span>
+
+                        <span class="status-badge @statusClass">
+
+                            @(Model.Status.ToString() == "InProgress"
+                                ? "In Progress"
+                                : Model.Status.ToString())
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="staff-box">
+
+                        <div class="staff-label">
+                            Assigned Maintenance Staff
+                        </div>
+
+                        <p class="staff-name">
+
+                            @(Model.AssignedStaff?.FullName
+                                ?? "Not yet assigned")
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <div class="col-lg-7">
+
+            <div class="details-card">
+
+                <div class="details-card-header">
+
+                    <h5>
+                        Description
+                    </h5>
+
+                </div>
+
+
+                <div class="details-card-body">
+
+                    <div class="description-box">
+
+                        @Model.Description
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HISTORY -->
+    <div class="history-card">
+
+        <div class="history-header">
+
+            <h5>
+                Complaint History
+            </h5>
+
+            <span class="text-muted small">
+                @history.Count update(s)
+            </span>
+
+        </div>
+
+
+        @if (history.Count == 0)
+        {
+
+            <div class="empty-history">
+
+                No status updates are available yet.
+
+            </div>
+
+        }
+        else
+        {
+
+            <div class="timeline">
+
+                @foreach (var h in history)
+                {
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+
+                        <div class="timeline-title">
+
+                            @h.OldStatus
+                            →
+                            @h.NewStatus
+
+                        </div>
+
+
+                        <div class="timeline-meta">
+
+                            @(h.ChangedAt
+                                .ToLocalTime()
+                                .ToString("dd MMM yyyy, hh:mm tt"))
+
+                            &nbsp;•&nbsp;
+
+                            Updated by @h.ChangedBy
+
+                        </div>
+
+
+                        @if (!string.IsNullOrWhiteSpace(h.Remarks))
+                        {
+
+                            <div class="timeline-remarks">
+
+                                @h.Remarks
+
+                            </div>
+
+                        }
+
+                    </div>
+
+                }
+
+            </div>
+
+        }
+
+    </div>
+
+
+    <!-- BACK AND ACTIONS -->
+    <div class="d-flex gap-2 flex-wrap">
+        <a asp-action="Complaints"
+           class="btn btn-outline-secondary back-btn">
+            ← Back to Complaints
+        </a>
+
+        @if (Model.Status == Hostel_hub.Models.ComplaintStatus.Pending)
+        {
+            <a asp-action="EditComplaint"
+               asp-route-id="@Model.ComplaintId"
+               class="btn btn-primary back-btn">
+                Edit Complaint
+            </a>
+        }
+    </div>
+
+</div>

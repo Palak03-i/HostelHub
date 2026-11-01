@@ -1,0 +1,452 @@
+@model List<Hostel_hub.Models.RoomChangeRequest>
+
+@{
+    ViewData["Title"] = "Room Change Requests";
+}
+
+<style>
+    .room-change-page {
+        padding: 35px 0 60px;
+    }
+
+    .room-change-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .room-change-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .room-change-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .request-btn {
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .summary-card {
+        background: white;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+
+    .summary-label {
+        color: #7c8798;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .summary-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .requests-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .requests-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .requests-card-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .requests-table {
+        margin-bottom: 0;
+    }
+
+    .requests-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .requests-table tbody td {
+        padding: 17px 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .room-number {
+        display: inline-block;
+        background: #eef4ff;
+        color: #4f46e5;
+        padding: 6px 11px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+
+    .status-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+    .status-pending {
+        background: #fff3cd;
+        color: #997404;
+    }
+
+    .status-approved {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .status-rejected {
+        background: #f8d7da;
+        color: #b02a37;
+    }
+
+    .status-default {
+        background: #eceff3;
+        color: #495057;
+    }
+
+    .reason-text {
+        max-width: 300px;
+        color: #4f5968;
+        line-height: 1.5;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .empty-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .room-change-page {
+            padding-top: 20px;
+        }
+
+        .room-change-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="room-change-page">
+
+    <!-- HEADER -->
+    <div class="room-change-header">
+
+        <div>
+            <h2>Room Change Requests</h2>
+
+            <p>
+                View and track your hostel room change requests.
+            </p>
+        </div>
+
+
+        <a asp-action="RequestRoomChange"
+           class="btn btn-primary request-btn">
+
+            + Request Room Change
+
+        </a>
+
+    </div>
+
+
+    @if (TempData["RoomChangeError"] is string roomChangeError)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @roomChangeError
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Dismiss message"></button>
+        </div>
+    }
+
+    <!-- SUMMARY -->
+    <div class="row g-3">
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Requests
+                </div>
+
+                <p class="summary-number">
+                    @Model.Count
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Pending Requests
+                </div>
+
+                <p class="summary-number text-warning">
+
+                    @Model.Count(r =>
+                        r.Status.ToString() == "Pending")
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Approved Requests
+                </div>
+
+                <p class="summary-number text-success">
+
+                    @Model.Count(r =>
+                        r.Status.ToString() == "Approved")
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REQUEST LIST -->
+    <div class="requests-card">
+
+        <div class="requests-card-header">
+
+            <h5>
+                Request History
+            </h5>
+
+            <span class="text-muted small">
+                @Model.Count record(s)
+            </span>
+
+        </div>
+
+
+        @if (!Model.Any())
+        {
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    RM
+                </div>
+
+                <h5>No room change requests yet</h5>
+
+                <p>
+                    You have not submitted any request to change your room.
+                </p>
+
+                <a asp-action="RequestRoomChange"
+                   class="btn btn-primary">
+
+                    Request Room Change
+
+                </a>
+
+            </div>
+
+        }
+        else
+        {
+
+            <div class="table-responsive">
+
+                <table data-enhance-table class="table table-hover requests-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Current Room</th>
+                            <th>Requested Room</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Requested At</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var req in Model)
+                        {
+
+                            string statusClass =
+                                req.Status.ToString() switch
+                                {
+                                    "Pending" => "status-pending",
+                                    "Approved" => "status-approved",
+                                    "Rejected" => "status-rejected",
+                                    _ => "status-default"
+                                };
+
+
+                            <tr>
+
+                                <!-- CURRENT ROOM -->
+                                <td>
+
+                                    @if (req.CurrentRoom != null)
+                                    {
+                                        <span class="room-number">
+                                            @req.CurrentRoom.RoomNumber
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">
+                                            Not assigned
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- REQUESTED ROOM -->
+                                <td>
+
+                                    @if (req.RequestedRoom != null)
+                                    {
+                                        <span class="room-number">
+                                            @req.RequestedRoom.RoomNumber
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">
+                                            Not available
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- REASON -->
+                                <td>
+
+                                    <div class="reason-text">
+                                        @req.Reason
+                                    </div>
+
+                                </td>
+
+
+                                <!-- STATUS -->
+                                <td>
+
+                                    <span class="status-badge @statusClass">
+
+                                        @req.Status
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- DATE -->
+                                <td>
+
+                                    <div>
+                                        @(req.RequestedAt
+                                            .ToLocalTime()
+                                            .ToString("dd MMM yyyy"))
+                                    </div>
+
+                                    <small class="text-muted">
+
+                                        @(req.RequestedAt
+                                            .ToLocalTime()
+                                            .ToString("hh:mm tt"))
+
+                                    </small>
+
+                                </td>
+
+                            </tr>
+
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>

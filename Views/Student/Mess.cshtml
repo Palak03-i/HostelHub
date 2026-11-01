@@ -1,0 +1,693 @@
+﻿@model Hostel_hub.ViewModels.MessOverviewViewModel
+
+@{
+    ViewData["Title"] = "Mess Menu";
+}
+
+<style>
+    .mess-page {
+        padding: 35px 0 60px;
+    }
+
+    .mess-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .mess-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .mess-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .mess-badge {
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .mess-section {
+        margin-top: 32px;
+    }
+
+    .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .section-heading h4 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .section-date {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    .meal-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .meal-card-header {
+        padding: 18px 20px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .meal-card-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .meal-card-body {
+        padding: 22px;
+    }
+
+    .meal-status {
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+    .meal-open {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .meal-closed {
+        background: #eceff3;
+        color: #6c757d;
+    }
+
+    .selection-take {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .selection-skip {
+        background: #eceff3;
+        color: #495057;
+    }
+
+    .meal-items-title {
+        color: #8a94a3;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+    }
+
+    .meal-items {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 22px;
+    }
+
+    .meal-items li {
+        padding: 9px 0;
+        border-bottom: 1px solid #f0f2f5;
+        color: #394355;
+        font-weight: 500;
+    }
+
+    .meal-items li:last-child {
+        border-bottom: none;
+    }
+
+    .meal-items li::before {
+        content: "•";
+        color: #4f46e5;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .meal-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        border-top: 1px solid #edf0f5;
+        padding-top: 18px;
+    }
+
+    .meal-actions .btn {
+        min-width: 100px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    .closed-message {
+        background: #f8f9fc;
+        border-radius: 9px;
+        padding: 12px 14px;
+        color: #6c757d;
+        font-size: 0.88rem;
+    }
+
+    .tomorrow-card {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 12px 30px rgba(79, 70, 229, 0.18);
+    }
+
+    .tomorrow-card h4 {
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .tomorrow-subtitle {
+        color: rgba(255,255,255,0.75);
+        margin-bottom: 22px;
+    }
+
+    .tomorrow-meal-box {
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 14px;
+        padding: 20px;
+    }
+
+    .tomorrow-items {
+        margin: 15px 0 20px;
+        padding-left: 20px;
+    }
+
+    .tomorrow-items li {
+        margin-bottom: 7px;
+    }
+
+    .tomorrow-selection {
+        background: rgba(255,255,255,0.18);
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .notice-card {
+        border-radius: 10px;
+        border: none;
+    }
+
+    .no-menu {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.05);
+    }
+
+    .no-menu h5 {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .no-menu p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    @@media (max-width: 767px) {
+        .mess-page {
+            padding-top: 20px;
+        }
+
+        .mess-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="mess-page">
+
+    <!-- HEADER -->
+    <div class="mess-header">
+
+        <div>
+            <h2>Mess Menu</h2>
+
+            <p>
+                View daily meals and manage your meal participation.
+            </p>
+        </div>
+
+        <span class="mess-badge">
+            Student Mess
+        </span>
+
+    </div>
+
+
+    <!-- MESSAGES -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger notice-card">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success notice-card">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (Model.NoticeMessage != null)
+    {
+        <div class="alert alert-info notice-card">
+            @Model.NoticeMessage
+        </div>
+    }
+
+
+    <!-- ==========================================
+         TOMORROW BREAKFAST
+         ========================================== -->
+    @if (Model.TomorrowMenu != null)
+    {
+        var meal = Hostel_hub.Models.MealType.Breakfast;
+
+        bool isOpen =
+            Model.TomorrowMealOpen.TryGetValue(
+                meal,
+                out var tomorrowOpen)
+            && tomorrowOpen;
+
+        Model.TomorrowSelections.TryGetValue(
+            meal,
+            out var tomorrowStatus);
+
+
+        <div class="mess-section">
+
+            <div class="tomorrow-card">
+
+                <div class="d-flex justify-content-between
+                    align-items-start flex-wrap gap-3">
+
+                    <div>
+
+                        <div class="small text-uppercase"
+                             style="color: rgba(255,255,255,0.7);
+                            font-weight:700;
+                            letter-spacing:.5px;">
+
+                            Tomorrow
+
+                        </div>
+
+                        <h4>
+                            Breakfast
+                        </h4>
+
+                        <div class="tomorrow-subtitle">
+
+                            @Model.TomorrowMenu.MenuDate.ToString("dd MMM yyyy")
+                            • Decide before the breakfast cutoff.
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="meal-status
+                        @(isOpen ? "meal-open" : "meal-closed")">
+
+                        @(isOpen ? "Selection Open" : "Selection Closed")
+
+                    </span>
+
+                </div>
+
+
+                <div class="tomorrow-meal-box">
+
+                    <div class="d-flex justify-content-between
+                        align-items-center flex-wrap gap-2">
+
+                        <strong>
+                            Breakfast Menu
+                        </strong>
+
+
+                        @if (Model.TomorrowSelections.ContainsKey(meal))
+                        {
+                            <span class="tomorrow-selection">
+
+                                Current:
+                                @tomorrowStatus
+
+                            </span>
+                        }
+
+                    </div>
+
+
+                    <ul class="tomorrow-items">
+
+                        @foreach (var item in
+                            Model.TomorrowMenu.Items
+                                .Where(i => i.MealType == meal))
+                        {
+                            <li>
+                                @item.ItemName
+                            </li>
+                        }
+
+                    </ul>
+
+
+                    @if (isOpen)
+                    {
+
+                        <div class="d-flex gap-2 flex-wrap">
+
+                            <form asp-action="SelectMeal"
+                                  method="post">
+
+                                <input type="hidden"
+                                       name="menuId"
+                                       value="@Model.TomorrowMenu.MessMenuId" />
+
+                                <input type="hidden"
+                                       name="mealType"
+                                       value="@meal" />
+
+                                <input type="hidden"
+                                       name="status"
+                                       value="Take" />
+
+                                <button type="submit"
+                                        class="btn btn-light fw-semibold">
+
+                                    Take Meal
+
+                                </button>
+
+                            </form>
+
+
+                            <form asp-action="SelectMeal"
+                                  method="post">
+
+                                <input type="hidden"
+                                       name="menuId"
+                                       value="@Model.TomorrowMenu.MessMenuId" />
+
+                                <input type="hidden"
+                                       name="mealType"
+                                       value="@meal" />
+
+                                <input type="hidden"
+                                       name="status"
+                                       value="Skip" />
+
+                                <button type="submit"
+                                        class="btn btn-outline-light fw-semibold">
+
+                                    Skip Meal
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    }
+                    else
+                    {
+
+                        <div style="color: rgba(255,255,255,0.72);">
+
+                            Meal selection is closed for tomorrow's breakfast.
+
+                        </div>
+
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+
+
+    <!-- ==========================================
+         TODAY MENU
+         ========================================== -->
+    @if (Model.TodayMenu != null)
+    {
+
+        <div class="mess-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h4>
+                        Today's Menu
+                    </h4>
+
+                    <div class="section-date">
+                        @Model.TodayMenu.MenuDate.ToString("dddd, dd MMMM yyyy")
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                @foreach (
+                    var meal in new[]
+                    {
+                        Hostel_hub.Models.MealType.Breakfast,
+                        Hostel_hub.Models.MealType.Lunch,
+                        Hostel_hub.Models.MealType.Dinner
+                    })
+                {
+
+                    bool isOpen =
+                        Model.TodayMealOpen.TryGetValue(
+                            meal,
+                            out var todayOpen)
+                        && todayOpen;
+
+                    Model.TodaySelections.TryGetValue(
+                        meal,
+                        out var status);
+
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="meal-card">
+
+
+                            <!-- HEADER -->
+                            <div class="meal-card-header">
+
+                                <h5>
+                                    @meal
+                                </h5>
+
+
+                                <span class="meal-status
+                                    @(isOpen
+                                       ? "meal-open"
+                                       : "meal-closed")">
+
+                                    @(isOpen ? "Open" : "Closed")
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- BODY -->
+                            <div class="meal-card-body">
+
+
+                                @if (Model.TodaySelections.ContainsKey(meal))
+                                {
+
+                                    <div class="mb-3">
+
+                                        <span class="meal-status
+                                            @(status ==
+                                               Hostel_hub.Models.MealSelectionStatus.Take
+                                               ? "selection-take"
+                                               : "selection-skip")">
+
+                                            Current Selection:
+                                            @status
+
+                                        </span>
+
+                                    </div>
+
+                                }
+
+
+                                <div class="meal-items-title">
+                                    Menu Items
+                                </div>
+
+
+                                <ul class="meal-items">
+
+                                    @foreach (
+                                        var item in
+                                        Model.TodayMenu.Items
+                                            .Where(i => i.MealType == meal))
+                                    {
+
+                                        <li>
+                                            @item.ItemName
+                                        </li>
+
+                                    }
+
+                                </ul>
+
+
+                                @if (isOpen)
+                                {
+
+                                    <div class="meal-actions">
+
+
+                                        <!-- TAKE -->
+                                        <form asp-action="SelectMeal"
+                                              method="post">
+
+                                            <input type="hidden"
+                                                   name="menuId"
+                                                   value="@Model.TodayMenu.MessMenuId" />
+
+                                            <input type="hidden"
+                                                   name="mealType"
+                                                   value="@meal" />
+
+                                            <input type="hidden"
+                                                   name="status"
+                                                   value="Take" />
+
+                                            <button type="submit"
+                                                    class="btn btn-success">
+
+                                                Take
+
+                                            </button>
+
+                                        </form>
+
+
+                                        <!-- SKIP -->
+                                        <form asp-action="SelectMeal"
+                                              method="post">
+
+                                            <input type="hidden"
+                                                   name="menuId"
+                                                   value="@Model.TodayMenu.MessMenuId" />
+
+                                            <input type="hidden"
+                                                   name="mealType"
+                                                   value="@meal" />
+
+                                            <input type="hidden"
+                                                   name="status"
+                                                   value="Skip" />
+
+                                            <button type="submit"
+                                                    class="btn btn-outline-secondary">
+
+                                                Skip
+
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                }
+                                else
+                                {
+
+                                    <div class="closed-message">
+
+                                        Selection window has closed for this meal.
+
+                                    </div>
+
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+    }
+    else
+    {
+
+        <div class="mess-section">
+
+            <div class="no-menu">
+
+                <h5>
+                    No menu available for today
+                </h5>
+
+                <p>
+                    The hostel administration has not published today's menu yet.
+                </p>
+
+            </div>
+
+        </div>
+
+    }
+
+</div>

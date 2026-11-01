@@ -1,0 +1,492 @@
+﻿@model Hostel_hub.Models.MessMenu
+
+@{
+    ViewData["Title"] = "Mess Menu Details";
+}
+
+<style>
+    .menu-details-page {
+        padding: 35px 0 60px;
+    }
+
+    .menu-details-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .menu-details-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .menu-details-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .date-badge {
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .menu-info-card {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        border-radius: 16px;
+        padding: 26px;
+        margin-bottom: 26px;
+        box-shadow: 0 10px 28px rgba(79, 70, 229,0.18);
+    }
+
+    .info-label {
+        color: rgba(255,255,255,0.72);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .hostel-name {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 4px;
+        margin-bottom: 18px;
+    }
+
+    .menu-date-box {
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 12px;
+        padding: 16px;
+        display: inline-block;
+        min-width: 210px;
+    }
+
+    .menu-date-value {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-top: 3px;
+    }
+
+    .meal-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .meal-card-header {
+        padding: 18px 20px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .meal-card-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .meal-card-body {
+        padding: 22px;
+    }
+
+    .meal-status {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+    .meal-open {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .meal-closed {
+        background: #eceff3;
+        color: #6c757d;
+    }
+
+    .items-label {
+        color: #8a94a3;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+    }
+
+    .meal-items {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .meal-items li {
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f2f5;
+        color: #394355;
+        font-weight: 500;
+    }
+
+    .meal-items li:last-child {
+        border-bottom: none;
+    }
+
+    .meal-items li::before {
+        content: "•";
+        color: #4f46e5;
+        font-weight: 700;
+        margin-right: 10px;
+    }
+
+    .empty-items {
+        background: #f8f9fc;
+        color: #6c757d;
+        border-radius: 9px;
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+
+    .page-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+    }
+
+    .page-actions .btn {
+        border-radius: 9px;
+        font-weight: 600;
+        padding: 9px 17px;
+    }
+
+    @@media (max-width: 767px) {
+        .menu-details-page {
+            padding-top: 20px;
+        }
+
+        .menu-details-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="menu-details-page">
+
+    <!-- HEADER -->
+    <div class="menu-details-header">
+
+        <div>
+            <h2>Mess Menu Details</h2>
+
+            <p>
+                Review the published meal schedule and menu items.
+            </p>
+        </div>
+
+
+        <span class="date-badge">
+
+            @Model.MenuDate.ToString("dd MMM yyyy")
+
+        </span>
+
+    </div>
+
+
+    <!-- MENU INFORMATION -->
+    <div class="menu-info-card">
+
+        <div class="info-label">
+            Hostel
+        </div>
+
+        <div class="hostel-name">
+
+            @(Model.Hostel?.Name ?? "Unassigned Hostel")
+
+        </div>
+
+
+        <div class="menu-date-box">
+
+            <div class="info-label">
+                Menu Date
+            </div>
+
+            <div class="menu-date-value">
+
+                @Model.MenuDate.ToString("dddd, dd MMMM yyyy")
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MEALS -->
+    <div class="row g-4">
+
+
+        <!-- BREAKFAST -->
+        <div class="col-md-6 col-lg-4">
+
+            <div class="meal-card">
+
+                <div class="meal-card-header">
+
+                    <h5>Breakfast</h5>
+
+
+                    <span class="meal-status
+                                 @(Model.IsBreakfastAvailable
+                                     ? "meal-open"
+                                     : "meal-closed")">
+
+                        @(Model.IsBreakfastAvailable
+                            ? "Available"
+                            : "Closed")
+
+                    </span>
+
+                </div>
+
+
+                <div class="meal-card-body">
+
+                    <div class="items-label">
+                        Menu Items
+                    </div>
+
+
+                    @{
+                        var breakfastItems =
+                            Model.Items
+                                .Where(i =>
+                                    i.MealType ==
+                                    Hostel_hub.Models.MealType.Breakfast)
+                                .ToList();
+                    }
+
+
+                    @if (breakfastItems.Any())
+                    {
+                        <ul class="meal-items">
+
+                            @foreach (var item in breakfastItems)
+                            {
+                                <li>
+                                    @item.ItemName
+                                </li>
+                            }
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="empty-items">
+                            No breakfast items added.
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LUNCH -->
+        <div class="col-md-6 col-lg-4">
+
+            <div class="meal-card">
+
+                <div class="meal-card-header">
+
+                    <h5>Lunch</h5>
+
+
+                    <span class="meal-status
+                                 @(Model.IsLunchAvailable
+                                     ? "meal-open"
+                                     : "meal-closed")">
+
+                        @(Model.IsLunchAvailable
+                            ? "Available"
+                            : "Closed")
+
+                    </span>
+
+                </div>
+
+
+                <div class="meal-card-body">
+
+                    <div class="items-label">
+                        Menu Items
+                    </div>
+
+
+                    @{
+                        var lunchItems =
+                            Model.Items
+                                .Where(i =>
+                                    i.MealType ==
+                                    Hostel_hub.Models.MealType.Lunch)
+                                .ToList();
+                    }
+
+
+                    @if (lunchItems.Any())
+                    {
+                        <ul class="meal-items">
+
+                            @foreach (var item in lunchItems)
+                            {
+                                <li>
+                                    @item.ItemName
+                                </li>
+                            }
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="empty-items">
+                            No lunch items added.
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DINNER -->
+        <div class="col-md-6 col-lg-4">
+
+            <div class="meal-card">
+
+                <div class="meal-card-header">
+
+                    <h5>Dinner</h5>
+
+
+                    <span class="meal-status
+                                 @(Model.IsDinnerAvailable
+                                     ? "meal-open"
+                                     : "meal-closed")">
+
+                        @(Model.IsDinnerAvailable
+                            ? "Available"
+                            : "Closed")
+
+                    </span>
+
+                </div>
+
+
+                <div class="meal-card-body">
+
+                    <div class="items-label">
+                        Menu Items
+                    </div>
+
+
+                    @{
+                        var dinnerItems =
+                            Model.Items
+                                .Where(i =>
+                                    i.MealType ==
+                                    Hostel_hub.Models.MealType.Dinner)
+                                .ToList();
+                    }
+
+
+                    @if (dinnerItems.Any())
+                    {
+                        <ul class="meal-items">
+
+                            @foreach (var item in dinnerItems)
+                            {
+                                <li>
+                                    @item.ItemName
+                                </li>
+                            }
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="empty-items">
+                            No dinner items added.
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACTIONS -->
+    <div class="page-actions">
+
+        <a asp-action="Index"
+           class="btn btn-outline-secondary">
+
+            ← Back to Menus
+
+        </a>
+
+
+        <div class="d-flex gap-2 flex-wrap">
+
+            <a asp-action="Participation"
+               asp-route-id="@Model.MessMenuId"
+               class="btn btn-outline-info">
+
+                View Participation
+
+            </a>
+
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.MessMenuId"
+               class="btn btn-primary">
+
+                Edit Menu
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

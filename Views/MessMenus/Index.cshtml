@@ -1,0 +1,548 @@
+@model List<Hostel_hub.Models.MessMenu>
+
+@{
+    ViewData["Title"] = "Manage Mess Menus";
+
+    var today = DateOnly.FromDateTime(DateTime.Today);
+
+    int todayMenus =
+        Model.Count(m => m.MenuDate == today);
+
+    int upcomingMenus =
+        Model.Count(m => m.MenuDate > today);
+}
+
+<style>
+    .mess-admin-page {
+        padding: 35px 0 60px;
+    }
+
+    .mess-admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .mess-admin-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .mess-admin-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .create-menu-btn {
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .summary-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+
+    .summary-label {
+        color: #7c8798;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .summary-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .menus-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .menus-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menus-card-header h5 {
+        margin-bottom: 2px;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .menus-table {
+        margin-bottom: 0;
+    }
+
+    .menus-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .menus-table tbody td {
+        padding: 17px 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .hostel-badge {
+        display: inline-block;
+        background: #eef4ff;
+        color: #4f46e5;
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+
+    .date-main {
+        display: block;
+        color: #273142;
+        font-weight: 700;
+    }
+
+    .date-sub {
+        display: block;
+        color: #8a94a3;
+        font-size: 0.8rem;
+        margin-top: 3px;
+    }
+
+    .menu-day-badge {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-size: 0.72rem;
+        font-weight: 600;
+    }
+
+    .menu-today {
+        background: #eef2ff;
+        color: #4f46e5;
+    }
+
+    .menu-upcoming {
+        background: #f1f3f5;
+        color: #495057;
+    }
+
+    .meal-status {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .meal-open {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .meal-closed {
+        background: #eceff3;
+        color: #6c757d;
+    }
+
+    .menu-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .menu-actions .btn {
+        border-radius: 7px;
+        font-weight: 600;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .empty-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .mess-admin-page {
+            padding-top: 20px;
+        }
+
+        .mess-admin-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="mess-admin-page">
+
+    <!-- HEADER -->
+    <div class="mess-admin-header">
+
+        <div>
+
+            <h2>Manage Mess Menus</h2>
+
+            <p>
+                Create daily menus and manage meal availability for students.
+            </p>
+
+        </div>
+
+
+        <a asp-action="Create"
+           class="btn btn-primary create-menu-btn">
+
+            + Create Menu
+
+        </a>
+
+    </div>
+
+
+    <!-- MESSAGES -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (TempData["InfoMessage"] != null)
+    {
+        <div class="alert alert-info">
+            @TempData["InfoMessage"]
+        </div>
+    }
+
+
+    <!-- SUMMARY -->
+    <div class="row g-3">
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Menus
+                </div>
+
+                <p class="summary-number">
+                    @Model.Count
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Today's Menu
+                </div>
+
+                <p class="summary-number text-primary">
+                    @todayMenus
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Upcoming Menus
+                </div>
+
+                <p class="summary-number text-success">
+                    @upcomingMenus
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MENU LIST -->
+    <div class="menus-card">
+
+        <div class="menus-card-header">
+
+            <div>
+
+                <h5>Menu Schedule</h5>
+
+                <span class="text-muted small">
+                    @Model.Count active menu(s)
+                </span>
+
+            </div>
+
+        </div>
+
+
+        @if (!Model.Any())
+        {
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    MM
+                </div>
+
+                <h5>No mess menus available</h5>
+
+                <p>
+                    Create a menu so students can view meals and submit
+                    their participation choices.
+                </p>
+
+
+                <a asp-action="Create"
+                   class="btn btn-primary">
+
+                    Create First Menu
+
+                </a>
+
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+
+                <table data-enhance-table class="table table-hover menus-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Hostel</th>
+                            <th>Date</th>
+                            <th>Breakfast</th>
+                            <th>Lunch</th>
+                            <th>Dinner</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var menu in Model)
+                        {
+                            bool isToday =
+                                menu.MenuDate == today;
+
+
+                            <tr>
+
+                                <!-- HOSTEL -->
+                                <td>
+
+                                    <span class="hostel-badge">
+
+                                        @(menu.Hostel?.Name
+                                            ?? "Unassigned")
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- DATE -->
+                                <td>
+
+    <span class="date-main">
+        @(menu.MenuDate.ToString("dd MMM yyyy"))
+    </span>
+
+    <span class="date-sub">
+        @(menu.MenuDate.ToString("dddd"))
+    </span>
+
+    @if (isToday)
+    {
+        <span class="menu-day-badge menu-today">
+            Today
+        </span>
+    }
+    else
+    {
+        <span class="menu-day-badge menu-upcoming">
+            Upcoming
+        </span>
+    }
+
+</td>
+
+
+                                <!-- BREAKFAST -->
+                                <td>
+
+                                    <span class="meal-status
+                                                 @(menu.IsBreakfastAvailable
+                                                     ? "meal-open"
+                                                     : "meal-closed")">
+
+                                        @(menu.IsBreakfastAvailable
+                                            ? "Available"
+                                            : "Closed")
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- LUNCH -->
+                                <td>
+
+                                    <span class="meal-status
+                                                 @(menu.IsLunchAvailable
+                                                     ? "meal-open"
+                                                     : "meal-closed")">
+
+                                        @(menu.IsLunchAvailable
+                                            ? "Available"
+                                            : "Closed")
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- DINNER -->
+                                <td>
+
+                                    <span class="meal-status
+                                                 @(menu.IsDinnerAvailable
+                                                     ? "meal-open"
+                                                     : "meal-closed")">
+
+                                        @(menu.IsDinnerAvailable
+                                            ? "Available"
+                                            : "Closed")
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- ACTIONS -->
+                                <td>
+
+                                    <div class="menu-actions">
+
+                                        <a asp-action="Details"
+                                           asp-route-id="@menu.MessMenuId"
+                                           class="btn btn-outline-secondary btn-sm">
+
+                                            View
+
+                                        </a>
+
+
+                                        <a asp-action="Participation"
+                                           asp-route-id="@menu.MessMenuId"
+                                           class="btn btn-outline-info btn-sm">
+
+                                            Participation
+
+                                        </a>
+
+
+                                        <a asp-action="Edit"
+                                           asp-route-id="@menu.MessMenuId"
+                                           class="btn btn-outline-primary btn-sm">
+
+                                            Edit
+
+                                        </a>
+
+
+                                        <form asp-action="Delete"
+                                              asp-route-id="@menu.MessMenuId"
+                                              method="post"
+                                              class="d-inline">
+
+                                            <button type="submit"
+                                                    class="btn btn-outline-danger btn-sm"
+                                                    onclick="return confirm('Delete this menu?');">
+
+                                                Delete
+
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+</div>

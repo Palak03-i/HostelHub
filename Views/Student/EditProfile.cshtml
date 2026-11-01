@@ -1,0 +1,310 @@
+﻿@model Hostel_hub.ViewModels.StudentEditProfileViewModel
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<style>
+    .edit-profile-page {
+        padding: 35px 0 60px;
+    }
+
+    .edit-profile-header {
+        margin-bottom: 28px;
+    }
+
+    .edit-profile-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .edit-profile-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .profile-form-card {
+        max-width: 760px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .profile-form-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .profile-form-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .profile-form-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .profile-form-body {
+        padding: 28px;
+    }
+
+    .info-box {
+        background: #eef5ff;
+        border-left: 4px solid #4f46e5;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 24px;
+        color: #556274;
+        font-size: 0.9rem;
+    }
+
+    .field-card {
+        background: #f8f9fc;
+        border: 1px solid #edf0f5;
+        border-radius: 12px;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .field-title {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .field-help {
+        color: #8a94a3;
+        font-size: 0.8rem;
+        margin-bottom: 14px;
+    }
+
+    .form-label-custom {
+        display: block;
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .profile-input {
+        min-height: 48px;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .profile-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229,0.12);
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .form-actions .btn {
+        min-width: 130px;
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .edit-profile-page {
+            padding-top: 20px;
+        }
+
+        .edit-profile-header h2 {
+            font-size: 1.7rem;
+        }
+
+        .profile-form-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="edit-profile-page">
+
+    <div class="edit-profile-header">
+
+        <h2>Edit Profile</h2>
+
+        <p>
+            Update your personal information.
+        </p>
+
+    </div>
+
+
+    <div class="profile-form-card">
+
+        <div class="profile-form-header">
+
+            <h5>Personal Information</h5>
+
+            <p>
+                Keep your profile details accurate and up to date.
+            </p>
+
+        </div>
+
+
+        <div class="profile-form-body">
+
+            <div class="info-box">
+                Hostel and room information are managed by the administration
+                and cannot be changed from your profile.
+            </div>
+
+
+            <form asp-action="EditProfile"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- FULL NAME -->
+                    <div class="col-md-6">
+
+                        <div class="field-card">
+
+                            <div class="field-title">
+                                Full Name
+                            </div>
+
+                            <div class="field-help">
+                                Update the name displayed on your student profile.
+                            </div>
+
+
+                            <label asp-for="FullName"
+                                   class="form-label-custom">
+
+                                Name
+
+                            </label>
+
+
+                            <input asp-for="FullName"
+                                   class="form-control profile-input"
+                                   placeholder="Enter your full name" />
+
+
+                            <span asp-validation-for="FullName"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE NUMBER -->
+                    <div class="col-md-6">
+
+                        <div class="field-card">
+
+                            <div class="field-title">
+                                Phone Number
+                            </div>
+
+                            <div class="field-help">
+                                Update your current contact number.
+                            </div>
+
+
+                            <label asp-for="PhoneNumber"
+                                   class="form-label-custom">
+
+                                Phone Number
+
+                            </label>
+
+
+                            <input asp-for="PhoneNumber"
+                                   class="form-control profile-input"
+                                   placeholder="Enter phone number" />
+
+
+                            <span asp-validation-for="PhoneNumber"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a asp-action="Profile"
+                       class="btn btn-outline-secondary">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

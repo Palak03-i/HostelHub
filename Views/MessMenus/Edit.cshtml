@@ -1,0 +1,475 @@
+﻿@model Hostel_hub.ViewModels.MessMenuViewModel
+
+@{
+    ViewData["Title"] = "Edit Mess Menu";
+
+    var hostels =
+        (List<Hostel_hub.Models.Hostel>)ViewBag.Hostels;
+
+    string hostelName =
+        hostels
+            .FirstOrDefault(h => h.HostelId == Model.HostelId)
+            ?.Name
+        ?? "Unknown Hostel";
+}
+
+<style>
+    .edit-menu-page {
+        padding: 35px 0 60px;
+    }
+
+    .edit-menu-header {
+        margin-bottom: 28px;
+    }
+
+    .edit-menu-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .edit-menu-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .menu-form-card {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .menu-form-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .menu-form-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .menu-form-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .menu-form-body {
+        padding: 28px;
+    }
+
+    .locked-info {
+        background: #eef5ff;
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 26px;
+    }
+
+    .locked-label {
+        display: block;
+        color: #7c8798;
+        font-size: 0.76rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 5px;
+    }
+
+    .locked-value {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .info-box {
+        background: #fff8e1;
+        border-left: 4px solid #ffc107;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 24px;
+        color: #665c3b;
+        font-size: 0.9rem;
+    }
+
+    .meal-section {
+        background: #f8f9fc;
+        border: 1px solid #edf0f5;
+        border-radius: 14px;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .meal-section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .meal-section-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .meal-toggle {
+        background: white;
+        border: 1px solid #e1e5eb;
+        border-radius: 20px;
+        padding: 7px 12px;
+    }
+
+    .form-label-custom {
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .meal-textarea {
+        min-height: 130px;
+        resize: vertical;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .meal-textarea:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229,0.12);
+    }
+
+    .meal-help {
+        margin-top: 7px;
+        color: #8a94a3;
+        font-size: 0.8rem;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .form-actions .btn {
+        min-width: 130px;
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .edit-menu-page {
+            padding-top: 20px;
+        }
+
+        .menu-form-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="edit-menu-page">
+
+    <div class="edit-menu-header">
+
+        <h2>Edit Mess Menu</h2>
+
+        <p>
+            Update meal availability and menu items for the selected date.
+        </p>
+
+    </div>
+
+
+    <div class="menu-form-card">
+
+        <div class="menu-form-header">
+
+            <h5>Update Menu</h5>
+
+            <p>
+                Hostel and menu date cannot be changed after creation.
+            </p>
+
+        </div>
+
+
+        <div class="menu-form-body">
+
+            <form asp-action="Edit"
+                  asp-route-id="@ViewBag.MenuId"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+
+
+                <!-- KEEP ORIGINAL VALUES -->
+                <input type="hidden"
+                       asp-for="HostelId" />
+
+                <input type="hidden"
+                       asp-for="MenuDate" />
+
+
+                <!-- LOCKED DETAILS -->
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-6">
+
+                        <div class="locked-info">
+
+                            <span class="locked-label">
+                                Hostel
+                            </span>
+
+                            <p class="locked-value">
+                                @hostelName
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="locked-info">
+
+                            <span class="locked-label">
+                                Menu Date
+                            </span>
+
+                            <p class="locked-value">
+
+                                @(Model.MenuDate.ToString("dddd, dd MMMM yyyy"))
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+                    Changes to meal availability may affect what students can
+                    select. Hostel and date remain fixed for this menu.
+                </div>
+
+
+                <!-- MEALS -->
+                <div class="row g-4">
+
+
+                    <!-- BREAKFAST -->
+                    <div class="col-lg-4">
+
+                        <div class="meal-section">
+
+                            <div class="meal-section-header">
+
+                                <h5>Breakfast</h5>
+
+
+                                <div class="form-check form-switch meal-toggle">
+
+                                    <input asp-for="IsBreakfastAvailable"
+                                           class="form-check-input" />
+
+                                    <label asp-for="IsBreakfastAvailable"
+                                           class="form-check-label">
+
+                                        Available
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <label asp-for="BreakfastItemsText"
+                                   class="form-label-custom">
+
+                                Breakfast Items
+
+                            </label>
+
+
+                            <textarea asp-for="BreakfastItemsText"
+                                      class="form-control meal-textarea"></textarea>
+
+
+                            <div class="meal-help">
+                                Update breakfast items for this menu.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LUNCH -->
+                    <div class="col-lg-4">
+
+                        <div class="meal-section">
+
+                            <div class="meal-section-header">
+
+                                <h5>Lunch</h5>
+
+
+                                <div class="form-check form-switch meal-toggle">
+
+                                    <input asp-for="IsLunchAvailable"
+                                           class="form-check-input" />
+
+                                    <label asp-for="IsLunchAvailable"
+                                           class="form-check-label">
+
+                                        Available
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <label asp-for="LunchItemsText"
+                                   class="form-label-custom">
+
+                                Lunch Items
+
+                            </label>
+
+
+                            <textarea asp-for="LunchItemsText"
+                                      class="form-control meal-textarea"></textarea>
+
+
+                            <div class="meal-help">
+                                Update lunch items for this menu.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DINNER -->
+                    <div class="col-lg-4">
+
+                        <div class="meal-section">
+
+                            <div class="meal-section-header">
+
+                                <h5>Dinner</h5>
+
+
+                                <div class="form-check form-switch meal-toggle">
+
+                                    <input asp-for="IsDinnerAvailable"
+                                           class="form-check-input" />
+
+                                    <label asp-for="IsDinnerAvailable"
+                                           class="form-check-label">
+
+                                        Available
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <label asp-for="DinnerItemsText"
+                                   class="form-label-custom">
+
+                                Dinner Items
+
+                            </label>
+
+
+                            <textarea asp-for="DinnerItemsText"
+                                      class="form-control meal-textarea"></textarea>
+
+
+                            <div class="meal-help">
+                                Update dinner items for this menu.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,46 @@
+﻿@model Hostel_hub.Models.MessMenu
+
+<h2>Mess Menu Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">Hostel</dt>
+    <dd class="col-sm-9">@Model.Hostel?.Name</dd>
+
+    <dt class="col-sm-3">Date</dt>
+    <dd class="col-sm-9">@Model.MenuDate.ToString("d")</dd>
+
+    <dt class="col-sm-3">Breakfast</dt>
+    <dd class="col-sm-9">
+        @(Model.IsBreakfastAvailable ? "Open" : "Closed")
+        <ul>
+            @foreach (var item in Model.Items.Where(i => i.MealType == Hostel_hub.Models.MealType.Breakfast))
+            {
+                <li>@item.ItemName</li>
+            }
+        </ul>
+    </dd>
+
+    <dt class="col-sm-3">Lunch</dt>
+    <dd class="col-sm-9">
+        @(Model.IsLunchAvailable ? "Open" : "Closed")
+        <ul>
+            @foreach (var item in Model.Items.Where(i => i.MealType == Hostel_hub.Models.MealType.Lunch))
+            {
+                <li>@item.ItemName</li>
+            }
+        </ul>
+    </dd>
+
+    <dt class="col-sm-3">Dinner</dt>
+    <dd class="col-sm-9">
+        @(Model.IsDinnerAvailable ? "Open" : "Closed")
+        <ul>
+            @foreach (var item in Model.Items.Where(i => i.MealType == Hostel_hub.Models.MealType.Dinner))
+            {
+                <li>@item.ItemName</li>
+            }
+        </ul>
+    </dd>
+</dl>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

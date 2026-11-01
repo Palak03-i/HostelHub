@@ -1,0 +1,212 @@
+@{
+    ViewData["Title"] = "Hostel Management & Maintenance";
+}
+
+<div class="hh-home">
+
+    <!-- ============ HERO ============ -->
+    <section class="hh-hero">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <span class="hh-hero-badge">
+                    <span class="hh-live-dot"></span>
+                    Centralized Hostel Operations
+                </span>
+
+                <h1 class="hh-hero-title">
+                    Run your hostel<br />
+                    <span class="hh-rotator" data-words="smarter,faster,easier,together"><span class="hh-rotator-word"><span class="hh-gradient-text">smarter</span></span></span>,
+                    not&nbsp;harder.
+                </h1>
+
+                <p class="hh-hero-sub">
+                    HostelHub unites hostel administration, wardens, students, and maintenance personnel into a single, intuitive platform for room allocations, complaints, mess management, and everyday operations.
+                </p>
+
+                <div class="hh-cta">
+                    <a asp-controller="Account"
+                       asp-action="Login"
+                       class="btn btn-primary btn-lg">
+                        Sign In to Portal
+                    </a>
+
+                    <a asp-controller="Account"
+                       asp-action="Register"
+                       class="btn btn-outline-primary btn-lg">
+                        Student Registration
+                    </a>
+                </div>
+
+                <div class="hh-trust">
+                    <div>
+                        <div class="hh-trust-num hh-gradient-text" data-count>4</div>
+                        <div class="hh-trust-label">User roles</div>
+                    </div>
+                    <div>
+                        <div class="hh-trust-num hh-gradient-text" data-count>4</div>
+                        <div class="hh-trust-label">Core modules</div>
+                    </div>
+                    <div>
+                        <div class="hh-trust-num hh-gradient-text" data-count>1</div>
+                        <div class="hh-trust-label">Unified portal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating dashboard preview -->
+            <div class="col-lg-6">
+                <div class="hh-stage" aria-hidden="true">
+
+                    <div class="hh-chip hh-chip--b"><i>!</i> Complaint assigned</div>
+                    <div class="hh-chip hh-chip--a"><i>✓</i> Room allocated</div>
+                    <div class="hh-chip hh-chip--c"><i>🍽</i> Meal selected</div>
+
+                    <div class="hh-mock">
+                        <div class="hh-mock-bar"><i></i><i></i><i></i></div>
+                        <div class="hh-mock-title">HostelHub Core Modules</div>
+
+                        <div class="hh-mock-grid">
+                            <div class="hh-mock-tile">
+                                <div class="hh-mock-num">01</div>
+                                <div class="hh-mock-lbl">Hostels &amp; Rooms</div>
+                            </div>
+                            <div class="hh-mock-tile">
+                                <div class="hh-mock-num">02</div>
+                                <div class="hh-mock-lbl">Room Allocation</div>
+                            </div>
+                            <div class="hh-mock-tile">
+                                <div class="hh-mock-num">03</div>
+                                <div class="hh-mock-lbl">Maintenance Tracking</div>
+                            </div>
+                            <div class="hh-mock-tile">
+                                <div class="hh-mock-num">04</div>
+                                <div class="hh-mock-lbl">Mess &amp; Meal Ops</div>
+                            </div>
+                        </div>
+
+                        <div class="hh-mock-bars"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="hh-marquee" aria-hidden="true">
+        <div class="hh-marquee-track">
+            <span>Room Allocation</span><span>Complaint Tracking</span><span>Mess Menus</span><span>Announcements</span>
+            <span>Room Change Requests</span><span>Maintenance Staff</span><span>Student Feedback</span><span>Role-Based Security</span>
+            <span>Room Allocation</span><span>Complaint Tracking</span><span>Mess Menus</span><span>Announcements</span>
+            <span>Room Change Requests</span><span>Maintenance Staff</span><span>Student Feedback</span><span>Role-Based Security</span>
+        </div>
+    </div>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="hh-section">
+        <div class="hh-section-head">
+            <span class="hh-eyebrow">Features</span>
+            <h2>Designed for modern campus residence operations</h2>
+            <p>
+                Tailored workflows for administrators, wardens, students, and maintenance staff with role-based access control.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 hh-feature-col">
+                <div class="feature-card hh-feature">
+                    <div class="hh-feature-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/><path d="M3 21h18"/></svg>
+                    </div>
+                    <h5>Rooms &amp; Capacity</h5>
+                    <p>Full room inventory management, occupancy tracking, automated capacity limits, and seamless student transfers.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 hh-feature-col">
+                <div class="feature-card hh-feature">
+                    <div class="hh-feature-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+                    </div>
+                    <h5>Complaints Workflow</h5>
+                    <p>Log, assign, prioritize, and track maintenance complaints with transparent status lifecycles from creation to resolution.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 hh-feature-col">
+                <div class="feature-card hh-feature">
+                    <div class="hh-feature-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v8a3 3 0 0 0 3 3v7"/><path d="M7 3v8"/><path d="M10 3v8a3 3 0 0 1-3 3"/><path d="M18 21V3c-2.5 1.5-4 4.5-4 8v3h4"/></svg>
+                    </div>
+                    <h5>Mess Management</h5>
+                    <p>Publish daily meal menus, monitor meal participation counts, and respect student meal take/skip preferences.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 hh-feature-col">
+                <div class="feature-card hh-feature">
+                    <div class="hh-feature-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h5>Role-Based Security</h5>
+                    <p>Secure cookie authentication, role-based views and actions, ensuring students, staff, and admins access only their authorized domains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ROLES ============ -->
+    <section class="hh-section">
+        <div class="hh-section-head">
+            <span class="hh-eyebrow">One platform, every role</span>
+            <h2>Everyone gets the tools they need</h2>
+        </div>
+
+        <div class="hh-roles">
+            <div class="hh-role">
+                <h6>Super Admin</h6>
+                <ul>
+                    <li>Create hostels &amp; wardens</li>
+                    <li>Manage students &amp; staff</li>
+                    <li>Publish announcements</li>
+                </ul>
+            </div>
+            <div class="hh-role">
+                <h6>Warden</h6>
+                <ul>
+                    <li>Allocate rooms &amp; approve changes</li>
+                    <li>Assign &amp; track complaints</li>
+                    <li>Publish mess menus</li>
+                </ul>
+            </div>
+            <div class="hh-role">
+                <h6>Student</h6>
+                <ul>
+                    <li>File complaints &amp; track status</li>
+                    <li>Request a room change</li>
+                    <li>Take or skip meals, share feedback</li>
+                </ul>
+            </div>
+            <div class="hh-role">
+                <h6>Maintenance Staff</h6>
+                <ul>
+                    <li>See assigned complaints</li>
+                    <li>Update complaint status</li>
+                    <li>Mark issues as resolved</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="hh-cta-band">
+        <h2>Ready to simplify hostel life?</h2>
+        <p>Sign in to your portal, or register as a student to get started in minutes.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-light btn-lg">Sign In</a>
+            <a asp-controller="Account" asp-action="Register" class="btn btn-outline-light btn-lg">Create Student Account</a>
+        </div>
+    </section>
+
+</div>

@@ -1,12 +1,25 @@
-using Hostel_hub.Models;
-using Hostel_hub.ViewModels;
+﻿using Microsoft.EntityFrameworkCore;
 using Hostel_hub.Data;
-using System;
+using Hostel_hub.Models;
 
 namespace Hostel_hub.Services
 {
     public class WardenService : IWardenService
     {
-        public Task<List<Warden>> GetAllAsync() => throw new NotImplementedException();
+        private readonly ApplicationDbContext _context;
+
+        public WardenService(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<Warden>> GetAllAsync()
+        {
+            return await _context.Wardens
+                .Include(w => w.User)
+                .Include(w => w.Hostel)
+                .OrderBy(w => w.FullName)
+                .ToListAsync();
+        }
     }
 }

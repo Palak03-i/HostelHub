@@ -1,0 +1,296 @@
+
+@model Hostel_hub.ViewModels.AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+
+    int totalRooms = Model.TotalRooms;
+    int occupiedRooms = Model.OccupiedRooms;
+    int occupancyPct = totalRooms > 0 ? (int)Math.Round((double)occupiedRooms / totalRooms * 100) : 0;
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-header-title">Admin Dashboard</h1>
+        <p class="page-header-subtitle">
+            System overview, occupancy metrics, complaint tracking &amp; mess participation
+        </p>
+    </div>
+    <div class="page-header-actions">
+        <span class="role-pill">
+            <span class="status-dot status-dot-assigned"></span>
+            HostelHub Management
+        </span>
+        <a asp-controller="Complaints" asp-action="Index" class="btn btn-sm btn-outline-primary">
+            View Complaints
+        </a>
+    </div>
+</div>
+
+<!-- ==============================================
+     TOP KPI METRICS
+     ============================================== -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-lg-3">
+        <div class="summary-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="summary-label">Total Students</div>
+                    <div class="summary-number">@Model.TotalStudents</div>
+                    <p class="kpi-subtext">Registered residents</p>
+                </div>
+                <div class="kpi-icon-pill">
+                    👥
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="summary-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="summary-label">Total Hostels</div>
+                    <div class="summary-number">@Model.TotalHostels</div>
+                    <p class="kpi-subtext">Active buildings</p>
+                </div>
+                <div class="kpi-icon-pill">
+                    🏢
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="summary-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="summary-label">Total Rooms</div>
+                    <div class="summary-number">@Model.TotalRooms</div>
+                    <p class="kpi-subtext">@Model.OccupiedRooms occupied</p>
+                </div>
+                <div class="kpi-icon-pill">
+                    🚪
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="summary-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="summary-label">Active Announcements</div>
+                    <div class="summary-number">@Model.ActiveAnnouncementsCount</div>
+                    <p class="kpi-subtext">Live notices</p>
+                </div>
+                <div class="kpi-icon-pill">
+                    📢
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span class="badge bg-primary fs-6">
+        HostelHub
+    </span>
+</div>
+
+<!-- ==============================================
+     ROOM OVERVIEW & OCCUPANCY
+     ============================================== -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-0">Room Inventory &amp; Occupancy</h5>
+            <small class="text-muted">Real-time room allocation status</small>
+        </div>
+        <span class="badge bg-light text-secondary border">
+            @occupancyPct% Occupied
+        </span>
+    </div>
+
+    <div class="card-body">
+        <!-- Occupancy Bar -->
+        <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="fw-semibold text-secondary">Overall Occupancy Progress</small>
+                <small class="text-muted">@Model.OccupiedRooms / @Model.TotalRooms rooms</small>
+            </div>
+            <div class="progress" style="height: 10px; border-radius: 6px;">
+                <div class="progress-bar bg-primary"
+                     role="progressbar"
+                     style="width: @(occupancyPct)%;"
+                     aria-valuenow="@occupancyPct"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3 text-center">
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <div class="text-muted small fw-semibold text-uppercase">Total Rooms</div>
+                    <div class="fs-3 fw-bold text-dark mt-1">@Model.TotalRooms</div>
+                    <small class="text-muted">Inventory</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <div class="text-muted small fw-semibold text-uppercase">Occupied</div>
+                    <div class="fs-3 fw-bold text-primary mt-1">@Model.OccupiedRooms</div>
+                    <small class="text-muted">Assigned rooms</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <div class="text-muted small fw-semibold text-uppercase">Available</div>
+                    <div class="fs-3 fw-bold text-success mt-1">@Model.AvailableRooms</div>
+                    <small class="text-muted">Ready for allocation</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <div class="text-muted small fw-semibold text-uppercase">Full Rooms</div>
+                    <div class="fs-3 fw-bold text-secondary mt-1">@Model.FullRooms</div>
+                    <small class="text-muted">Max capacity reached</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==============================================
+     COMPLAINTS OVERVIEW
+     ============================================== -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-0">Maintenance &amp; Complaint Health</h5>
+            <small class="text-muted">Breakdown by current lifecycle and urgency</small>
+        </div>
+        <a asp-controller="Complaints" asp-action="Index" class="btn btn-sm btn-outline-secondary">
+            Manage All
+        </a>
+    </div>
+
+    <div class="card-body">
+        <h6 class="text-uppercase small fw-bold text-muted mb-3">Status Breakdown</h6>
+        <div class="row g-3 mb-4 text-center">
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-muted fw-semibold">Total Logged</small>
+                    <div class="fs-3 fw-bold text-dark mt-1">@Model.TotalComplaints</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-warning fw-semibold">Pending Action</small>
+                    <div class="fs-3 fw-bold text-warning mt-1">@Model.PendingComplaints</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-primary fw-semibold">Assigned</small>
+                    <div class="fs-3 fw-bold text-primary mt-1">@Model.AssignedComplaints</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-info fw-semibold">In Progress</small>
+                    <div class="fs-3 fw-bold text-info mt-1">@Model.InProgressComplaints</div>
+                </div>
+            </div>
+        </div>
+
+        <h6 class="text-uppercase small fw-bold text-muted mb-3">Priority Distribution</h6>
+        <div class="row g-3 text-center">
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-danger fw-semibold">High Priority</small>
+                    <div class="fs-3 fw-bold text-danger mt-1">@Model.HighPriorityComplaints</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-warning fw-semibold">Medium Priority</small>
+                    <div class="fs-3 fw-bold text-warning mt-1">@Model.MediumPriorityComplaints</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-secondary fw-semibold">Low Priority</small>
+                    <div class="fs-3 fw-bold text-secondary mt-1">@Model.LowPriorityComplaints</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="p-3 border rounded-3 bg-white h-100">
+                    <small class="text-success fw-semibold">Resolved</small>
+                    <div class="fs-3 fw-bold text-success mt-1">@Model.ResolvedComplaints</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==============================================
+     TODAY'S MESS PARTICIPATION
+     ============================================== -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-0">Today's Mess Participation</h5>
+            <small class="text-muted">Headcount of students taking meals today</small>
+        </div>
+        <span class="badge bg-light text-secondary border">
+            📅 @DateTime.Today.ToString("dd MMM yyyy")
+        </span>
+    </div>
+
+    <div class="card-body">
+        <div class="row g-3 text-center">
+            <div class="col-md-4">
+                <div class="p-4 border rounded-3 bg-white h-100">
+                    <div class="fs-2 mb-2">🍳</div>
+                    <div class="text-secondary fw-semibold">Breakfast</div>
+                    <div class="fs-2 fw-bold text-primary my-1">
+                        @Model.TodayBreakfastTaking
+                    </div>
+                    <small class="text-muted">students taking</small>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="p-4 border rounded-3 bg-white h-100">
+                    <div class="fs-2 mb-2">🍲</div>
+                    <div class="text-secondary fw-semibold">Lunch</div>
+                    <div class="fs-2 fw-bold text-primary my-1">
+                        @Model.TodayLunchTaking
+                    </div>
+                    <small class="text-muted">students taking</small>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="p-4 border rounded-3 bg-white h-100">
+                    <div class="fs-2 mb-2">🍛</div>
+                    <div class="text-secondary fw-semibold">Dinner</div>
+                    <div class="fs-2 fw-bold text-primary my-1">
+                        @Model.TodayDinnerTaking
+                    </div>
+                    <small class="text-muted">students taking</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

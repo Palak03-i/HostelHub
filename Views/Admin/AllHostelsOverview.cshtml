@@ -1,0 +1,385 @@
+﻿@model List<Hostel_hub.ViewModels.HostelOverviewRow>
+
+@{
+    ViewData["Title"] = "All Hostels Overview";
+
+    int totalHostels = Model.Count;
+    int totalStudents = Model.Sum(x => x.TotalStudents);
+    int totalRooms = Model.Sum(x => x.TotalRooms);
+    int totalOpenComplaints = Model.Sum(x => x.OpenComplaints);
+}
+
+<style>
+    .overview-page {
+        padding: 35px 0 60px;
+    }
+
+    .overview-header {
+        margin-bottom: 28px;
+    }
+
+    .overview-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .overview-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .summary-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+
+    .summary-label {
+        color: #7c8798;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .summary-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .overview-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .overview-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .overview-card-header h5 {
+        margin-bottom: 3px;
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .overview-table {
+        margin-bottom: 0;
+    }
+
+    .overview-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+        white-space: nowrap;
+    }
+
+    .overview-table tbody td {
+        padding: 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .hostel-name {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .metric-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .students-badge {
+        background: #eaf2ff;
+        color: #4f46e5;
+    }
+
+    .rooms-badge {
+        background: #e8f7ee;
+        color: #146c43;
+    }
+
+    .complaint-open {
+        background: #fff3cd;
+        color: #997404;
+    }
+
+    .complaint-resolved {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .meals-badge {
+        background: #cff4fc;
+        color: #087990;
+    }
+
+    .sub-metric {
+        display: block;
+        color: #8a94a3;
+        font-size: 0.76rem;
+        margin-top: 4px;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .empty-state h5 {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    @@media (max-width: 767px) {
+        .overview-page {
+            padding-top: 20px;
+        }
+
+        .overview-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="overview-page">
+
+    <!-- HEADER -->
+    <div class="overview-header">
+
+        <h2>All Hostels Overview</h2>
+
+        <p>
+            System-wide summary of hostel occupancy, complaints and mess activity.
+        </p>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+    <div class="row g-3">
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Hostels
+                </div>
+
+                <p class="summary-number">
+                    @totalHostels
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Students
+                </div>
+
+                <p class="summary-number text-primary">
+                    @totalStudents
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Rooms
+                </div>
+
+                <p class="summary-number text-success">
+                    @totalRooms
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Open Complaints
+                </div>
+
+                <p class="summary-number text-warning">
+                    @totalOpenComplaints
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HOSTEL OVERVIEW TABLE -->
+    <div class="overview-card">
+
+        <div class="overview-card-header">
+
+            <h5>Hostel Performance Overview</h5>
+
+            <span class="text-muted small">
+                Comparative operational summary for all hostels
+            </span>
+
+        </div>
+
+
+        @if (!Model.Any())
+        {
+            <div class="empty-state">
+
+                <h5>No hostel data available</h5>
+
+                <p>
+                    Hostel statistics will appear here once hostel data exists.
+                </p>
+
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+
+                <table class="table table-hover overview-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Hostel</th>
+                            <th>Students</th>
+                            <th>Rooms</th>
+                            <th>Complaints</th>
+                            <th>Today's Meals Taken</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var row in Model)
+                        {
+                            <tr>
+
+                                <!-- HOSTEL -->
+                                <td>
+
+                                    <span class="hostel-name">
+                                        @row.Name
+                                    </span>
+
+                                </td>
+
+
+                                <!-- STUDENTS -->
+                                <td>
+
+                                    <span class="metric-badge students-badge">
+
+                                        @row.TotalStudents Students
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- ROOMS -->
+                                <td>
+
+                                    <span class="metric-badge rooms-badge">
+
+                                        @row.TotalRooms Total
+
+                                    </span>
+
+                                    <span class="sub-metric">
+                                        Occupied: @row.OccupiedRooms
+                                        · Full: @row.FullRooms
+                                    </span>
+
+                                </td>
+
+
+                                <!-- COMPLAINTS -->
+                                <td>
+
+                                    <span class="metric-badge complaint-open">
+
+                                        @row.OpenComplaints Open
+
+                                    </span>
+
+                                    <span class="metric-badge complaint-resolved ms-1">
+
+                                        @row.ResolvedComplaints Resolved
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- MEALS -->
+                                <td>
+
+                                    <span class="metric-badge meals-badge">
+
+                                        @row.TodayMealsTaking Taken
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+</div>

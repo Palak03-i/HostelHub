@@ -1,0 +1,319 @@
+﻿@model Hostel_hub.ViewModels.RoomViewModel
+
+@{
+    ViewData["Title"] = "Create Room";
+}
+
+<style>
+    .create-room-page {
+        padding: 35px 0 60px;
+    }
+
+    .create-room-header {
+        margin-bottom: 28px;
+    }
+
+    .create-room-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .create-room-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .room-form-card {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .room-form-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .room-form-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .room-form-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .room-form-body {
+        padding: 28px;
+    }
+
+    .info-box {
+        background: #eef5ff;
+        border-left: 4px solid #4f46e5;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 24px;
+        color: #49566a;
+        font-size: 0.9rem;
+    }
+
+    .form-section {
+        margin-bottom: 22px;
+    }
+
+    .form-label-custom {
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .room-input {
+        min-height: 48px;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .room-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.12);
+    }
+
+    .form-help {
+        margin-top: 6px;
+        font-size: 0.82rem;
+        color: #8a94a3;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .form-actions .btn {
+        min-width: 125px;
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .create-room-page {
+            padding-top: 20px;
+        }
+
+        .room-form-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="create-room-page">
+
+    <!-- HEADER -->
+    <div class="create-room-header">
+
+        <h2>Create Room</h2>
+
+        <p>
+            Add a new room and define its student capacity.
+        </p>
+
+    </div>
+
+
+    <div class="room-form-card">
+
+        <!-- CARD HEADER -->
+        <div class="room-form-header">
+
+            <h5>
+                Room Information
+            </h5>
+
+            <p>
+                Enter the room details below.
+            </p>
+
+        </div>
+
+
+        <!-- BODY -->
+        <div class="room-form-body">
+
+            <div class="info-box">
+                Room numbers should be unique within the hostel.
+                Capacity defines the maximum number of students who can be allocated.
+            </div>
+
+
+            <form asp-action="Create"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+
+
+                <!-- HOSTEL -->
+                <div class="form-section">
+
+                    <label asp-for="HostelId"
+                           class="form-label-custom">
+
+                        Hostel
+
+                    </label>
+
+
+                    <select asp-for="HostelId"
+                            class="form-select room-input">
+
+                        <option value="">
+                            Select hostel
+                        </option>
+
+
+                        @foreach (
+                            var hostel in
+                            (List<Hostel_hub.Models.Hostel>)
+                            ViewBag.Hostels)
+                        {
+                            <option value="@hostel.HostelId">
+                                @hostel.Name
+                            </option>
+                        }
+
+                    </select>
+
+
+                    <span asp-validation-for="HostelId"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- ROOM NUMBER -->
+                <div class="form-section">
+
+                    <label asp-for="RoomNumber"
+                           class="form-label-custom">
+
+                        Room Number
+
+                    </label>
+
+
+                    <input asp-for="RoomNumber"
+                           class="form-control room-input"
+                           placeholder="Example: 101" />
+
+
+                    <div class="form-help">
+                        Enter the room number used within the hostel.
+                    </div>
+
+
+                    <span asp-validation-for="RoomNumber"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- CAPACITY -->
+                <div class="form-section">
+
+                    <label asp-for="Capacity"
+                           class="form-label-custom">
+
+                        Student Capacity
+
+                    </label>
+
+
+                    <input asp-for="Capacity"
+                           type="number"
+                           min="1"
+                           class="form-control room-input"
+                           placeholder="Example: 3" />
+
+
+                    <div class="form-help">
+                        Enter the maximum number of students allowed in this room.
+                    </div>
+
+
+                    <span asp-validation-for="Capacity"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+
+                        Create Room
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

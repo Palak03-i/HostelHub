@@ -1,0 +1,313 @@
+﻿@model Hostel_hub.ViewModels.HostelViewModel
+
+@{
+    ViewData["Title"] = "Edit Hostel";
+}
+
+<style>
+    .edit-hostel-page {
+        padding: 35px 0 60px;
+    }
+
+    .edit-hostel-header {
+        margin-bottom: 28px;
+    }
+
+    .edit-hostel-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .edit-hostel-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .hostel-form-card {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .hostel-form-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .hostel-form-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .hostel-form-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .hostel-form-body {
+        padding: 28px;
+    }
+
+    .info-box {
+        background: #eef5ff;
+        border-left: 4px solid #4f46e5;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 24px;
+        color: #556274;
+        font-size: 0.9rem;
+    }
+
+    .form-label-custom {
+        display: block;
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .hostel-input {
+        min-height: 48px;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .hostel-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229,0.12);
+    }
+
+    .field-card {
+        background: #f8f9fc;
+        border: 1px solid #edf0f5;
+        border-radius: 12px;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .field-card-title {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .field-card-help {
+        color: #8a94a3;
+        font-size: 0.8rem;
+        margin-bottom: 14px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .form-actions .btn {
+        min-width: 130px;
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .edit-hostel-page {
+            padding-top: 20px;
+        }
+
+        .edit-hostel-header h2 {
+            font-size: 1.7rem;
+        }
+
+        .hostel-form-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="edit-hostel-page">
+
+    <!-- PAGE HEADER -->
+    <div class="edit-hostel-header">
+
+        <h2>Edit Hostel</h2>
+
+        <p>
+            Update the hostel's basic information.
+        </p>
+
+    </div>
+
+
+    <div class="hostel-form-card">
+
+        <!-- CARD HEADER -->
+        <div class="hostel-form-header">
+
+            <h5>Hostel Information</h5>
+
+            <p>
+                Modify the hostel name or hostel type.
+            </p>
+
+        </div>
+
+
+        <div class="hostel-form-body">
+
+            <div class="info-box">
+                Updating these details changes the hostel information
+                visible throughout the system.
+            </div>
+
+
+            <form asp-action="Edit"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- HOSTEL NAME -->
+                    <div class="col-md-6">
+
+                        <div class="field-card">
+
+                            <div class="field-card-title">
+                                Hostel Name
+                            </div>
+
+                            <div class="field-card-help">
+                                Update the official name of the hostel.
+                            </div>
+
+
+                            <label asp-for="Name"
+                                   class="form-label-custom">
+
+                                Name
+
+                            </label>
+
+
+                            <input asp-for="Name"
+                                   class="form-control hostel-input"
+                                   placeholder="Enter hostel name" />
+
+
+                            <span asp-validation-for="Name"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HOSTEL TYPE -->
+                    <div class="col-md-6">
+
+                        <div class="field-card">
+
+                            <div class="field-card-title">
+                                Hostel Type
+                            </div>
+
+                            <div class="field-card-help">
+                                Select the category of this hostel.
+                            </div>
+
+
+                            <label asp-for="Type"
+                                   class="form-label-custom">
+
+                                Type
+
+                            </label>
+
+
+                            <select asp-for="Type"
+                                    asp-items="Html.GetEnumSelectList<Hostel_hub.Models.HostelType>()"
+                                    class="form-select hostel-input">
+                            </select>
+
+
+                            <span asp-validation-for="Type"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

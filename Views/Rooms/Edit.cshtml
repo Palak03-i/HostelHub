@@ -1,0 +1,286 @@
+﻿@model Hostel_hub.ViewModels.RoomViewModel
+
+@{
+    ViewData["Title"] = "Edit Room";
+}
+
+<style>
+    .edit-room-page {
+        padding: 35px 0 60px;
+    }
+
+    .edit-room-header {
+        margin-bottom: 28px;
+    }
+
+    .edit-room-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .edit-room-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .room-form-card {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .room-form-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .room-form-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .room-form-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .room-form-body {
+        padding: 28px;
+    }
+
+    .info-box {
+        background: #fff8e1;
+        border-left: 4px solid #ffc107;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 24px;
+        color: #665c3b;
+        font-size: 0.9rem;
+    }
+
+    .form-section {
+        margin-bottom: 22px;
+    }
+
+    .form-label-custom {
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .room-input {
+        min-height: 48px;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .room-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.12);
+    }
+
+    .form-help {
+        margin-top: 6px;
+        font-size: 0.82rem;
+        color: #8a94a3;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .form-actions .btn {
+        min-width: 125px;
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+
+        .edit-room-page {
+            padding-top: 20px;
+        }
+
+        .room-form-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="edit-room-page">
+
+    <!-- HEADER -->
+    <div class="edit-room-header">
+
+        <h2>Edit Room</h2>
+
+        <p>
+            Update the room number or student capacity.
+        </p>
+
+    </div>
+
+
+    <div class="room-form-card">
+
+        <!-- CARD HEADER -->
+        <div class="room-form-header">
+
+            <h5>
+                Update Room Information
+            </h5>
+
+            <p>
+                Modify the room details below and save your changes.
+            </p>
+
+        </div>
+
+
+        <!-- FORM BODY -->
+        <div class="room-form-body">
+
+            <div class="info-box">
+                Be careful when reducing room capacity. The new capacity
+                should support the students currently allocated to this room.
+            </div>
+
+
+            <form asp-action="Edit"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+
+
+                <!-- Preserve existing hostel -->
+                <input type="hidden"
+                       asp-for="HostelId" />
+
+
+                <!-- ROOM NUMBER -->
+                <div class="form-section">
+
+                    <label asp-for="RoomNumber"
+                           class="form-label-custom">
+
+                        Room Number
+
+                    </label>
+
+
+                    <input asp-for="RoomNumber"
+                           class="form-control room-input"
+                           placeholder="Enter room number" />
+
+
+                    <div class="form-help">
+                        Update the room number if required.
+                    </div>
+
+
+                    <span asp-validation-for="RoomNumber"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- CAPACITY -->
+                <div class="form-section">
+
+                    <label asp-for="Capacity"
+                           class="form-label-custom">
+
+                        Student Capacity
+
+                    </label>
+
+
+                    <input asp-for="Capacity"
+                           type="number"
+                           min="1"
+                           class="form-control room-input"
+                           placeholder="Enter room capacity" />
+
+
+                    <div class="form-help">
+                        Maximum number of students that can stay in this room.
+                    </div>
+
+
+                    <span asp-validation-for="Capacity"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

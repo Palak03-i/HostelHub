@@ -1,0 +1,506 @@
+﻿@{
+    ViewData["Title"] = "Allocate Student";
+
+    var room =
+        (Hostel_hub.Models.Room)ViewBag.Room;
+
+    var students =
+        (List<Hostel_hub.Models.Student>)ViewBag.UnallocatedStudents;
+
+    int availableBeds =
+        Math.Max(0, room.Capacity - room.CurrentOccupancy);
+
+    bool isFull =
+        room.CurrentOccupancy >= room.Capacity;
+
+    int occupancyPercentage =
+        room.Capacity > 0
+            ? (int)(((double)room.CurrentOccupancy / room.Capacity) * 100)
+            : 0;
+}
+
+<style>
+    .allocate-page {
+        padding: 35px 0 60px;
+    }
+
+    .allocate-header {
+        margin-bottom: 28px;
+    }
+
+    .allocate-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .allocate-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .allocation-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .room-summary {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        border-radius: 18px;
+        padding: 26px;
+        margin-bottom: 24px;
+        box-shadow: 0 12px 30px rgba(79, 70, 229, 0.18);
+    }
+
+    .room-label {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .room-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 4px;
+        margin-bottom: 20px;
+    }
+
+    .room-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .room-stat {
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 12px;
+        padding: 14px;
+    }
+
+    .room-stat-label {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .room-stat-value {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-top: 3px;
+    }
+
+    .occupancy-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        margin-bottom: 7px;
+    }
+
+    .occupancy-bar {
+        height: 8px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .occupancy-fill {
+        height: 100%;
+        background: white;
+        border-radius: 20px;
+    }
+
+    .allocation-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .allocation-card-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .allocation-card-header h5 {
+        color: #172033;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .allocation-card-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .allocation-card-body {
+        padding: 28px;
+    }
+
+    .info-box {
+        background: #eef5ff;
+        border-left: 4px solid #4f46e5;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 24px;
+        color: #49566a;
+        font-size: 0.9rem;
+    }
+
+    .student-label {
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .student-select {
+        min-height: 50px;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .student-select:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229,0.12);
+    }
+
+    .form-help {
+        margin-top: 7px;
+        font-size: 0.82rem;
+        color: #8a94a3;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        border-top: 1px solid #edf0f5;
+        margin-top: 28px;
+        padding-top: 22px;
+    }
+
+    .form-actions .btn {
+        min-width: 130px;
+        border-radius: 9px;
+        padding: 10px 18px;
+        font-weight: 600;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 30px 10px;
+    }
+
+    .empty-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+
+    .full-alert {
+        background: #fff3f3;
+        border-left: 4px solid #dc3545;
+        border-radius: 8px;
+        padding: 15px 18px;
+        color: #842029;
+    }
+
+    @@media (max-width: 767px) {
+        .allocate-page {
+            padding-top: 20px;
+        }
+
+        .allocate-header h2 {
+            font-size: 1.7rem;
+        }
+
+        .room-stat-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .allocation-card-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="allocate-page">
+
+    <div class="allocate-header">
+
+        <h2>Allocate Student</h2>
+
+        <p>
+            Assign an unallocated hostel student to Room @room.RoomNumber.
+        </p>
+
+    </div>
+
+
+    <div class="allocation-container">
+
+
+        <!-- ROOM SUMMARY -->
+        <div class="room-summary">
+
+            <div class="room-label">
+                Selected Room
+            </div>
+
+            <div class="room-number">
+                Room @room.RoomNumber
+            </div>
+
+
+            <div class="room-stat-grid">
+
+                <div class="room-stat">
+
+                    <div class="room-stat-label">
+                        Capacity
+                    </div>
+
+                    <div class="room-stat-value">
+                        @room.Capacity
+                    </div>
+
+                </div>
+
+
+                <div class="room-stat">
+
+                    <div class="room-stat-label">
+                        Occupied
+                    </div>
+
+                    <div class="room-stat-value">
+                        @room.CurrentOccupancy
+                    </div>
+
+                </div>
+
+
+                <div class="room-stat">
+
+                    <div class="room-stat-label">
+                        Available Beds
+                    </div>
+
+                    <div class="room-stat-value">
+                        @availableBeds
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="occupancy-info">
+
+                <span>
+                    Room Occupancy
+                </span>
+
+                <span>
+                    @occupancyPercentage%
+                </span>
+
+            </div>
+
+
+            <div class="occupancy-bar">
+
+                <div class="occupancy-fill"
+                     style="width: @occupancyPercentage%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALLOCATION -->
+        <div class="allocation-card">
+
+            <div class="allocation-card-header">
+
+                <h5>
+                    Student Allocation
+                </h5>
+
+                <p>
+                    Select an eligible student to allocate to this room.
+                </p>
+
+            </div>
+
+
+            <div class="allocation-card-body">
+
+                @if (isFull)
+                {
+                    <div class="full-alert">
+
+                        <strong>Room is full.</strong>
+
+                        No additional students can be allocated to
+                        Room @room.RoomNumber.
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <a asp-action="Details"
+                           asp-route-id="@room.RoomId"
+                           class="btn btn-outline-secondary">
+
+                            ← Back to Room
+
+                        </a>
+
+                    </div>
+                }
+                else if (!students.Any())
+                {
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ST
+                        </div>
+
+                        <h5>No students available</h5>
+
+                        <p>
+                            There are currently no unallocated students
+                            available for this hostel.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <a asp-action="Details"
+                           asp-route-id="@room.RoomId"
+                           class="btn btn-outline-secondary">
+
+                            ← Back to Room
+
+                        </a>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="info-box">
+                        Only students who are currently unallocated and
+                        eligible for this hostel are available for selection.
+                    </div>
+
+
+                    <form asp-action="Allocate"
+                          asp-route-roomId="@room.RoomId"
+                          method="post">
+
+
+                        <div>
+
+                            <label class="student-label">
+                                Select Student
+                            </label>
+
+
+                            <select name="studentId"
+                                    class="form-select student-select"
+                                    required>
+
+                                <option value="">
+                                    Select student
+                                </option>
+
+
+                                @foreach (var student in students)
+                                {
+                                    <option value="@student.StudentId">
+
+                                        @student.FullName
+                                        (@student.RollNumber)
+
+                                    </option>
+                                }
+
+                            </select>
+
+
+                            <div class="form-help">
+                                The student will be allocated immediately
+                                after confirmation.
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <a asp-action="Details"
+                               asp-route-id="@room.RoomId"
+                               class="btn btn-outline-secondary">
+
+                                Cancel
+
+                            </a>
+
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+
+                                Allocate Student
+
+                            </button>
+
+                        </div>
+
+                    </form>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

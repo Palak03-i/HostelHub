@@ -1,13 +1,28 @@
-using Hostel_hub.Models;
-using Hostel_hub.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using Hostel_hub.Data;
-using System;
 
 namespace Hostel_hub.Services
 {
     public class WardenContext : IWardenContext
     {
-        public Task<int?> GetScopedHostelIdAsync(int userId) => throw new NotImplementedException();
-        public Task<bool> IsSuperAdminAsync(int userId) => throw new NotImplementedException();
+        private readonly ApplicationDbContext _context;
+
+        public WardenContext(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<int?> GetScopedHostelIdAsync(int userId)
+        {
+            var warden = await _context.Wardens.FirstOrDefaultAsync(w => w.UserId == userId);
+            return warden?.HostelId;
+        }
+
+        public async Task<bool> IsSuperAdminAsync(int userId)
+        {
+            bool hasWardenRecord = await _context.Wardens.AnyAsync(w => w.UserId == userId);
+            return !hasWardenRecord && await _context.Users.AnyAsync(u =>
+                u.UserId == userId && u.Role == Hostel_hub.Models.UserRole.Admin);
+        }
     }
 }

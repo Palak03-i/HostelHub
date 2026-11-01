@@ -1,0 +1,601 @@
+﻿@model Hostel_hub.Models.Room
+
+@{
+    ViewData["Title"] = "Room Details";
+
+    bool isFull =
+        Model.CurrentOccupancy >= Model.Capacity;
+
+    int availableBeds =
+        Math.Max(0, Model.Capacity - Model.CurrentOccupancy);
+
+    int occupancyPercentage =
+        Model.Capacity > 0
+            ? (int)(((double)Model.CurrentOccupancy / Model.Capacity) * 100)
+            : 0;
+}
+
+<style>
+    .room-details-page {
+        padding: 35px 0 60px;
+    }
+
+    .room-details-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .room-details-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .room-details-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .room-status {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .room-available {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .room-full {
+        background: #f8d7da;
+        color: #b02a37;
+    }
+
+    .info-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .info-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .info-card-header h5 {
+        margin-bottom: 0;
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .info-card-body {
+        padding: 24px;
+    }
+
+    .detail-item {
+        padding: 14px 0;
+        border-bottom: 1px solid #f0f2f5;
+    }
+
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+
+    .detail-label {
+        display: block;
+        color: #8a94a3;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 5px;
+    }
+
+    .detail-value {
+        font-size: 1.05rem;
+        color: #273142;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .room-summary {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 10px 28px rgba(79, 70, 229, 0.18);
+    }
+
+    .room-summary-label {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .room-summary-number {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-top: 4px;
+        margin-bottom: 20px;
+    }
+
+    .occupancy-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.88rem;
+        margin-bottom: 8px;
+    }
+
+    .occupancy-bar {
+        height: 9px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .occupancy-fill {
+        height: 100%;
+        background: white;
+        border-radius: 20px;
+    }
+
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .summary-box {
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 12px;
+        padding: 15px;
+    }
+
+    .summary-box-label {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.72);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .summary-box-value {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 3px;
+    }
+
+    .students-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .students-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .students-card-header h5 {
+        margin-bottom: 0;
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .allocate-btn {
+        border-radius: 9px;
+        padding: 9px 16px;
+        font-weight: 600;
+    }
+
+    .students-table {
+        margin-bottom: 0;
+    }
+
+    .students-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .students-table tbody td {
+        padding: 17px 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .student-name {
+        font-weight: 700;
+        color: #273142;
+    }
+
+    .roll-badge {
+        display: inline-block;
+        background: #eef4ff;
+        color: #4f46e5;
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+
+    .empty-students {
+        text-align: center;
+        padding: 45px 20px;
+    }
+
+    .empty-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-weight: 700;
+    }
+
+    .empty-students h5 {
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .empty-students p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .back-btn {
+        margin-top: 26px;
+        border-radius: 9px;
+        padding: 9px 18px;
+        font-weight: 600;
+    }
+
+    @@media (max-width: 767px) {
+        .room-details-page {
+            padding-top: 20px;
+        }
+
+        .room-details-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="room-details-page">
+
+    <!-- HEADER -->
+    <div class="room-details-header">
+
+        <div>
+
+            <h2>
+                Room @Model.RoomNumber
+            </h2>
+
+            <p>
+                View room capacity, occupancy and allocated students.
+            </p>
+
+        </div>
+
+
+        <span class="room-status
+                     @(isFull ? "room-full" : "room-available")">
+
+            @(isFull ? "Room Full" : "Available")
+
+        </span>
+
+    </div>
+
+
+    <!-- ERROR -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+
+    <div class="row g-4">
+
+        <!-- BASIC DETAILS -->
+        <div class="col-lg-5">
+
+            <div class="info-card">
+
+                <div class="info-card-header">
+
+                    <h5>
+                        Room Information
+                    </h5>
+
+                </div>
+
+
+                <div class="info-card-body">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Hostel
+                        </span>
+
+                        <p class="detail-value">
+
+                            @(Model.Hostel?.Name
+                                ?? "Not assigned")
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Room Number
+                        </span>
+
+                        <p class="detail-value">
+                            @Model.RoomNumber
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Capacity
+                        </span>
+
+                        <p class="detail-value">
+                            @Model.Capacity students
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Current Occupancy
+                        </span>
+
+                        <p class="detail-value">
+                            @Model.CurrentOccupancy students
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OCCUPANCY SUMMARY -->
+        <div class="col-lg-7">
+
+            <div class="room-summary">
+
+                <span class="room-summary-label">
+                    Room Occupancy
+                </span>
+
+                <div class="room-summary-number">
+                    @Model.CurrentOccupancy / @Model.Capacity
+                </div>
+
+
+                <div class="occupancy-info">
+
+                    <span>
+                        Occupied
+                    </span>
+
+                    <span>
+                        @occupancyPercentage%
+                    </span>
+
+                </div>
+
+
+                <div class="occupancy-bar">
+
+                    <div class="occupancy-fill"
+                         style="width: @occupancyPercentage%">
+                    </div>
+
+                </div>
+
+
+                <div class="summary-grid">
+
+                    <div class="summary-box">
+
+                        <div class="summary-box-label">
+                            Occupied Beds
+                        </div>
+
+                        <div class="summary-box-value">
+                            @Model.CurrentOccupancy
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-box">
+
+                        <div class="summary-box-label">
+                            Available Beds
+                        </div>
+
+                        <div class="summary-box-value">
+                            @availableBeds
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STUDENTS -->
+    <div class="students-card">
+
+        <div class="students-card-header">
+
+            <div>
+
+                <h5>
+                    Students in this Room
+                </h5>
+
+                <span class="text-muted small">
+                    @Model.Students.Count student(s)
+                </span>
+
+            </div>
+
+
+            @if (!isFull)
+            {
+                <a asp-action="Allocate"
+                   asp-route-roomId="@Model.RoomId"
+                   class="btn btn-success allocate-btn">
+
+                    + Allocate Student
+
+                </a>
+            }
+            else
+            {
+                <span class="badge bg-danger">
+                    No beds available
+                </span>
+            }
+
+        </div>
+
+
+        @if (!Model.Students.Any())
+        {
+
+            <div class="empty-students">
+
+                <div class="empty-icon">
+                    ST
+                </div>
+
+                <h5>No students allocated</h5>
+
+                <p>
+                    This room currently has no student allocations.
+                </p>
+
+            </div>
+
+        }
+        else
+        {
+
+            <div class="table-responsive">
+
+                <table class="table table-hover students-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Student</th>
+                            <th>Roll Number</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var student in Model.Students)
+                        {
+
+                            <tr>
+
+                                <td>
+
+                                    <span class="student-name">
+                                        @student.FullName
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="roll-badge">
+                                        @student.RollNumber
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        }
+
+    </div>
+
+
+    <!-- BACK -->
+    <a asp-action="Index"
+       class="btn btn-outline-secondary back-btn">
+
+        ← Back to Rooms
+
+    </a>
+
+</div>

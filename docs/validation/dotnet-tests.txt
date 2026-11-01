@@ -1,0 +1,8 @@
+Test run for /workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/TestResults/hostelhub-final.trx
+
+Passed!  - Failed:     0, Passed:    96, Skipped:     0, Total:    96, Duration: 1 m 38 s - HostelHub.Tests.dll (net10.0)
+
+Attachments:
+  /workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/TestResults/5bd8acb0-7af8-4775-9101-78da84c8b1e5/coverage.cobertura.xml

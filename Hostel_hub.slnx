@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Hostel_hub.csproj" />
+  <Project Path="Tests/HostelHub.Tests/HostelHub.Tests.csproj" />
+</Solution>

@@ -1,0 +1,17 @@
+✔ pagination shows ten rows and next/previous change visible records (271.407076ms)
+✔ search is case-insensitive, updates count, and clear restores records (61.388006ms)
+✔ zero matches show an empty state and disable navigation (45.221215ms)
+✔ numeric sorting handles Room 2 before Room 10 and supports descending (76.805767ms)
+✔ textarea limit and character counter are accessible (26.563528ms)
+✔ duplicate submits are stopped without disabling named submit values (28.212424ms)
+✔ invalid and cancelled submissions do not lock forms (28.949576ms)
+✔ print temporarily reveals all filtered rows (23.936329ms)
+✔ feedback messages expose alert/status semantics (25.06259ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1241.732848

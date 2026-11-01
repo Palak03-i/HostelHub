@@ -1,0 +1,6 @@
+{
+  "name": "hostelhub-frontend-tests",
+  "private": true,
+  "scripts": { "test": "node --test enhancements.test.cjs" },
+  "devDependencies": { "jsdom": "26.1.0" }
+}

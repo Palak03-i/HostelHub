@@ -1,0 +1,1237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="89288759-42db-40c1-af21-a6cfdd2a9999" name="@dd20154a95e2 2026-10-30 18:36:21" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-30T18:36:21.6523963+02:00" queuing="2026-10-30T18:36:21.6523963+02:00" start="2026-10-30T18:36:11.7459383+02:00" finish="2026-10-30T18:38:01.4772628+02:00" />
+  <TestSettings name="default" id="6bd5e8bf-c6e9-41e0-bff8-a8f11280d207">
+    <Deployment runDeploymentRoot="_dd20154a95e2_2026-10-30_18_36_21" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="11f65b3a-d4d5-4c68-b181-db47620320dc" testId="fc02559a-a289-a5fe-a7c6-508f32ce5bea" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/AllHostelsOverview&quot;)" computerName="dd20154a95e2" duration="00:00:01.4973436" startTime="2026-10-30T18:36:56.9130298+02:00" endTime="2026-10-30T18:36:58.4106055+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11f65b3a-d4d5-4c68-b181-db47620320dc" />
+    <UnitTestResult executionId="ebe7a9d4-473d-44be-9843-44f327f47d8a" testId="48000a9c-a7ec-5eca-008f-e6c7f9fc829d" testName="HostelHub.Tests.WebIntegrationTests.Unknown_route_returns_404" computerName="dd20154a95e2" duration="00:00:00.5254388" startTime="2026-10-30T18:37:59.7403613+02:00" endTime="2026-10-30T18:38:00.2652938+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ebe7a9d4-473d-44be-9843-44f327f47d8a" />
+    <UnitTestResult executionId="0a7e51ff-3d78-4786-bbba-c9e63560d29f" testId="9951a3af-2776-f339-1360-297ae999b2c9" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels/Edit/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.8702126" startTime="2026-10-30T18:37:25.0912835+02:00" endTime="2026-10-30T18:37:26.9630140+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a7e51ff-3d78-4786-bbba-c9e63560d29f" />
+    <UnitTestResult executionId="636e433f-6a9c-40f1-8ad1-08aef2446028" testId="c81b8857-f09f-4197-e80c-8ac427eef3f2" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels/Create&quot;)" computerName="dd20154a95e2" duration="00:00:01.4482014" startTime="2026-10-30T18:36:30.6847497+02:00" endTime="2026-10-30T18:36:32.1384972+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="636e433f-6a9c-40f1-8ad1-08aef2446028" />
+    <UnitTestResult executionId="51d5e763-2ce8-4806-8217-8b41aa43de5b" testId="e9c18b28-1934-47f6-25b2-f4dcef7133d3" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:01.6292503" startTime="2026-10-30T18:37:07.0537170+02:00" endTime="2026-10-30T18:37:08.6828127+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="51d5e763-2ce8-4806-8217-8b41aa43de5b" />
+    <UnitTestResult executionId="433f07ab-13c3-41b5-b039-6cc8b30df597" testId="3b0e7a3f-7d05-e901-ebff-e439e1f53e74" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;staff@test.local&quot;, path: &quot;/Maintenance/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:01.4930606" startTime="2026-10-30T18:36:55.4209852+02:00" endTime="2026-10-30T18:36:56.9123550+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="433f07ab-13c3-41b5-b039-6cc8b30df597" />
+    <UnitTestResult executionId="25ded094-6857-48d7-b296-98a06d6cca41" testId="19356be0-5427-3989-a30b-06950d7f895c" testName="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/&quot;)" computerName="dd20154a95e2" duration="00:00:00.9221588" startTime="2026-10-30T18:37:50.5737380+02:00" endTime="2026-10-30T18:37:51.4960863+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25ded094-6857-48d7-b296-98a06d6cca41" />
+    <UnitTestResult executionId="3cbe00c3-e797-4ee7-8cdf-2213d6053f92" testId="41072575-fb12-6f9e-5ee9-f918d0ce9269" testName="HostelHub.Tests.UnitTests.Feedback_model_rejects_out_of_range_rating(rating: 0)" computerName="dd20154a95e2" duration="00:00:00.0006751" startTime="2026-10-30T18:36:21.5606010+02:00" endTime="2026-10-30T18:36:21.5607464+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3cbe00c3-e797-4ee7-8cdf-2213d6053f92" />
+    <UnitTestResult executionId="4a99516e-6591-4752-a19c-da23455c6e19" testId="fdf87173-b50e-8ee4-6313-8a73acc9e882" testName="HostelHub.Tests.ServiceIntegrationTests.Room_change_approval_moves_student_and_cannot_repeat" computerName="dd20154a95e2" duration="00:00:01.6478066" startTime="2026-10-30T18:36:26.6780799+02:00" endTime="2026-10-30T18:36:28.3253144+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a99516e-6591-4752-a19c-da23455c6e19" />
+    <UnitTestResult executionId="266f6157-5311-4443-b672-d3ede1c7c607" testId="d01e89a1-092b-d053-7f50-20c72de4dd0d" testName="HostelHub.Tests.ServiceIntegrationTests.Meal_selection_upserts_and_rejects_other_hostel_and_bad_enum" computerName="dd20154a95e2" duration="00:00:00.7755061" startTime="2026-10-30T18:36:29.4035436+02:00" endTime="2026-10-30T18:36:30.1780822+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="266f6157-5311-4443-b672-d3ede1c7c607" />
+    <UnitTestResult executionId="a1ec2bc1-82d9-493a-9556-464360d3f3f9" testId="4bbe3f9a-5874-135f-50c8-90acbaf83c35" testName="HostelHub.Tests.UnitTests.Home_routes_authenticated_roles_to_their_dashboard(role: &quot;MaintenanceStaff&quot;, controller: &quot;Maintenance&quot;)" computerName="dd20154a95e2" duration="00:00:00.0000174" startTime="2026-10-30T18:36:21.4915154+02:00" endTime="2026-10-30T18:36:21.4915872+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1ec2bc1-82d9-493a-9556-464360d3f3f9" />
+    <UnitTestResult executionId="c8fd2334-ebd8-48ad-93fc-1a4244430be4" testId="ef58443f-8117-adf5-956c-de6a0bcc7ab0" testName="HostelHub.Tests.ServiceIntegrationTests.Complaint_assignment_rejects_inactive_and_other_hostel_staff" computerName="dd20154a95e2" duration="00:00:00.9447624" startTime="2026-10-30T18:36:24.9528496+02:00" endTime="2026-10-30T18:36:25.8953624+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8fd2334-ebd8-48ad-93fc-1a4244430be4" />
+    <UnitTestResult executionId="c263782b-af7d-4e8e-9457-f319417e4751" testId="730de69b-8cc2-d9c9-f080-6b2a3719bd9c" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/RequestRoomChange&quot;)" computerName="dd20154a95e2" duration="00:00:01.0767064" startTime="2026-10-30T18:37:21.6087589+02:00" endTime="2026-10-30T18:37:22.6885796+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c263782b-af7d-4e8e-9457-f319417e4751" />
+    <UnitTestResult executionId="d60956e5-df03-41b7-843b-b65d05e0849e" testId="a5ea3ac9-b9a4-79f3-9b3b-c6490bb750cc" testName="HostelHub.Tests.ServiceIntegrationTests.Dashboard_counts_are_hostel_scoped" computerName="dd20154a95e2" duration="00:00:00.7339521" startTime="2026-10-30T18:36:38.6325470+02:00" endTime="2026-10-30T18:36:39.3658346+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d60956e5-df03-41b7-843b-b65d05e0849e" />
+    <UnitTestResult executionId="107d1bda-08bd-47f7-bb16-a19bf4cbd72a" testId="d0a9b3c8-9581-419b-c130-667463b084ca" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Students&quot;)" computerName="dd20154a95e2" duration="00:00:01.0303005" startTime="2026-10-30T18:37:17.5450423+02:00" endTime="2026-10-30T18:37:18.5754030+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="107d1bda-08bd-47f7-bb16-a19bf4cbd72a" />
+    <UnitTestResult executionId="611f0771-5e23-4b19-b174-98026db5d658" testId="d9333827-9d40-e7fc-2ef7-f1b31ce6b881" testName="HostelHub.Tests.UnitTests.Passwords_are_salted_and_wrong_password_is_rejected" computerName="dd20154a95e2" duration="00:00:02.4191760" startTime="2026-10-30T18:36:21.5620251+02:00" endTime="2026-10-30T18:36:23.9103240+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="611f0771-5e23-4b19-b174-98026db5d658" />
+    <UnitTestResult executionId="5912207a-8a36-4bb0-adbe-882cabde8f96" testId="23dd584d-fe58-7c8e-f364-f71675be8c49" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Hostels/Create&quot;)" computerName="dd20154a95e2" duration="00:00:01.3193326" startTime="2026-10-30T18:37:38.8126855+02:00" endTime="2026-10-30T18:37:40.1334121+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5912207a-8a36-4bb0-adbe-882cabde8f96" />
+    <UnitTestResult executionId="01a0c01f-6b72-4abc-87d9-0f023f52e188" testId="08b1cb55-447d-c8ca-50d0-a1c80820f4b9" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Participation/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.1749698" startTime="2026-10-30T18:36:59.4645150+02:00" endTime="2026-10-30T18:37:00.6397198+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01a0c01f-6b72-4abc-87d9-0f023f52e188" />
+    <UnitTestResult executionId="e2030e58-fa10-4cd6-a35d-429e2943dc2a" testId="2b497166-2edb-dd27-a601-67936c9ea037" testName="HostelHub.Tests.ServiceIntegrationTests.Allocation_rejects_cross_hostel_and_updates_occupancy_once" computerName="dd20154a95e2" duration="00:00:00.6668244" startTime="2026-10-30T18:36:30.9407501+02:00" endTime="2026-10-30T18:36:31.6037684+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2030e58-fa10-4cd6-a35d-429e2943dc2a" />
+    <UnitTestResult executionId="be1b065c-496c-4f33-bced-6a63b9dab22c" testId="a81294c2-5ba9-4c3b-2f2c-4e72271afd1d" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/RoomChangeRequests&quot;)" computerName="dd20154a95e2" duration="00:00:02.1219247" startTime="2026-10-30T18:36:35.5958783+02:00" endTime="2026-10-30T18:36:37.7162131+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be1b065c-496c-4f33-bced-6a63b9dab22c" />
+    <UnitTestResult executionId="392c1b66-61d1-406a-bd77-40fc2e415379" testId="37472300-9d8e-e21a-99da-f8bbfed02030" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/EditComplaint/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.5783270" startTime="2026-10-30T18:36:47.3767839+02:00" endTime="2026-10-30T18:36:48.9545695+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="392c1b66-61d1-406a-bd77-40fc2e415379" />
+    <UnitTestResult executionId="8447be3e-ec6b-4c4b-860a-f22716ff9d99" testId="bd8ab2c8-9f9c-175c-618c-881c6fb40099" testName="HostelHub.Tests.UnitTests.Lunch_and_dinner_cutoffs_are_on_menu_date(meal: Dinner, time: &quot;19:00&quot;, hour: 19, minute: 0)" computerName="dd20154a95e2" duration="00:00:00.0190531" startTime="2026-10-30T18:36:21.4442748+02:00" endTime="2026-10-30T18:36:21.4491283+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8447be3e-ec6b-4c4b-860a-f22716ff9d99" />
+    <UnitTestResult executionId="ce6bead7-a033-47e3-8379-0bc065ec81c1" testId="6ec4fd25-4aaa-2ea8-3af0-5f99d0eba0b2" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;staff@test.local&quot;, path: &quot;/Maintenance/ComplaintDetails/1&quot;)" computerName="dd20154a95e2" duration="00:00:02.5838421" startTime="2026-10-30T18:37:42.4127180+02:00" endTime="2026-10-30T18:37:44.9966137+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce6bead7-a033-47e3-8379-0bc065ec81c1" />
+    <UnitTestResult executionId="2283e63d-ce5a-401e-b653-995cbbb092ea" testId="a46fb600-e736-1d25-0011-d6bec82707a1" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;staff@test.local&quot;, path: &quot;/Maintenance/AssignedComplaints&quot;)" computerName="dd20154a95e2" duration="00:00:01.9317926" startTime="2026-10-30T18:36:33.6649292+02:00" endTime="2026-10-30T18:36:35.5928949+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2283e63d-ce5a-401e-b653-995cbbb092ea" />
+    <UnitTestResult executionId="2cec2c47-fb89-4b4a-a080-29d944178ef9" testId="3d77f601-537b-f995-7b63-a2be5ad7d87c" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;other@test.local&quot;, path: &quot;/Student/ComplaintDetails/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.1502564" startTime="2026-10-30T18:37:40.1340511+02:00" endTime="2026-10-30T18:37:41.2850634+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2cec2c47-fb89-4b4a-a080-29d944178ef9" />
+    <UnitTestResult executionId="8f0d3148-8f98-4ae5-bac9-fe006572433c" testId="6fe764fb-b339-9d5e-f4e2-ad72dc5b962d" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/RoomChangeRequests&quot;)" computerName="dd20154a95e2" duration="00:00:02.1980737" startTime="2026-10-30T18:36:43.0503482+02:00" endTime="2026-10-30T18:36:45.2610246+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f0d3148-8f98-4ae5-bac9-fe006572433c" />
+    <UnitTestResult executionId="c0b13df7-f5a8-40ec-8196-56b9da2d1065" testId="6bf498bc-13d3-74d7-5642-fb522ef910c7" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff/Edit/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.2320542" startTime="2026-10-30T18:37:22.6894838+02:00" endTime="2026-10-30T18:37:23.9212266+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0b13df7-f5a8-40ec-8196-56b9da2d1065" />
+    <UnitTestResult executionId="97f4389c-293e-4ea6-a1e5-8da114346bcd" testId="26eea257-2f2d-5322-95cb-beae342ceb19" testName="HostelHub.Tests.ServiceIntegrationTests.Student_profile_and_initial_hostel_assignment" computerName="dd20154a95e2" duration="00:00:00.5597004" startTime="2026-10-30T18:36:39.3673464+02:00" endTime="2026-10-30T18:36:39.9283453+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97f4389c-293e-4ea6-a1e5-8da114346bcd" />
+    <UnitTestResult executionId="14890e36-2d03-441f-98a2-ed9ee95f5ff6" testId="13e2e7fa-5c77-c09f-249d-8f79d510d1b9" testName="HostelHub.Tests.UnitTests.Registration_rejects_short_or_mismatched_passwords" computerName="dd20154a95e2" duration="00:00:00.0156100" startTime="2026-10-30T18:36:21.5612949+02:00" endTime="2026-10-30T18:36:21.5613426+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="14890e36-2d03-441f-98a2-ed9ee95f5ff6" />
+    <UnitTestResult executionId="f133b7c5-1bd3-4afc-aaec-5e677b4fc519" testId="978b791c-2883-6e38-57a1-309da2e5f28e" testName="HostelHub.Tests.UnitTests.Breakfast_cutoff_is_previous_day_and_inclusive(now: &quot;2026-11-03T22:59:59Z&quot;, expected: True)" computerName="dd20154a95e2" duration="00:00:00.0000593" startTime="2026-10-30T18:36:21.5578208+02:00" endTime="2026-10-30T18:36:21.5580533+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f133b7c5-1bd3-4afc-aaec-5e677b4fc519" />
+    <UnitTestResult executionId="072dec7c-99ed-4153-b983-4a63be6e47bf" testId="f75b6ae3-4de3-273e-af3e-3e7e58d80244" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/MaintenanceStaff&quot;)" computerName="dd20154a95e2" duration="00:00:01.0501637" startTime="2026-10-30T18:36:58.4119237+02:00" endTime="2026-10-30T18:36:59.4626949+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="072dec7c-99ed-4153-b983-4a63be6e47bf" />
+    <UnitTestResult executionId="455b58a7-ae28-4a69-8d2f-34ad325c4e4e" testId="954c4597-4815-f3cc-1843-9bec716acbaf" testName="HostelHub.Tests.WebIntegrationTests.Anonymous_users_are_sent_to_login(path: &quot;/Admin/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:00.5340001" startTime="2026-10-30T18:37:53.8420013+02:00" endTime="2026-10-30T18:37:54.3759621+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="455b58a7-ae28-4a69-8d2f-34ad325c4e4e" />
+    <UnitTestResult executionId="fad0e175-d9a7-4fdb-8577-c7c794ee0cd1" testId="262c11c3-2502-e347-e9a7-7e06fc64b80e" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Complaints&quot;)" computerName="dd20154a95e2" duration="00:00:02.2667495" startTime="2026-10-30T18:37:33.8520652+02:00" endTime="2026-10-30T18:37:36.1191090+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fad0e175-d9a7-4fdb-8577-c7c794ee0cd1" />
+    <UnitTestResult executionId="c6f87e1b-039a-4325-9680-74a17b7a3d02" testId="6b3fc20b-b48c-86a0-7259-52cdd978ffe1" testName="HostelHub.Tests.ServiceIntegrationTests.Stale_room_change_cannot_decrement_old_occupancy" computerName="dd20154a95e2" duration="00:00:03.5479720" startTime="2026-10-30T18:36:21.4474198+02:00" endTime="2026-10-30T18:36:24.9509400+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6f87e1b-039a-4325-9680-74a17b7a3d02" />
+    <UnitTestResult executionId="d2352364-ad3c-41a1-87a8-db37500e63e6" testId="54891d2c-2995-23a5-ee1c-793dc00acf0c" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus&quot;)" computerName="dd20154a95e2" duration="00:00:01.4956139" startTime="2026-10-30T18:37:20.1126119+02:00" endTime="2026-10-30T18:37:21.6083613+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2352364-ad3c-41a1-87a8-db37500e63e6" />
+    <UnitTestResult executionId="09e5227b-2e2e-486c-9e3e-ffcbf77927dd" testId="f0f8ccd9-f3b6-c430-50d1-2d3baf37ba96" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/SubmitFeedback&quot;)" computerName="dd20154a95e2" duration="00:00:01.1691368" startTime="2026-10-30T18:37:23.9215670+02:00" endTime="2026-10-30T18:37:25.0909500+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09e5227b-2e2e-486c-9e3e-ffcbf77927dd" />
+    <UnitTestResult executionId="eedefb96-640e-4e74-8447-253b7f9b39ab" testId="c4e4d9af-6096-fd9e-5ccd-d80ddbd24cd5" testName="HostelHub.Tests.ServiceIntegrationTests.Staff_creation_updates_and_activation" computerName="dd20154a95e2" duration="00:00:01.9576864" startTime="2026-10-30T18:36:35.9281853+02:00" endTime="2026-10-30T18:36:37.8842928+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eedefb96-640e-4e74-8447-253b7f9b39ab" />
+    <UnitTestResult executionId="1a9e39ed-e487-47ad-93e4-8b5f8131f32a" testId="933986d1-28d0-4e79-9509-fadf21e9f4ef" testName="HostelHub.Tests.WebIntegrationTests.Login_does_not_redirect_to_external_return_url" computerName="dd20154a95e2" duration="00:00:01.3367681" startTime="2026-10-30T18:37:58.4043457+02:00" endTime="2026-10-30T18:37:59.7392718+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a9e39ed-e487-47ad-93e4-8b5f8131f32a" />
+    <UnitTestResult executionId="ef12a80d-6984-4176-862e-9f069cba6ba6" testId="ddfb7796-9f38-d99f-fe7a-b3306971259d" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/EditProfile&quot;)" computerName="dd20154a95e2" duration="00:00:01.5443616" startTime="2026-10-30T18:37:12.3361290+02:00" endTime="2026-10-30T18:37:13.8824058+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef12a80d-6984-4176-862e-9f069cba6ba6" />
+    <UnitTestResult executionId="6e5b4200-600e-4ee3-b61f-555ba098aea1" testId="9239940d-b95a-eb03-6d72-7a0953e07f12" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Complaints/Details/1&quot;)" computerName="dd20154a95e2" duration="00:00:05.1459577" startTime="2026-10-30T18:36:21.4472374+02:00" endTime="2026-10-30T18:36:26.5750361+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e5b4200-600e-4ee3-b61f-555ba098aea1" />
+    <UnitTestResult executionId="35745275-051f-47ba-9d13-b3d4b429257c" testId="ef6d7d1b-cebe-5946-5829-dfcc3c483509" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Details/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.4284376" startTime="2026-10-30T18:36:29.2527878+02:00" endTime="2026-10-30T18:36:30.6810420+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35745275-051f-47ba-9d13-b3d4b429257c" />
+    <UnitTestResult executionId="6757f619-b309-4e3b-80a4-1b0726f6ebae" testId="9e3382fa-f4dd-daa7-2466-7111074b3eed" testName="HostelHub.Tests.WebIntegrationTests.Posts_without_antiforgery_token_are_rejected" computerName="dd20154a95e2" duration="00:00:00.6985915" startTime="2026-10-30T18:37:56.0061508+02:00" endTime="2026-10-30T18:37:56.7049903+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6757f619-b309-4e3b-80a4-1b0726f6ebae" />
+    <UnitTestResult executionId="50eac9a3-9405-4b45-ae82-eb41c6fbd70a" testId="efd17c92-b5f9-dc02-874c-beaa8bb9b4c0" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:01.5328312" startTime="2026-10-30T18:37:05.5183802+02:00" endTime="2026-10-30T18:37:07.0528349+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50eac9a3-9405-4b45-ae82-eb41c6fbd70a" />
+    <UnitTestResult executionId="db9600be-426e-450a-ae9a-f0bc011752e1" testId="b16d1db7-5701-4317-6b31-36f09b52023e" testName="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/Home/Privacy&quot;)" computerName="dd20154a95e2" duration="00:00:00.6758294" startTime="2026-10-30T18:37:52.0217349+02:00" endTime="2026-10-30T18:37:52.6951914+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db9600be-426e-450a-ae9a-f0bc011752e1" />
+    <UnitTestResult executionId="a5b028f2-77a5-4983-99f1-0d410d66f331" testId="ff97e12c-fd2b-7891-b850-948dde57e9d1" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Allocate/2&quot;)" computerName="dd20154a95e2" duration="00:00:01.0296154" startTime="2026-10-30T18:36:54.3875205+02:00" endTime="2026-10-30T18:36:55.4202208+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5b028f2-77a5-4983-99f1-0d410d66f331" />
+    <UnitTestResult executionId="a5f2e0e8-edc2-44b0-9ff8-bf990442dd39" testId="482f4737-13b8-2c83-8319-63185b5cad73" testName="HostelHub.Tests.ServiceIntegrationTests.Occupied_room_cannot_be_deleted_or_shrunk" computerName="dd20154a95e2" duration="00:00:00.5513419" startTime="2026-10-30T18:36:31.6069703+02:00" endTime="2026-10-30T18:36:32.1563617+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5f2e0e8-edc2-44b0-9ff8-bf990442dd39" />
+    <UnitTestResult executionId="dfda8148-c052-453a-b5ac-1a6200d86a88" testId="25d2a64f-cdd0-aad7-95b5-6aa24e262f24" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Feedback&quot;)" computerName="dd20154a95e2" duration="00:00:02.4658487" startTime="2026-10-30T18:36:40.5830093+02:00" endTime="2026-10-30T18:36:43.0482625+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dfda8148-c052-453a-b5ac-1a6200d86a88" />
+    <UnitTestResult executionId="6e53abc4-9c4e-424a-9a58-df6f465426d7" testId="faa3bac0-2eee-04b7-3939-b7e7078b4814" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels/Details/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.7040617" startTime="2026-10-30T18:37:10.6313489+02:00" endTime="2026-10-30T18:37:12.3347657+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e53abc4-9c4e-424a-9a58-df6f465426d7" />
+    <UnitTestResult executionId="1ebfefe2-9e3f-4e88-8359-8dfd0fdf9f6b" testId="6e342573-d2ce-a9ad-2188-af42cdbf301d" testName="HostelHub.Tests.WebIntegrationTests.Deactivating_staff_revokes_existing_session_access" computerName="dd20154a95e2" duration="00:00:01.1453633" startTime="2026-10-30T18:37:52.6955346+02:00" endTime="2026-10-30T18:37:53.8412750+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ebfefe2-9e3f-4e88-8359-8dfd0fdf9f6b" />
+    <UnitTestResult executionId="5f3f5a7f-f940-4162-ac5c-8e57ecf61883" testId="6df0f154-4bd4-e4c1-d090-279b78efc84d" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Announcements&quot;)" computerName="dd20154a95e2" duration="00:00:01.9121899" startTime="2026-10-30T18:36:48.9565884+02:00" endTime="2026-10-30T18:36:50.8694375+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f3f5a7f-f940-4162-ac5c-8e57ecf61883" />
+    <UnitTestResult executionId="b8ef1789-34bd-4388-a2f5-7037bef31fcc" testId="c5321b1e-d33d-7958-7c77-e3a1f8c771c1" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Students/Details/2&quot;)" computerName="dd20154a95e2" duration="00:00:01.1119046" startTime="2026-10-30T18:37:37.6971596+02:00" endTime="2026-10-30T18:37:38.8123443+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b8ef1789-34bd-4388-a2f5-7037bef31fcc" />
+    <UnitTestResult executionId="e3f2ae6e-e562-495e-bd60-26c618aa5020" testId="008591e7-cfca-4bd9-b09a-357be6767913" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Feedback&quot;)" computerName="dd20154a95e2" duration="00:00:01.1404941" startTime="2026-10-30T18:36:53.2464183+02:00" endTime="2026-10-30T18:36:54.3870956+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3f2ae6e-e562-495e-bd60-26c618aa5020" />
+    <UnitTestResult executionId="b01d84e7-2a04-4e4b-87bf-29318dbb6f62" testId="650f261b-2d1d-3487-3600-288f8f78d570" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff&quot;)" computerName="dd20154a95e2" duration="00:00:03.1924791" startTime="2026-10-30T18:37:30.6596544+02:00" endTime="2026-10-30T18:37:33.8512965+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b01d84e7-2a04-4e4b-87bf-29318dbb6f62" />
+    <UnitTestResult executionId="ec3cd3c5-24af-4665-ae9a-64711b6e2907" testId="b77c69cd-c179-5e27-11eb-578a9677b23e" testName="HostelHub.Tests.ServiceIntegrationTests.Room_CRUD_rejects_duplicate_and_invalid_capacity" computerName="dd20154a95e2" duration="00:00:00.8457930" startTime="2026-10-30T18:36:35.0820714+02:00" endTime="2026-10-30T18:36:35.9264057+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ec3cd3c5-24af-4665-ae9a-64711b6e2907" />
+    <UnitTestResult executionId="dd3412c4-b09c-47c3-8444-2c1e9daa974c" testId="50951977-84db-5b8f-36ce-3adb730049a6" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms&quot;)" computerName="dd20154a95e2" duration="00:00:02.6742220" startTime="2026-10-30T18:36:26.5771521+02:00" endTime="2026-10-30T18:36:29.2517545+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dd3412c4-b09c-47c3-8444-2c1e9daa974c" />
+    <UnitTestResult executionId="dc696913-b085-463e-b1e1-1cf9f0d60e25" testId="09fe8fe1-04fb-01ca-9a88-4275b49f5aae" testName="HostelHub.Tests.WebIntegrationTests.Registration_persists_student_with_hashed_password_and_login_cookie" computerName="dd20154a95e2" duration="00:00:01.6977560" startTime="2026-10-30T18:37:56.7054344+02:00" endTime="2026-10-30T18:37:58.4018181+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc696913-b085-463e-b1e1-1cf9f0d60e25" />
+    <UnitTestResult executionId="64f00011-d334-4a38-aff9-eb8e6c42a04b" testId="3ded0275-5b3f-4e56-f5da-fb558972c8f9" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:01.3346710" startTime="2026-10-30T18:36:39.2475038+02:00" endTime="2026-10-30T18:36:40.5809660+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="64f00011-d334-4a38-aff9-eb8e6c42a04b" />
+    <UnitTestResult executionId="195cb924-27ce-4beb-8faf-437e28b21ee2" testId="9cd8fdca-3117-8465-1f51-957199c320f8" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Mess&quot;)" computerName="dd20154a95e2" duration="00:00:01.2337967" startTime="2026-10-30T18:36:50.8709540+02:00" endTime="2026-10-30T18:36:52.1045038+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="195cb924-27ce-4beb-8faf-437e28b21ee2" />
+    <UnitTestResult executionId="21cb3a89-2201-445d-ab0b-2b471ea935ff" testId="292ab76f-d0ed-bb95-9dad-d926e993b0a9" testName="HostelHub.Tests.ServiceIntegrationTests.Complaint_lifecycle_records_history_and_accepts_one_feedback" computerName="dd20154a95e2" duration="00:00:01.0769370" startTime="2026-10-30T18:36:28.3275165+02:00" endTime="2026-10-30T18:36:29.4021952+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21cb3a89-2201-445d-ab0b-2b471ea935ff" />
+    <UnitTestResult executionId="cd3f6286-41f5-4a0e-b7b3-0915098482d8" testId="8ba56698-fa7f-8181-c1c0-f1e6e1f90fcb" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Details/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.1683809" startTime="2026-10-30T18:37:01.9004167+02:00" endTime="2026-10-30T18:37:03.0691185+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd3f6286-41f5-4a0e-b7b3-0915098482d8" />
+    <UnitTestResult executionId="e8ac0d87-deb6-4264-b39b-9433fb98d356" testId="5879cbeb-fb04-45a4-1e4d-34ad5f95639f" testName="HostelHub.Tests.ServiceIntegrationTests.Menu_CRUD_and_cleanup_preserve_today_and_remove_old_dependencies" computerName="dd20154a95e2" duration="00:00:00.7556259" startTime="2026-10-30T18:36:30.1825175+02:00" endTime="2026-10-30T18:36:30.9342036+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8ac0d87-deb6-4264-b39b-9433fb98d356" />
+    <UnitTestResult executionId="d41219f9-9d8e-409e-8916-e73dc4e0f9d5" testId="5be890f1-0f3f-1252-a20c-3c20a7fc3bee" testName="HostelHub.Tests.WebIntegrationTests.Anonymous_users_are_sent_to_login(path: &quot;/Student/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:01.0533553" startTime="2026-10-30T18:37:54.9496792+02:00" endTime="2026-10-30T18:37:56.0036979+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d41219f9-9d8e-409e-8916-e73dc4e0f9d5" />
+    <UnitTestResult executionId="bf000ab5-8e91-4f83-be26-5a900261bf05" testId="98ecb6ba-483d-b948-e997-1a26a1849ca3" testName="HostelHub.Tests.UnitTests.Feedback_model_rejects_out_of_range_rating(rating: 6)" computerName="dd20154a95e2" duration="00:00:00.0121743" startTime="2026-10-30T18:36:21.5597057+02:00" endTime="2026-10-30T18:36:21.5597690+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bf000ab5-8e91-4f83-be26-5a900261bf05" />
+    <UnitTestResult executionId="c402a5fb-1bce-4522-9269-33dd211f379a" testId="5d9280e5-9cb5-7f91-4ee2-64d2c594b023" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;unassigned@test.local&quot;, path: &quot;/Admin/Rooms&quot;)" computerName="dd20154a95e2" duration="00:00:01.7122381" startTime="2026-10-30T18:37:48.3028297+02:00" endTime="2026-10-30T18:37:50.0162475+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c402a5fb-1bce-4522-9269-33dd211f379a" />
+    <UnitTestResult executionId="657c6b0d-c5fb-4c0b-979e-f2b7a4801e0b" testId="f4a20e94-23c0-874d-eacb-4701573ea1e2" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Create&quot;)" computerName="dd20154a95e2" duration="00:00:01.5210755" startTime="2026-10-30T18:36:32.1416487+02:00" endTime="2026-10-30T18:36:33.6601948+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="657c6b0d-c5fb-4c0b-979e-f2b7a4801e0b" />
+    <UnitTestResult executionId="b5241102-0a0e-4df0-b835-1c85c9f156d8" testId="8599ceef-06f0-ab1d-2afc-57e48a944d7a" testName="HostelHub.Tests.ServiceIntegrationTests.Feedback_rejects_unresolved_other_owner_and_bad_rating" computerName="dd20154a95e2" duration="00:00:00.5717868" startTime="2026-10-30T18:36:32.1639527+02:00" endTime="2026-10-30T18:36:32.7276212+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b5241102-0a0e-4df0-b835-1c85c9f156d8" />
+    <UnitTestResult executionId="5d4f693c-f7be-4b2a-8759-1fc910c4efd9" testId="cec404b1-fbaf-ec6b-e130-0b0613cb353d" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff/Create&quot;)" computerName="dd20154a95e2" duration="00:00:01.1362928" startTime="2026-10-30T18:37:03.0697483+02:00" endTime="2026-10-30T18:37:04.2082112+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d4f693c-f7be-4b2a-8759-1fc910c4efd9" />
+    <UnitTestResult executionId="dc1ad1f6-f3f0-43ab-8661-3f01074527d6" testId="c5b2aba3-d3f3-b511-d24b-ba17e588e276" testName="HostelHub.Tests.ServiceIntegrationTests.Approval_rechecks_capacity_and_rejection_is_final" computerName="dd20154a95e2" duration="00:00:00.6141120" startTime="2026-10-30T18:36:32.7312861+02:00" endTime="2026-10-30T18:36:33.3419343+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc1ad1f6-f3f0-43ab-8661-3f01074527d6" />
+    <UnitTestResult executionId="2a471876-ccd4-4d06-ae02-3cb35bbff601" testId="219009b1-dc0b-3020-4f4a-241cd67a3ccf" testName="HostelHub.Tests.ServiceIntegrationTests.Admin_identity_requires_real_admin_without_warden_record" computerName="dd20154a95e2" duration="00:00:01.0492824" startTime="2026-10-30T18:36:40.4859806+02:00" endTime="2026-10-30T18:36:41.5336415+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a471876-ccd4-4d06-ae02-3cb35bbff601" />
+    <UnitTestResult executionId="1c6231ed-fb1b-43e3-90e5-1fa5c90dae27" testId="50f583da-a6b7-5668-b1b2-90383ed3d290" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Complaints&quot;)" computerName="dd20154a95e2" duration="00:00:01.3650743" startTime="2026-10-30T18:37:15.0122434+02:00" endTime="2026-10-30T18:37:16.3773781+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c6231ed-fb1b-43e3-90e5-1fa5c90dae27" />
+    <UnitTestResult executionId="03dde3e6-bc0d-4879-ac3e-75679f3a0c12" testId="95a9f0f5-80bc-2226-47e3-2faf8b9295ce" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;student@test.local&quot;, path: &quot;/Admin/Rooms&quot;)" computerName="dd20154a95e2" duration="00:00:03.3047087" startTime="2026-10-30T18:37:44.9971274+02:00" endTime="2026-10-30T18:37:48.3021087+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="03dde3e6-bc0d-4879-ac3e-75679f3a0c12" />
+    <UnitTestResult executionId="62d25d3d-2036-4d32-9a04-e1ef69138be9" testId="15ac8caf-df94-d78b-7484-522d31d051dc" testName="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/Account/Register&quot;)" computerName="dd20154a95e2" duration="00:00:00.5220598" startTime="2026-10-30T18:37:51.4964053+02:00" endTime="2026-10-30T18:37:52.0188533+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62d25d3d-2036-4d32-9a04-e1ef69138be9" />
+    <UnitTestResult executionId="5ae655fe-a46e-4b29-ba23-d81690932304" testId="8f510389-e186-d672-0f8c-9935248519b4" testName="HostelHub.Tests.UnitTests.Breakfast_cutoff_is_previous_day_and_inclusive(now: &quot;2026-11-03T23:00:00Z&quot;, expected: True)" computerName="dd20154a95e2" duration="00:00:00.0008139" startTime="2026-10-30T18:36:21.4935887+02:00" endTime="2026-10-30T18:36:21.4936412+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ae655fe-a46e-4b29-ba23-d81690932304" />
+    <UnitTestResult executionId="bb7563ca-ae6b-4765-b810-eeb4deea6aea" testId="5f7b7c74-e502-edb4-4f73-e5bcec0d28e4" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/ComplaintDetails/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.1401514" startTime="2026-10-30T18:36:52.1050108+02:00" endTime="2026-10-30T18:36:53.2457155+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb7563ca-ae6b-4765-b810-eeb4deea6aea" />
+    <UnitTestResult executionId="a658c795-32b7-4e08-8147-895709271625" testId="ffbb8056-793c-65a9-e7a7-43fcdd34be63" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Announcements/Create&quot;)" computerName="dd20154a95e2" duration="00:00:01.9461179" startTime="2026-10-30T18:37:08.6876950+02:00" endTime="2026-10-30T18:37:10.6296353+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a658c795-32b7-4e08-8147-895709271625" />
+    <UnitTestResult executionId="b985af9d-4d0d-49ad-9b32-278bccc15acd" testId="895037a4-511f-ddb1-9677-fa4700f1e4ae" testName="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/Account/Login&quot;)" computerName="dd20154a95e2" duration="00:00:00.5563989" startTime="2026-10-30T18:37:50.0172914+02:00" endTime="2026-10-30T18:37:50.5733360+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b985af9d-4d0d-49ad-9b32-278bccc15acd" />
+    <UnitTestResult executionId="4aed3e45-077e-4a5e-b335-674975595a4a" testId="a4aaee6e-7b95-9334-7ffd-ea0758fff307" testName="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Details/3&quot;)" computerName="dd20154a95e2" duration="00:00:01.1252879" startTime="2026-10-30T18:37:41.2855503+02:00" endTime="2026-10-30T18:37:42.4122195+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4aed3e45-077e-4a5e-b335-674975595a4a" />
+    <UnitTestResult executionId="58779f21-3f48-44f5-9246-db368d662d05" testId="e3ea1fb1-d08b-c0e2-7a76-e181aac6bb81" testName="HostelHub.Tests.ServiceIntegrationTests.Announcements_respect_dates_scope_and_deactivation" computerName="dd20154a95e2" duration="00:00:00.7464726" startTime="2026-10-30T18:36:37.8864080+02:00" endTime="2026-10-30T18:36:38.6310096+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="58779f21-3f48-44f5-9246-db368d662d05" />
+    <UnitTestResult executionId="7a1b12a3-2f91-470a-b987-cd2fd9c41c8b" testId="19177c92-90e5-b543-ce7c-ed271b81b03e" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels&quot;)" computerName="dd20154a95e2" duration="00:00:02.0982495" startTime="2026-10-30T18:36:45.2765588+02:00" endTime="2026-10-30T18:36:47.3761969+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a1b12a3-2f91-470a-b987-cd2fd9c41c8b" />
+    <UnitTestResult executionId="e1c44076-6b3b-4514-ae7c-91d5e6f6e369" testId="00c5738d-4201-40b9-dd65-5aee461554e3" testName="HostelHub.Tests.WebIntegrationTests.Anonymous_users_are_sent_to_login(path: &quot;/Maintenance/Dashboard&quot;)" computerName="dd20154a95e2" duration="00:00:00.5727759" startTime="2026-10-30T18:37:54.3765435+02:00" endTime="2026-10-30T18:37:54.9493481+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e1c44076-6b3b-4514-ae7c-91d5e6f6e369" />
+    <UnitTestResult executionId="f227de9e-893e-4aa2-a2bb-6fbe25e946da" testId="281a47bf-2531-c5cf-cc6e-01e5f1a2d3c1" testName="HostelHub.Tests.UnitTests.Lunch_and_dinner_cutoffs_are_on_menu_date(meal: Lunch, time: &quot;11:30&quot;, hour: 11, minute: 30)" computerName="dd20154a95e2" duration="00:00:00.0007309" startTime="2026-10-30T18:36:21.4741580+02:00" endTime="2026-10-30T18:36:21.4742483+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f227de9e-893e-4aa2-a2bb-6fbe25e946da" />
+    <UnitTestResult executionId="bba688a7-8abe-4974-9257-7bb7259137f4" testId="656865c3-4ad1-97fa-5658-7e01dcade642" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Students/Details/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.1651914" startTime="2026-10-30T18:37:16.3778550+02:00" endTime="2026-10-30T18:37:17.5442286+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bba688a7-8abe-4974-9257-7bb7259137f4" />
+    <UnitTestResult executionId="7ee140eb-f9c6-4be4-8919-21b537ab0a95" testId="1b76f8ea-9d71-5036-1bdc-2d37b867d078" testName="HostelHub.Tests.ServiceIntegrationTests.Unavailable_and_past_meals_cannot_be_selected" computerName="dd20154a95e2" duration="00:00:00.6016734" startTime="2026-10-30T18:36:33.3436608+02:00" endTime="2026-10-30T18:36:33.9453752+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ee140eb-f9c6-4be4-8919-21b537ab0a95" />
+    <UnitTestResult executionId="cce5db85-0821-4a7e-9a1b-971ac0a1efb4" testId="23b3f7f8-c465-0639-303a-d4b1d22aa9ed" testName="HostelHub.Tests.UnitTests.Breakfast_cutoff_is_previous_day_and_inclusive(now: &quot;2026-11-03T23:00:01Z&quot;, expected: False)" computerName="dd20154a95e2" duration="00:00:00.0068776" startTime="2026-10-30T18:36:21.4925634+02:00" endTime="2026-10-30T18:36:21.4928318+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cce5db85-0821-4a7e-9a1b-971ac0a1efb4" />
+    <UnitTestResult executionId="5e5cd4bd-8b60-453f-a481-886620814b1e" testId="35b99ca9-cdf7-5f1f-2c64-050afb412b50" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/CreateComplaint&quot;)" computerName="dd20154a95e2" duration="00:00:01.1276997" startTime="2026-10-30T18:37:13.8875655+02:00" endTime="2026-10-30T18:37:15.0112866+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e5cd4bd-8b60-453f-a481-886620814b1e" />
+    <UnitTestResult executionId="6a6e6def-bf52-474a-a753-97192bd019ec" testId="840464ca-2b3e-280d-93fc-e271d2afd194" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Edit/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.3104883" startTime="2026-10-30T18:37:04.2086674+02:00" endTime="2026-10-30T18:37:05.5176582+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a6e6def-bf52-474a-a753-97192bd019ec" />
+    <UnitTestResult executionId="b6e9da24-7459-4f06-8fa0-7c0726ac9b7e" testId="d20c864e-5863-16a3-70b5-70fa5f8a08b3" testName="HostelHub.Tests.ServiceIntegrationTests.Room_change_rejects_other_hostel_and_same_room" computerName="dd20154a95e2" duration="00:00:00.5578176" startTime="2026-10-30T18:36:39.9297653+02:00" endTime="2026-10-30T18:36:40.4840784+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b6e9da24-7459-4f06-8fa0-7c0726ac9b7e" />
+    <UnitTestResult executionId="7cdf4400-cb51-45c3-b9ba-85b8ff4fd3a9" testId="f07d6221-a84f-373d-68a7-d465b825b424" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Profile&quot;)" computerName="dd20154a95e2" duration="00:00:01.2593125" startTime="2026-10-30T18:37:00.6403990+02:00" endTime="2026-10-30T18:37:01.8998408+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7cdf4400-cb51-45c3-b9ba-85b8ff4fd3a9" />
+    <UnitTestResult executionId="36634a9d-1248-4c2e-8175-6e6d9a13dead" testId="8eafee02-2025-97a5-c2d3-c9e13355c1ca" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Announcements&quot;)" computerName="dd20154a95e2" duration="00:00:01.5257562" startTime="2026-10-30T18:36:37.7194668+02:00" endTime="2026-10-30T18:36:39.2453997+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36634a9d-1248-4c2e-8175-6e6d9a13dead" />
+    <UnitTestResult executionId="7e934ae3-794e-426c-9f9f-26cc7fef71fa" testId="49e62cc2-4daa-ffa5-5300-fb3643130ca5" testName="HostelHub.Tests.ServiceIntegrationTests.Hostel_CRUD_and_related_data_deletion_guard" computerName="dd20154a95e2" duration="00:00:00.7813716" startTime="2026-10-30T18:36:25.8968498+02:00" endTime="2026-10-30T18:36:26.6771222+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e934ae3-794e-426c-9f9f-26cc7fef71fa" />
+    <UnitTestResult executionId="f43af963-50d6-4dc6-8330-869d9f22d7e3" testId="711c0ddc-f5e7-5250-25c9-e4c2e37c7bb0" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Edit/1&quot;)" computerName="dd20154a95e2" duration="00:00:01.5733435" startTime="2026-10-30T18:37:36.1206251+02:00" endTime="2026-10-30T18:37:37.6940183+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f43af963-50d6-4dc6-8330-869d9f22d7e3" />
+    <UnitTestResult executionId="adc8d802-e0da-42e4-8546-b6c632d5e803" testId="2158b79d-4027-7e2a-8299-fa0f272f3b68" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Create&quot;)" computerName="dd20154a95e2" duration="00:00:01.5359598" startTime="2026-10-30T18:37:18.5757635+02:00" endTime="2026-10-30T18:37:20.1120448+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="adc8d802-e0da-42e4-8546-b6c632d5e803" />
+    <UnitTestResult executionId="c1e1d619-0ad6-4899-8dab-169ec6fe2b6c" testId="addf2ea2-cc27-7031-aa2a-604a708d2769" testName="HostelHub.Tests.UnitTests.Home_routes_authenticated_roles_to_their_dashboard(role: &quot;Admin&quot;, controller: &quot;Admin&quot;)" computerName="dd20154a95e2" duration="00:00:00.0005549" startTime="2026-10-30T18:36:21.4897926+02:00" endTime="2026-10-30T18:36:21.4898961+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1e1d619-0ad6-4899-8dab-169ec6fe2b6c" />
+    <UnitTestResult executionId="2d0e81ca-746a-4b7e-b896-10f9fd120c9a" testId="54933714-1363-172e-8291-cbd26018de93" testName="HostelHub.Tests.UnitTests.Home_routes_authenticated_roles_to_their_dashboard(role: &quot;Student&quot;, controller: &quot;Student&quot;)" computerName="dd20154a95e2" duration="00:00:00.0127669" startTime="2026-10-30T18:36:21.4835357+02:00" endTime="2026-10-30T18:36:21.4835991+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d0e81ca-746a-4b7e-b896-10f9fd120c9a" />
+    <UnitTestResult executionId="be0ec265-ec64-44b2-a936-89b06abfe5a0" testId="fb77ff68-f426-536b-a7ae-0e34a7208da2" testName="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff/Details/1&quot;)" computerName="dd20154a95e2" duration="00:00:03.6902064" startTime="2026-10-30T18:37:26.9635435+02:00" endTime="2026-10-30T18:37:30.6589651+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be0ec265-ec64-44b2-a936-89b06abfe5a0" />
+    <UnitTestResult executionId="4c5fc42e-f8fe-43a1-a384-722254a53d17" testId="01a4c789-2c1b-0a88-1895-d9a835c0d382" testName="HostelHub.Tests.ServiceIntegrationTests.Complaint_edit_and_filters_preserve_ownership" computerName="dd20154a95e2" duration="00:00:01.1359759" startTime="2026-10-30T18:36:33.9530001+02:00" endTime="2026-10-30T18:36:35.0803106+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c5fc42e-f8fe-43a1-a384-722254a53d17" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="HostelHub.Tests.UnitTests.Feedback_model_rejects_out_of_range_rating(rating: 6)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="98ecb6ba-483d-b948-e997-1a26a1849ca3">
+      <Execution id="bf000ab5-8e91-4f83-be26-5a900261bf05" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Feedback_model_rejects_out_of_range_rating" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Allocate/2&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="ff97e12c-fd2b-7891-b850-948dde57e9d1">
+      <Execution id="a5b028f2-77a5-4983-99f1-0d410d66f331" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels/Details/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="faa3bac0-2eee-04b7-3939-b7e7078b4814">
+      <Execution id="6e53abc4-9c4e-424a-9a58-df6f465426d7" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/CreateComplaint&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="35b99ca9-cdf7-5f1f-2c64-050afb412b50">
+      <Execution id="5e5cd4bd-8b60-453f-a481-886620814b1e" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="e9c18b28-1934-47f6-25b2-f4dcef7133d3">
+      <Execution id="51d5e763-2ce8-4806-8217-8b41aa43de5b" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Registration_persists_student_with_hashed_password_and_login_cookie" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="09fe8fe1-04fb-01ca-9a88-4275b49f5aae">
+      <Execution id="dc696913-b085-463e-b1e1-1cf9f0d60e25" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Registration_persists_student_with_hashed_password_and_login_cookie" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Create&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="f4a20e94-23c0-874d-eacb-4701573ea1e2">
+      <Execution id="657c6b0d-c5fb-4c0b-979e-f2b7a4801e0b" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="19356be0-5427-3989-a30b-06950d7f895c">
+      <Execution id="25ded094-6857-48d7-b296-98a06d6cca41" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Public_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Announcements&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="8eafee02-2025-97a5-c2d3-c9e13355c1ca">
+      <Execution id="36634a9d-1248-4c2e-8175-6e6d9a13dead" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Complaints&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="262c11c3-2502-e347-e9a7-7e06fc64b80e">
+      <Execution id="fad0e175-d9a7-4fdb-8577-c7c794ee0cd1" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Feedback_model_rejects_out_of_range_rating(rating: 0)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="41072575-fb12-6f9e-5ee9-f918d0ce9269">
+      <Execution id="3cbe00c3-e797-4ee7-8cdf-2213d6053f92" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Feedback_model_rejects_out_of_range_rating" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Registration_rejects_short_or_mismatched_passwords" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="13e2e7fa-5c77-c09f-249d-8f79d510d1b9">
+      <Execution id="14890e36-2d03-441f-98a2-ed9ee95f5ff6" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Registration_rejects_short_or_mismatched_passwords" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="19177c92-90e5-b543-ce7c-ed271b81b03e">
+      <Execution id="7a1b12a3-2f91-470a-b987-cd2fd9c41c8b" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/Home/Privacy&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="b16d1db7-5701-4317-6b31-36f09b52023e">
+      <Execution id="db9600be-426e-450a-ae9a-f0bc011752e1" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Public_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Dashboard_counts_are_hostel_scoped" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="a5ea3ac9-b9a4-79f3-9b3b-c6490bb750cc">
+      <Execution id="d60956e5-df03-41b7-843b-b65d05e0849e" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Dashboard_counts_are_hostel_scoped" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/RoomChangeRequests&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="a81294c2-5ba9-4c3b-2f2c-4e72271afd1d">
+      <Execution id="be1b065c-496c-4f33-bced-6a63b9dab22c" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Profile&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="f07d6221-a84f-373d-68a7-d465b825b424">
+      <Execution id="7cdf4400-cb51-45c3-b9ba-85b8ff4fd3a9" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Feedback_rejects_unresolved_other_owner_and_bad_rating" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="8599ceef-06f0-ab1d-2afc-57e48a944d7a">
+      <Execution id="b5241102-0a0e-4df0-b835-1c85c9f156d8" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Feedback_rejects_unresolved_other_owner_and_bad_rating" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Complaints/Details/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="9239940d-b95a-eb03-6d72-7a0953e07f12">
+      <Execution id="6e5b4200-600e-4ee3-b61f-555ba098aea1" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Posts_without_antiforgery_token_are_rejected" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="9e3382fa-f4dd-daa7-2466-7111074b3eed">
+      <Execution id="6757f619-b309-4e3b-80a4-1b0726f6ebae" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Posts_without_antiforgery_token_are_rejected" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Hostels/Create&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="23dd584d-fe58-7c8e-f364-f71675be8c49">
+      <Execution id="5912207a-8a36-4bb0-adbe-882cabde8f96" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Home_routes_authenticated_roles_to_their_dashboard(role: &quot;MaintenanceStaff&quot;, controller: &quot;Maintenance&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="4bbe3f9a-5874-135f-50c8-90acbaf83c35">
+      <Execution id="a1ec2bc1-82d9-493a-9556-464360d3f3f9" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Home_routes_authenticated_roles_to_their_dashboard" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels/Edit/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="9951a3af-2776-f339-1360-297ae999b2c9">
+      <Execution id="0a7e51ff-3d78-4786-bbba-c9e63560d29f" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Unknown_route_returns_404" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="48000a9c-a7ec-5eca-008f-e6c7f9fc829d">
+      <Execution id="ebe7a9d4-473d-44be-9843-44f327f47d8a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Unknown_route_returns_404" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/RoomChangeRequests&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="6fe764fb-b339-9d5e-f4e2-ad72dc5b962d">
+      <Execution id="8f0d3148-8f98-4ae5-bac9-fe006572433c" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;staff@test.local&quot;, path: &quot;/Maintenance/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="3b0e7a3f-7d05-e901-ebff-e439e1f53e74">
+      <Execution id="433f07ab-13c3-41b5-b039-6cc8b30df597" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Details/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="ef6d7d1b-cebe-5946-5829-dfcc3c483509">
+      <Execution id="35745275-051f-47ba-9d13-b3d4b429257c" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;unassigned@test.local&quot;, path: &quot;/Admin/Rooms&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="5d9280e5-9cb5-7f91-4ee2-64d2c594b023">
+      <Execution id="c402a5fb-1bce-4522-9269-33dd211f379a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;other@test.local&quot;, path: &quot;/Student/ComplaintDetails/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="3d77f601-537b-f995-7b63-a2be5ad7d87c">
+      <Execution id="2cec2c47-fb89-4b4a-a080-29d944178ef9" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Room_CRUD_rejects_duplicate_and_invalid_capacity" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="b77c69cd-c179-5e27-11eb-578a9677b23e">
+      <Execution id="ec3cd3c5-24af-4665-ae9a-64711b6e2907" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Room_CRUD_rejects_duplicate_and_invalid_capacity" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Feedback&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="25d2a64f-cdd0-aad7-95b5-6aa24e262f24">
+      <Execution id="dfda8148-c052-453a-b5ac-1a6200d86a88" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Deactivating_staff_revokes_existing_session_access" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="6e342573-d2ce-a9ad-2188-af42cdbf301d">
+      <Execution id="1ebfefe2-9e3f-4e88-8359-8dfd0fdf9f6b" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Deactivating_staff_revokes_existing_session_access" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff/Create&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="cec404b1-fbaf-ec6b-e130-0b0613cb353d">
+      <Execution id="5d4f693c-f7be-4b2a-8759-1fc910c4efd9" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Anonymous_users_are_sent_to_login(path: &quot;/Student/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="5be890f1-0f3f-1252-a20c-3c20a7fc3bee">
+      <Execution id="d41219f9-9d8e-409e-8916-e73dc4e0f9d5" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Anonymous_users_are_sent_to_login" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Room_change_approval_moves_student_and_cannot_repeat" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="fdf87173-b50e-8ee4-6313-8a73acc9e882">
+      <Execution id="4a99516e-6591-4752-a19c-da23455c6e19" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Room_change_approval_moves_student_and_cannot_repeat" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Participation/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="08b1cb55-447d-c8ca-50d0-a1c80820f4b9">
+      <Execution id="01a0c01f-6b72-4abc-87d9-0f023f52e188" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Home_routes_authenticated_roles_to_their_dashboard(role: &quot;Admin&quot;, controller: &quot;Admin&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="addf2ea2-cc27-7031-aa2a-604a708d2769">
+      <Execution id="c1e1d619-0ad6-4899-8dab-169ec6fe2b6c" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Home_routes_authenticated_roles_to_their_dashboard" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Lunch_and_dinner_cutoffs_are_on_menu_date(meal: Lunch, time: &quot;11:30&quot;, hour: 11, minute: 30)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="281a47bf-2531-c5cf-cc6e-01e5f1a2d3c1">
+      <Execution id="f227de9e-893e-4aa2-a2bb-6fbe25e946da" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Lunch_and_dinner_cutoffs_are_on_menu_date" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Hostel_CRUD_and_related_data_deletion_guard" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="49e62cc2-4daa-ffa5-5300-fb3643130ca5">
+      <Execution id="7e934ae3-794e-426c-9f9f-26cc7fef71fa" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Hostel_CRUD_and_related_data_deletion_guard" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/Account/Register&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="15ac8caf-df94-d78b-7484-522d31d051dc">
+      <Execution id="62d25d3d-2036-4d32-9a04-e1ef69138be9" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Public_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;student@test.local&quot;, path: &quot;/Admin/Rooms&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="95a9f0f5-80bc-2226-47e3-2faf8b9295ce">
+      <Execution id="03dde3e6-bc0d-4879-ac3e-75679f3a0c12" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Announcements_respect_dates_scope_and_deactivation" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="e3ea1fb1-d08b-c0e2-7a76-e181aac6bb81">
+      <Execution id="58779f21-3f48-44f5-9246-db368d662d05" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Announcements_respect_dates_scope_and_deactivation" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Mess&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="9cd8fdca-3117-8465-1f51-957199c320f8">
+      <Execution id="195cb924-27ce-4beb-8faf-437e28b21ee2" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Student_profile_and_initial_hostel_assignment" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="26eea257-2f2d-5322-95cb-beae342ceb19">
+      <Execution id="97f4389c-293e-4ea6-a1e5-8da114346bcd" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Student_profile_and_initial_hostel_assignment" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/ComplaintDetails/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="5f7b7c74-e502-edb4-4f73-e5bcec0d28e4">
+      <Execution id="bb7563ca-ae6b-4765-b810-eeb4deea6aea" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Unavailable_and_past_meals_cannot_be_selected" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="1b76f8ea-9d71-5036-1bdc-2d37b867d078">
+      <Execution id="7ee140eb-f9c6-4be4-8919-21b537ab0a95" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Unavailable_and_past_meals_cannot_be_selected" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Details/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="8ba56698-fa7f-8181-c1c0-f1e6e1f90fcb">
+      <Execution id="cd3f6286-41f5-4a0e-b7b3-0915098482d8" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/SubmitFeedback&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="f0f8ccd9-f3b6-c430-50d1-2d3baf37ba96">
+      <Execution id="09e5227b-2e2e-486c-9e3e-ffcbf77927dd" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Students/Details/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="656865c3-4ad1-97fa-5658-7e01dcade642">
+      <Execution id="bba688a7-8abe-4974-9257-7bb7259137f4" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/EditProfile&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="ddfb7796-9f38-d99f-fe7a-b3306971259d">
+      <Execution id="ef12a80d-6984-4176-862e-9f069cba6ba6" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Login_does_not_redirect_to_external_return_url" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="933986d1-28d0-4e79-9509-fadf21e9f4ef">
+      <Execution id="1a9e39ed-e487-47ad-93e4-8b5f8131f32a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Login_does_not_redirect_to_external_return_url" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Occupied_room_cannot_be_deleted_or_shrunk" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="482f4737-13b8-2c83-8319-63185b5cad73">
+      <Execution id="a5f2e0e8-edc2-44b0-9ff8-bf990442dd39" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Occupied_room_cannot_be_deleted_or_shrunk" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Public_pages_render(path: &quot;/Account/Login&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="895037a4-511f-ddb1-9677-fa4700f1e4ae">
+      <Execution id="b985af9d-4d0d-49ad-9b32-278bccc15acd" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Public_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Room_change_rejects_other_hostel_and_same_room" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="d20c864e-5863-16a3-70b5-70fa5f8a08b3">
+      <Execution id="b6e9da24-7459-4f06-8fa0-7c0726ac9b7e" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Room_change_rejects_other_hostel_and_same_room" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Students/Details/2&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="c5321b1e-d33d-7958-7c77-e3a1f8c771c1">
+      <Execution id="b8ef1789-34bd-4388-a2f5-7037bef31fcc" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Approval_rechecks_capacity_and_rejection_is_final" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="c5b2aba3-d3f3-b511-d24b-ba17e588e276">
+      <Execution id="dc1ad1f6-f3f0-43ab-8661-3f01074527d6" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Approval_rechecks_capacity_and_rejection_is_final" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Passwords_are_salted_and_wrong_password_is_rejected" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="d9333827-9d40-e7fc-2ef7-f1b31ce6b881">
+      <Execution id="611f0771-5e23-4b19-b174-98026db5d658" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Passwords_are_salted_and_wrong_password_is_rejected" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Allocation_rejects_cross_hostel_and_updates_occupancy_once" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="2b497166-2edb-dd27-a601-67936c9ea037">
+      <Execution id="e2030e58-fa10-4cd6-a35d-429e2943dc2a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Allocation_rejects_cross_hostel_and_updates_occupancy_once" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Anonymous_users_are_sent_to_login(path: &quot;/Maintenance/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="00c5738d-4201-40b9-dd65-5aee461554e3">
+      <Execution id="e1c44076-6b3b-4514-ae7c-91d5e6f6e369" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Anonymous_users_are_sent_to_login" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="650f261b-2d1d-3487-3600-288f8f78d570">
+      <Execution id="b01d84e7-2a04-4e4b-87bf-29318dbb6f62" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="efd17c92-b5f9-dc02-874c-beaa8bb9b4c0">
+      <Execution id="50eac9a3-9405-4b45-ae82-eb41c6fbd70a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Complaint_assignment_rejects_inactive_and_other_hostel_staff" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="ef58443f-8117-adf5-956c-de6a0bcc7ab0">
+      <Execution id="c8fd2334-ebd8-48ad-93fc-1a4244430be4" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Complaint_assignment_rejects_inactive_and_other_hostel_staff" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Announcements&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="6df0f154-4bd4-e4c1-d090-279b78efc84d">
+      <Execution id="5f3f5a7f-f940-4162-ac5c-8e57ecf61883" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Staff_creation_updates_and_activation" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="c4e4d9af-6096-fd9e-5ccd-d80ddbd24cd5">
+      <Execution id="eedefb96-640e-4e74-8447-253b7f9b39ab" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Staff_creation_updates_and_activation" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Breakfast_cutoff_is_previous_day_and_inclusive(now: &quot;2026-11-03T23:00:01Z&quot;, expected: False)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="23b3f7f8-c465-0639-303a-d4b1d22aa9ed">
+      <Execution id="cce5db85-0821-4a7e-9a1b-971ac0a1efb4" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Breakfast_cutoff_is_previous_day_and_inclusive" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Students&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="d0a9b3c8-9581-419b-c130-667463b084ca">
+      <Execution id="107d1bda-08bd-47f7-bb16-a19bf4cbd72a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Announcements/Create&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="ffbb8056-793c-65a9-e7a7-43fcdd34be63">
+      <Execution id="a658c795-32b7-4e08-8147-895709271625" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Breakfast_cutoff_is_previous_day_and_inclusive(now: &quot;2026-11-03T22:59:59Z&quot;, expected: True)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="978b791c-2883-6e38-57a1-309da2e5f28e">
+      <Execution id="f133b7c5-1bd3-4afc-aaec-5e677b4fc519" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Breakfast_cutoff_is_previous_day_and_inclusive" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/Complaints&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="50f583da-a6b7-5668-b1b2-90383ed3d290">
+      <Execution id="1c6231ed-fb1b-43e3-90e5-1fa5c90dae27" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Meal_selection_upserts_and_rejects_other_hostel_and_bad_enum" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="d01e89a1-092b-d053-7f50-20c72de4dd0d">
+      <Execution id="266f6157-5311-4443-b672-d3ede1c7c607" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Meal_selection_upserts_and_rejects_other_hostel_and_bad_enum" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Edit/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="711c0ddc-f5e7-5250-25c9-e4c2e37c7bb0">
+      <Execution id="f43af963-50d6-4dc6-8330-869d9f22d7e3" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Complaint_lifecycle_records_history_and_accepts_one_feedback" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="292ab76f-d0ed-bb95-9dad-d926e993b0a9">
+      <Execution id="21cb3a89-2201-445d-ab0b-2b471ea935ff" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Complaint_lifecycle_records_history_and_accepts_one_feedback" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Details/3&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="a4aaee6e-7b95-9334-7ffd-ea0758fff307">
+      <Execution id="4aed3e45-077e-4a5e-b335-674975595a4a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="3ded0275-5b3f-4e56-f5da-fb558972c8f9">
+      <Execution id="64f00011-d334-4a38-aff9-eb8e6c42a04b" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;staff@test.local&quot;, path: &quot;/Maintenance/AssignedComplaints&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="a46fb600-e736-1d25-0011-d6bec82707a1">
+      <Execution id="2283e63d-ce5a-401e-b653-995cbbb092ea" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="50951977-84db-5b8f-36ce-3adb730049a6">
+      <Execution id="dd3412c4-b09c-47c3-8444-2c1e9daa974c" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Stale_room_change_cannot_decrement_old_occupancy" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="6b3fc20b-b48c-86a0-7259-52cdd978ffe1">
+      <Execution id="c6f87e1b-039a-4325-9680-74a17b7a3d02" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Stale_room_change_cannot_decrement_old_occupancy" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Complaint_edit_and_filters_preserve_ownership" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="01a4c789-2c1b-0a88-1895-d9a835c0d382">
+      <Execution id="4c5fc42e-f8fe-43a1-a384-722254a53d17" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Complaint_edit_and_filters_preserve_ownership" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Feedback&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="008591e7-cfca-4bd9-b09a-357be6767913">
+      <Execution id="e3f2ae6e-e562-495e-bd60-26c618aa5020" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/AllHostelsOverview&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="fc02559a-a289-a5fe-a7c6-508f32ce5bea">
+      <Execution id="11f65b3a-d4d5-4c68-b181-db47620320dc" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/RequestRoomChange&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="730de69b-8cc2-d9c9-f080-6b2a3719bd9c">
+      <Execution id="c263782b-af7d-4e8e-9457-f319417e4751" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;student@test.local&quot;, path: &quot;/Student/EditComplaint/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="37472300-9d8e-e21a-99da-f8bbfed02030">
+      <Execution id="392c1b66-61d1-406a-bd77-40fc2e415379" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff/Details/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="fb77ff68-f426-536b-a7ae-0e34a7208da2">
+      <Execution id="be0ec265-ec64-44b2-a936-89b06abfe5a0" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Breakfast_cutoff_is_previous_day_and_inclusive(now: &quot;2026-11-03T23:00:00Z&quot;, expected: True)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="8f510389-e186-d672-0f8c-9935248519b4">
+      <Execution id="5ae655fe-a46e-4b29-ba23-d81690932304" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Breakfast_cutoff_is_previous_day_and_inclusive" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/Hostels/Create&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="c81b8857-f09f-4197-e80c-8ac427eef3f2">
+      <Execution id="636e433f-6a9c-40f1-8ad1-08aef2446028" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Menu_CRUD_and_cleanup_preserve_today_and_remove_old_dependencies" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="5879cbeb-fb04-45a4-1e4d-34ad5f95639f">
+      <Execution id="e8ac0d87-deb6-4264-b39b-9433fb98d356" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Menu_CRUD_and_cleanup_preserve_today_and_remove_old_dependencies" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;admin@test.local&quot;, path: &quot;/Admin/MaintenanceStaff&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="f75b6ae3-4de3-273e-af3e-3e7e58d80244">
+      <Execution id="072dec7c-99ed-4153-b983-4a63be6e47bf" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Wrong_role_or_hostel_is_denied(email: &quot;staff@test.local&quot;, path: &quot;/Maintenance/ComplaintDetails/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="6ec4fd25-4aaa-2ea8-3af0-5f99d0eba0b2">
+      <Execution id="ce6bead7-a033-47e3-8379-0bc065ec81c1" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Wrong_role_or_hostel_is_denied" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Lunch_and_dinner_cutoffs_are_on_menu_date(meal: Dinner, time: &quot;19:00&quot;, hour: 19, minute: 0)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="bd8ab2c8-9f9c-175c-618c-881c6fb40099">
+      <Execution id="8447be3e-ec6b-4c4b-860a-f22716ff9d99" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Lunch_and_dinner_cutoffs_are_on_menu_date" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus/Edit/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="840464ca-2b3e-280d-93fc-e271d2afd194">
+      <Execution id="6a6e6def-bf52-474a-a753-97192bd019ec" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MaintenanceStaff/Edit/1&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="6bf498bc-13d3-74d7-5642-fb522ef910c7">
+      <Execution id="c0b13df7-f5a8-40ec-8196-56b9da2d1065" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/Rooms/Create&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="2158b79d-4027-7e2a-8299-fa0f272f3b68">
+      <Execution id="adc8d802-e0da-42e4-8546-b6c632d5e803" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Anonymous_users_are_sent_to_login(path: &quot;/Admin/Dashboard&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="954c4597-4815-f3cc-1843-9bec716acbaf">
+      <Execution id="455b58a7-ae28-4a69-8d2f-34ad325c4e4e" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Anonymous_users_are_sent_to_login" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.ServiceIntegrationTests.Admin_identity_requires_real_admin_without_warden_record" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="219009b1-dc0b-3020-4f4a-241cd67a3ccf">
+      <Execution id="2a471876-ccd4-4d06-ae02-3cb35bbff601" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.ServiceIntegrationTests" name="Admin_identity_requires_real_admin_without_warden_record" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.UnitTests.Home_routes_authenticated_roles_to_their_dashboard(role: &quot;Student&quot;, controller: &quot;Student&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="54933714-1363-172e-8291-cbd26018de93">
+      <Execution id="2d0e81ca-746a-4b7e-b896-10f9fd120c9a" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.UnitTests" name="Home_routes_authenticated_roles_to_their_dashboard" />
+    </UnitTest>
+    <UnitTest name="HostelHub.Tests.WebIntegrationTests.Authenticated_feature_pages_render(email: &quot;warden@test.local&quot;, path: &quot;/Admin/MessMenus&quot;)" storage="/workspace/scratch/a52c1a38d9d1/work/hostel_hub/tests/hostelhub.tests/bin/debug/net10.0/hostelhub.tests.dll" id="54891d2c-2995-23a5-ee1c-793dc00acf0c">
+      <Execution id="d2352364-ad3c-41a1-87a8-db37500e63e6" />
+      <TestMethod codeBase="/workspace/scratch/a52c1a38d9d1/work/Hostel_hub/Tests/HostelHub.Tests/bin/Debug/net10.0/HostelHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="HostelHub.Tests.WebIntegrationTests" name="Authenticated_feature_pages_render" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fc02559a-a289-a5fe-a7c6-508f32ce5bea" executionId="11f65b3a-d4d5-4c68-b181-db47620320dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48000a9c-a7ec-5eca-008f-e6c7f9fc829d" executionId="ebe7a9d4-473d-44be-9843-44f327f47d8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9951a3af-2776-f339-1360-297ae999b2c9" executionId="0a7e51ff-3d78-4786-bbba-c9e63560d29f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c81b8857-f09f-4197-e80c-8ac427eef3f2" executionId="636e433f-6a9c-40f1-8ad1-08aef2446028" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9c18b28-1934-47f6-25b2-f4dcef7133d3" executionId="51d5e763-2ce8-4806-8217-8b41aa43de5b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3b0e7a3f-7d05-e901-ebff-e439e1f53e74" executionId="433f07ab-13c3-41b5-b039-6cc8b30df597" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19356be0-5427-3989-a30b-06950d7f895c" executionId="25ded094-6857-48d7-b296-98a06d6cca41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="41072575-fb12-6f9e-5ee9-f918d0ce9269" executionId="3cbe00c3-e797-4ee7-8cdf-2213d6053f92" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fdf87173-b50e-8ee4-6313-8a73acc9e882" executionId="4a99516e-6591-4752-a19c-da23455c6e19" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d01e89a1-092b-d053-7f50-20c72de4dd0d" executionId="266f6157-5311-4443-b672-d3ede1c7c607" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4bbe3f9a-5874-135f-50c8-90acbaf83c35" executionId="a1ec2bc1-82d9-493a-9556-464360d3f3f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef58443f-8117-adf5-956c-de6a0bcc7ab0" executionId="c8fd2334-ebd8-48ad-93fc-1a4244430be4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="730de69b-8cc2-d9c9-f080-6b2a3719bd9c" executionId="c263782b-af7d-4e8e-9457-f319417e4751" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a5ea3ac9-b9a4-79f3-9b3b-c6490bb750cc" executionId="d60956e5-df03-41b7-843b-b65d05e0849e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0a9b3c8-9581-419b-c130-667463b084ca" executionId="107d1bda-08bd-47f7-bb16-a19bf4cbd72a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9333827-9d40-e7fc-2ef7-f1b31ce6b881" executionId="611f0771-5e23-4b19-b174-98026db5d658" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23dd584d-fe58-7c8e-f364-f71675be8c49" executionId="5912207a-8a36-4bb0-adbe-882cabde8f96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08b1cb55-447d-c8ca-50d0-a1c80820f4b9" executionId="01a0c01f-6b72-4abc-87d9-0f023f52e188" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b497166-2edb-dd27-a601-67936c9ea037" executionId="e2030e58-fa10-4cd6-a35d-429e2943dc2a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a81294c2-5ba9-4c3b-2f2c-4e72271afd1d" executionId="be1b065c-496c-4f33-bced-6a63b9dab22c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37472300-9d8e-e21a-99da-f8bbfed02030" executionId="392c1b66-61d1-406a-bd77-40fc2e415379" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd8ab2c8-9f9c-175c-618c-881c6fb40099" executionId="8447be3e-ec6b-4c4b-860a-f22716ff9d99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ec4fd25-4aaa-2ea8-3af0-5f99d0eba0b2" executionId="ce6bead7-a033-47e3-8379-0bc065ec81c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a46fb600-e736-1d25-0011-d6bec82707a1" executionId="2283e63d-ce5a-401e-b653-995cbbb092ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d77f601-537b-f995-7b63-a2be5ad7d87c" executionId="2cec2c47-fb89-4b4a-a080-29d944178ef9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6fe764fb-b339-9d5e-f4e2-ad72dc5b962d" executionId="8f0d3148-8f98-4ae5-bac9-fe006572433c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6bf498bc-13d3-74d7-5642-fb522ef910c7" executionId="c0b13df7-f5a8-40ec-8196-56b9da2d1065" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26eea257-2f2d-5322-95cb-beae342ceb19" executionId="97f4389c-293e-4ea6-a1e5-8da114346bcd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13e2e7fa-5c77-c09f-249d-8f79d510d1b9" executionId="14890e36-2d03-441f-98a2-ed9ee95f5ff6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="978b791c-2883-6e38-57a1-309da2e5f28e" executionId="f133b7c5-1bd3-4afc-aaec-5e677b4fc519" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f75b6ae3-4de3-273e-af3e-3e7e58d80244" executionId="072dec7c-99ed-4153-b983-4a63be6e47bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="954c4597-4815-f3cc-1843-9bec716acbaf" executionId="455b58a7-ae28-4a69-8d2f-34ad325c4e4e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="262c11c3-2502-e347-e9a7-7e06fc64b80e" executionId="fad0e175-d9a7-4fdb-8577-c7c794ee0cd1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b3fc20b-b48c-86a0-7259-52cdd978ffe1" executionId="c6f87e1b-039a-4325-9680-74a17b7a3d02" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54891d2c-2995-23a5-ee1c-793dc00acf0c" executionId="d2352364-ad3c-41a1-87a8-db37500e63e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0f8ccd9-f3b6-c430-50d1-2d3baf37ba96" executionId="09e5227b-2e2e-486c-9e3e-ffcbf77927dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c4e4d9af-6096-fd9e-5ccd-d80ddbd24cd5" executionId="eedefb96-640e-4e74-8447-253b7f9b39ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="933986d1-28d0-4e79-9509-fadf21e9f4ef" executionId="1a9e39ed-e487-47ad-93e4-8b5f8131f32a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ddfb7796-9f38-d99f-fe7a-b3306971259d" executionId="ef12a80d-6984-4176-862e-9f069cba6ba6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9239940d-b95a-eb03-6d72-7a0953e07f12" executionId="6e5b4200-600e-4ee3-b61f-555ba098aea1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef6d7d1b-cebe-5946-5829-dfcc3c483509" executionId="35745275-051f-47ba-9d13-b3d4b429257c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9e3382fa-f4dd-daa7-2466-7111074b3eed" executionId="6757f619-b309-4e3b-80a4-1b0726f6ebae" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="efd17c92-b5f9-dc02-874c-beaa8bb9b4c0" executionId="50eac9a3-9405-4b45-ae82-eb41c6fbd70a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b16d1db7-5701-4317-6b31-36f09b52023e" executionId="db9600be-426e-450a-ae9a-f0bc011752e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff97e12c-fd2b-7891-b850-948dde57e9d1" executionId="a5b028f2-77a5-4983-99f1-0d410d66f331" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="482f4737-13b8-2c83-8319-63185b5cad73" executionId="a5f2e0e8-edc2-44b0-9ff8-bf990442dd39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="25d2a64f-cdd0-aad7-95b5-6aa24e262f24" executionId="dfda8148-c052-453a-b5ac-1a6200d86a88" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="faa3bac0-2eee-04b7-3939-b7e7078b4814" executionId="6e53abc4-9c4e-424a-9a58-df6f465426d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6e342573-d2ce-a9ad-2188-af42cdbf301d" executionId="1ebfefe2-9e3f-4e88-8359-8dfd0fdf9f6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6df0f154-4bd4-e4c1-d090-279b78efc84d" executionId="5f3f5a7f-f940-4162-ac5c-8e57ecf61883" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5321b1e-d33d-7958-7c77-e3a1f8c771c1" executionId="b8ef1789-34bd-4388-a2f5-7037bef31fcc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="008591e7-cfca-4bd9-b09a-357be6767913" executionId="e3f2ae6e-e562-495e-bd60-26c618aa5020" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="650f261b-2d1d-3487-3600-288f8f78d570" executionId="b01d84e7-2a04-4e4b-87bf-29318dbb6f62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b77c69cd-c179-5e27-11eb-578a9677b23e" executionId="ec3cd3c5-24af-4665-ae9a-64711b6e2907" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50951977-84db-5b8f-36ce-3adb730049a6" executionId="dd3412c4-b09c-47c3-8444-2c1e9daa974c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="09fe8fe1-04fb-01ca-9a88-4275b49f5aae" executionId="dc696913-b085-463e-b1e1-1cf9f0d60e25" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ded0275-5b3f-4e56-f5da-fb558972c8f9" executionId="64f00011-d334-4a38-aff9-eb8e6c42a04b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9cd8fdca-3117-8465-1f51-957199c320f8" executionId="195cb924-27ce-4beb-8faf-437e28b21ee2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="292ab76f-d0ed-bb95-9dad-d926e993b0a9" executionId="21cb3a89-2201-445d-ab0b-2b471ea935ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8ba56698-fa7f-8181-c1c0-f1e6e1f90fcb" executionId="cd3f6286-41f5-4a0e-b7b3-0915098482d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5879cbeb-fb04-45a4-1e4d-34ad5f95639f" executionId="e8ac0d87-deb6-4264-b39b-9433fb98d356" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5be890f1-0f3f-1252-a20c-3c20a7fc3bee" executionId="d41219f9-9d8e-409e-8916-e73dc4e0f9d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="98ecb6ba-483d-b948-e997-1a26a1849ca3" executionId="bf000ab5-8e91-4f83-be26-5a900261bf05" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d9280e5-9cb5-7f91-4ee2-64d2c594b023" executionId="c402a5fb-1bce-4522-9269-33dd211f379a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4a20e94-23c0-874d-eacb-4701573ea1e2" executionId="657c6b0d-c5fb-4c0b-979e-f2b7a4801e0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8599ceef-06f0-ab1d-2afc-57e48a944d7a" executionId="b5241102-0a0e-4df0-b835-1c85c9f156d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cec404b1-fbaf-ec6b-e130-0b0613cb353d" executionId="5d4f693c-f7be-4b2a-8759-1fc910c4efd9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5b2aba3-d3f3-b511-d24b-ba17e588e276" executionId="dc1ad1f6-f3f0-43ab-8661-3f01074527d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="219009b1-dc0b-3020-4f4a-241cd67a3ccf" executionId="2a471876-ccd4-4d06-ae02-3cb35bbff601" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50f583da-a6b7-5668-b1b2-90383ed3d290" executionId="1c6231ed-fb1b-43e3-90e5-1fa5c90dae27" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="95a9f0f5-80bc-2226-47e3-2faf8b9295ce" executionId="03dde3e6-bc0d-4879-ac3e-75679f3a0c12" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15ac8caf-df94-d78b-7484-522d31d051dc" executionId="62d25d3d-2036-4d32-9a04-e1ef69138be9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8f510389-e186-d672-0f8c-9935248519b4" executionId="5ae655fe-a46e-4b29-ba23-d81690932304" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f7b7c74-e502-edb4-4f73-e5bcec0d28e4" executionId="bb7563ca-ae6b-4765-b810-eeb4deea6aea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffbb8056-793c-65a9-e7a7-43fcdd34be63" executionId="a658c795-32b7-4e08-8147-895709271625" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="895037a4-511f-ddb1-9677-fa4700f1e4ae" executionId="b985af9d-4d0d-49ad-9b32-278bccc15acd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4aaee6e-7b95-9334-7ffd-ea0758fff307" executionId="4aed3e45-077e-4a5e-b335-674975595a4a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3ea1fb1-d08b-c0e2-7a76-e181aac6bb81" executionId="58779f21-3f48-44f5-9246-db368d662d05" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19177c92-90e5-b543-ce7c-ed271b81b03e" executionId="7a1b12a3-2f91-470a-b987-cd2fd9c41c8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00c5738d-4201-40b9-dd65-5aee461554e3" executionId="e1c44076-6b3b-4514-ae7c-91d5e6f6e369" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="281a47bf-2531-c5cf-cc6e-01e5f1a2d3c1" executionId="f227de9e-893e-4aa2-a2bb-6fbe25e946da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="656865c3-4ad1-97fa-5658-7e01dcade642" executionId="bba688a7-8abe-4974-9257-7bb7259137f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b76f8ea-9d71-5036-1bdc-2d37b867d078" executionId="7ee140eb-f9c6-4be4-8919-21b537ab0a95" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23b3f7f8-c465-0639-303a-d4b1d22aa9ed" executionId="cce5db85-0821-4a7e-9a1b-971ac0a1efb4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35b99ca9-cdf7-5f1f-2c64-050afb412b50" executionId="5e5cd4bd-8b60-453f-a481-886620814b1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="840464ca-2b3e-280d-93fc-e271d2afd194" executionId="6a6e6def-bf52-474a-a753-97192bd019ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d20c864e-5863-16a3-70b5-70fa5f8a08b3" executionId="b6e9da24-7459-4f06-8fa0-7c0726ac9b7e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f07d6221-a84f-373d-68a7-d465b825b424" executionId="7cdf4400-cb51-45c3-b9ba-85b8ff4fd3a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8eafee02-2025-97a5-c2d3-c9e13355c1ca" executionId="36634a9d-1248-4c2e-8175-6e6d9a13dead" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49e62cc2-4daa-ffa5-5300-fb3643130ca5" executionId="7e934ae3-794e-426c-9f9f-26cc7fef71fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="711c0ddc-f5e7-5250-25c9-e4c2e37c7bb0" executionId="f43af963-50d6-4dc6-8330-869d9f22d7e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2158b79d-4027-7e2a-8299-fa0f272f3b68" executionId="adc8d802-e0da-42e4-8546-b6c632d5e803" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="addf2ea2-cc27-7031-aa2a-604a708d2769" executionId="c1e1d619-0ad6-4899-8dab-169ec6fe2b6c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54933714-1363-172e-8291-cbd26018de93" executionId="2d0e81ca-746a-4b7e-b896-10f9fd120c9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb77ff68-f426-536b-a7ae-0e34a7208da2" executionId="be0ec265-ec64-44b2-a936-89b06abfe5a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="01a4c789-2c1b-0a88-1895-d9a835c0d382" executionId="4c5fc42e-f8fe-43a1-a384-722254a53d17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="96" executed="96" passed="96" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.14)
+[xUnit.net 00:00:00.15]   Discovering: HostelHub.Tests
+[xUnit.net 00:00:00.26]   Discovered:  HostelHub.Tests
+[xUnit.net 00:00:00.35]   Starting:    HostelHub.Tests
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 5 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 5 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 1 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 4 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 2 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 5 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 6 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 5 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      Student registered successfully with UserId 7, RollNumber NEW1.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+info: Hostel_hub.Controllers.AccountController[0]
+      User 3 logged in successfully.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /workspace/scratch/a52c1a38d9d1/work/Hostel_hub
+warn: Hostel_hub.Controllers.HomeController[0]
+      HTTP 404 Not Found at path /does-not-exist. Tracking ID: 00-bc103f776899aae283c1143dd9139129-4687c237c16648c6-00.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[xUnit.net 00:01:39.29]   Finished:    HostelHub.Tests
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="dd20154a95e2" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="dd20154a95e2/coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

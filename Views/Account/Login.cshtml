@@ -1,0 +1,323 @@
+@model Hostel_hub.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    .login-page {
+        min-height: calc(100vh - 170px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 15px;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 1000px;
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
+    }
+
+    .login-brand-panel {
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        padding: 55px 45px;
+        min-height: 520px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .brand-logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .login-brand-panel h1 {
+        font-size: 2.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .login-brand-panel p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 420px;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 18px;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .feature-check {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .login-form-panel {
+        padding: 55px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 520px;
+    }
+
+    .login-heading {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 8px;
+    }
+
+    .login-subtitle {
+        color: #6c757d;
+        margin-bottom: 32px;
+    }
+
+    .login-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #343a40;
+    }
+
+    .login-input {
+        min-height: 48px;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        padding-left: 14px;
+    }
+
+    .login-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.12);
+    }
+
+    .login-btn {
+        min-height: 48px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+
+    .login-footer-text {
+        text-align: center;
+        color: #adb5bd;
+        font-size: 0.85rem;
+        margin-top: 28px;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .login-brand-panel {
+            min-height: auto;
+            padding: 35px 30px;
+        }
+
+        .login-brand-panel h1 {
+            font-size: 1.8rem;
+        }
+
+        .login-form-panel {
+            min-height: auto;
+            padding: 35px 25px;
+        }
+    }
+</style>
+
+<div class="login-page">
+
+    <div class="login-container">
+
+        <div class="row g-0">
+
+            <!-- LEFT BRAND SECTION -->
+            <div class="col-md-6">
+
+                <div class="login-brand-panel h-100">
+
+                    <div class="brand-logo">
+                        HH
+                    </div>
+
+                    <h1>HostelHub</h1>
+
+                    <p>
+                        A centralized hostel management platform designed to
+                        simplify room allocation, maintenance, mess management,
+                        complaints and student services.
+                    </p>
+
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Smart hostel and room management</span>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Complaint and maintenance tracking</span>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Daily mess participation management</span>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Role-based secure access</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT LOGIN SECTION -->
+            <div class="col-md-6">
+
+                <div class="login-form-panel">
+
+                    <div class="mb-4">
+                        <h2 class="login-heading">Welcome back</h2>
+
+                        <p class="login-subtitle">
+                            Sign in to continue to your HostelHub dashboard.
+                        </p>
+                    </div>
+
+                    <form asp-action="Login"
+                          asp-route-returnUrl="@ViewData["ReturnUrl"]"
+                          method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger">
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="mb-4">
+
+                            <label asp-for="Email"
+                                   class="login-label">
+                                Email Address
+                            </label>
+
+                            <input asp-for="Email"
+                                   class="form-control login-input"
+                                   placeholder="Enter your email"
+                                   autocomplete="email" />
+
+                            <span asp-validation-for="Email"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+                        <div class="mb-4">
+
+                            <label asp-for="Password"
+                                   class="login-label">
+                                Password
+                            </label>
+
+                            <div class="password-field">
+                                <input asp-for="Password"
+                                       type="password"
+                                       class="form-control login-input"
+                                       placeholder="Enter your password"
+                                       autocomplete="current-password" />
+                                <button type="button"
+                                        class="password-toggle-btn"
+                                        data-password-toggle
+                                        aria-label="Show password"
+                                        aria-pressed="false"
+                                        title="Show password">
+                                    <span class="password-toggle-icon" aria-hidden="true">
+                                        <svg class="eye-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <span asp-validation-for="Password"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+
+                        <!-- LOGIN BUTTON -->
+                        <div class="d-grid">
+
+                            <button type="submit"
+                                    class="btn btn-primary login-btn">
+
+                                Sign In
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="login-footer-text">
+                        HostelHub • Hostel Management System
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

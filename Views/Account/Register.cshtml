@@ -1,0 +1,463 @@
+@model Hostel_hub.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Student Registration";
+}
+
+<style>
+    .register-page {
+        min-height: calc(100vh - 170px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 45px 15px;
+    }
+
+    .register-container {
+        width: 100%;
+        max-width: 1100px;
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
+    }
+
+    .register-brand-panel {
+        height: 100%;
+        min-height: 620px;
+        padding: 55px 42px;
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-logo {
+        width: 68px;
+        height: 68px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .register-brand-panel h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .register-brand-panel p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .registration-step {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .step-number {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .step-content strong {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .step-content span {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+    }
+
+    .register-form-panel {
+        min-height: 620px;
+        padding: 48px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-title {
+        font-size: 1.9rem;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+
+    .register-subtitle {
+        color: #6c757d;
+        margin-bottom: 30px;
+    }
+
+    .register-label {
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 7px;
+    }
+
+    .register-input {
+        min-height: 47px;
+        border-radius: 10px;
+        padding-left: 14px;
+        border: 1px solid #dee2e6;
+    }
+
+    .register-input:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.12);
+    }
+
+    .register-btn {
+        min-height: 48px;
+        border-radius: 10px;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+
+    .login-link-area {
+        text-align: center;
+        margin-top: 22px;
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+
+    .login-link-area a {
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .register-brand-panel {
+            min-height: auto;
+            padding: 35px 28px;
+        }
+
+        .register-form-panel {
+            min-height: auto;
+            padding: 35px 25px;
+        }
+
+        .register-brand-panel h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+
+
+<div class="register-page">
+
+    <div class="register-container">
+
+        <div class="row g-0">
+
+            <!-- LEFT PANEL -->
+            <div class="col-lg-5">
+
+                <div class="register-brand-panel">
+
+                    <div class="register-logo">
+                        HH
+                    </div>
+
+                    <h1>Join HostelHub</h1>
+
+                    <p>
+                        Create your student account and access hostel services
+                        through one secure platform.
+                    </p>
+
+
+                    <div class="registration-step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-content">
+                            <strong>Create your account</strong>
+                            <span>Enter your student and login details.</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="registration-step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-content">
+                            <strong>Access student services</strong>
+                            <span>View hostel information and manage requests.</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="registration-step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-content">
+                            <strong>Stay connected</strong>
+                            <span>
+                                Track complaints, mess participation and announcements.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT PANEL -->
+            <div class="col-lg-7">
+
+                <div class="register-form-panel">
+
+                    <div>
+                        <h2 class="register-title">
+                            Student Registration
+                        </h2>
+
+                        <p class="register-subtitle">
+                            Enter your details to create your HostelHub account.
+                        </p>
+                    </div>
+
+
+                    <form asp-action="Register" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger">
+                        </div>
+
+
+                        <div class="row">
+
+                            <!-- FULL NAME -->
+                            <div class="col-md-6 mb-3">
+
+                                <label asp-for="FullName"
+                                       class="register-label">
+                                    Full Name
+                                </label>
+
+                                <input asp-for="FullName"
+                                       class="form-control register-input"
+                                       placeholder="Enter your full name"
+                                       autocomplete="name" />
+
+                                <span asp-validation-for="FullName"
+                                      class="text-danger small">
+                                </span>
+
+                            </div>
+
+
+                            <!-- ROLL NUMBER -->
+                            <div class="col-md-6 mb-3">
+
+                                <label asp-for="RollNumber"
+                                       class="register-label">
+                                    Roll Number
+                                </label>
+
+                                <input asp-for="RollNumber"
+                                       class="form-control register-input"
+                                       placeholder="Enter roll number" />
+
+                                <span asp-validation-for="RollNumber"
+                                      class="text-danger small">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="mb-3">
+
+                            <label asp-for="Email"
+                                   class="register-label">
+                                Email Address
+                            </label>
+
+                            <input asp-for="Email"
+                                   class="form-control register-input"
+                                   placeholder="Enter your email"
+                                   autocomplete="email" />
+
+                            <span asp-validation-for="Email"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <!-- PASSWORD -->
+                            <div class="col-md-6 mb-4">
+
+                                <label asp-for="Password"
+                                       class="register-label">
+                                    Password
+                                </label>
+
+                                <div class="password-field">
+                                    <input asp-for="Password"
+                                           type="password"
+                                           class="form-control register-input"
+                                           placeholder="Create password"
+                                           autocomplete="new-password" />
+                                    <button type="button"
+                                            class="password-toggle-btn"
+                                            data-password-toggle
+                                            aria-label="Show password"
+                                        aria-pressed="false"
+                                            title="Show password">
+                                        <span class="password-toggle-icon" aria-hidden="true">
+                                            <svg class="eye-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <span asp-validation-for="Password"
+                                      class="text-danger small">
+                                </span>
+
+                            </div>
+
+
+                           <!-- CONFIRM PASSWORD -->
+<div class="col-md-6 mb-4">
+
+    <label asp-for="ConfirmPassword"
+           class="register-label">
+        Confirm Password
+    </label>
+
+    <div class="password-field">
+
+        <input asp-for="ConfirmPassword"
+               type="password"
+               class="form-control register-input"
+               placeholder="Confirm password"
+               autocomplete="new-password" />
+
+        <button type="button"
+                class="password-toggle-btn"
+                data-password-toggle
+                aria-label="Show password"
+                                        aria-pressed="false"
+                title="Show password">
+
+            <span class="password-toggle-icon"
+                  aria-hidden="true">
+
+                <svg class="eye-icon"
+                     width="16"
+                     height="16"
+                     fill="currentColor"
+                     viewBox="0 0 16 16">
+
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+
+                </svg>
+
+            </span>
+
+        </button>
+
+    </div>
+
+    <span asp-validation-for="ConfirmPassword"
+          class="text-danger small">
+    </span>
+
+</div>
+
+
+                        <div class="d-grid">
+
+                            <button type="submit"
+                                    class="btn btn-primary register-btn">
+
+                                Create Student Account
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="login-link-area">
+
+                        Already have an account?
+
+                        <a asp-controller="Account"
+                           asp-action="Login">
+                            Sign in
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

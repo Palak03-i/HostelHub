@@ -1,0 +1,29 @@
+name: HostelHub checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Unit and integration tests
+        run: dotnet test Tests/HostelHub.Tests/HostelHub.Tests.csproj -c Release --logger "trx;LogFileName=hostelhub.trx" --collect:"XPlat Code Coverage"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Frontend interaction tests
+        working-directory: Tests/frontend
+        run: |
+          npm ci
+          npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: Tests/HostelHub.Tests/TestResults/

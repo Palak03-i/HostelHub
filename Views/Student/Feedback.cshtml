@@ -1,0 +1,438 @@
+@model List<Hostel_hub.Models.Feedback>
+
+@{
+    ViewData["Title"] = "My Feedback";
+
+    double averageRating =
+        Model.Any()
+            ? Model.Average(f => f.Rating)
+            : 0;
+}
+
+<style>
+    .feedback-page {
+        padding: 35px 0 60px;
+    }
+
+    .feedback-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .feedback-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .feedback-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .submit-feedback-btn {
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .feedback-summary-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+        height: 100%;
+    }
+
+    .summary-label {
+        color: #7c8798;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .summary-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .feedback-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .feedback-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .feedback-card-header h5 {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .feedback-table {
+        margin-bottom: 0;
+    }
+
+    .feedback-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .feedback-table tbody td {
+        padding: 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .source-badge {
+        display: inline-block;
+        background: #eaf2ff;
+        color: #4f46e5;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+    .complaint-name {
+        font-weight: 600;
+        color: #394355;
+    }
+
+    .rating-box {
+        white-space: nowrap;
+    }
+
+    .star-filled {
+        color: #ffc107;
+        font-size: 1rem;
+    }
+
+    .star-empty {
+        color: #dee2e6;
+        font-size: 1rem;
+    }
+
+    .rating-number {
+        display: block;
+        color: #7c8798;
+        font-size: 0.78rem;
+        margin-top: 3px;
+    }
+
+    .feedback-comments {
+        max-width: 330px;
+        color: #4f5968;
+        line-height: 1.5;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .empty-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .feedback-page {
+            padding-top: 20px;
+        }
+
+        .feedback-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="feedback-page">
+
+    <!-- HEADER -->
+    <div class="feedback-header">
+
+        <div>
+
+            <h2>My Feedback</h2>
+
+            <p>
+                Share your hostel experience and review resolved services.
+            </p>
+
+        </div>
+
+
+        <a asp-action="SubmitFeedback"
+           class="btn btn-primary submit-feedback-btn">
+
+            + Submit Feedback
+
+        </a>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+    <div class="row g-3">
+
+        <div class="col-md-6">
+
+            <div class="feedback-summary-card">
+
+                <div class="summary-label">
+                    Feedback Submitted
+                </div>
+
+                <p class="summary-number">
+                    @Model.Count
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <div class="feedback-summary-card">
+
+                <div class="summary-label">
+                    Average Rating
+                </div>
+
+                <p class="summary-number">
+
+                    @averageRating.ToString("0.0")
+
+                    <span class="fs-6 text-muted">
+                        / 5
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEEDBACK HISTORY -->
+    <div class="feedback-card">
+
+        <div class="feedback-card-header">
+
+            <h5>
+                Feedback History
+            </h5>
+
+            <span class="text-muted small">
+                @Model.Count record(s)
+            </span>
+
+        </div>
+
+
+        @if (!Model.Any())
+        {
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    FB
+                </div>
+
+                <h5>No feedback submitted yet</h5>
+
+                <p>
+                    Share your experience to help improve hostel services.
+                </p>
+
+
+                <a asp-action="SubmitFeedback"
+                   class="btn btn-primary">
+
+                    Submit Your First Feedback
+
+                </a>
+
+            </div>
+
+        }
+        else
+        {
+
+            <div class="table-responsive">
+
+                <table data-enhance-table class="table table-hover feedback-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Source</th>
+                            <th>Related Complaint</th>
+                            <th>Rating</th>
+                            <th>Comments</th>
+                            <th>Submitted</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var f in Model)
+                        {
+
+                            <tr>
+
+                                <!-- SOURCE -->
+                                <td>
+
+                                    <span class="source-badge">
+                                        @f.Source
+                                    </span>
+
+                                </td>
+
+
+                                <!-- COMPLAINT -->
+                                <td>
+
+                                    @if (f.Complaint != null)
+                                    {
+                                        <span class="complaint-name">
+                                            @f.Complaint.Title
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">
+                                            General Feedback
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- RATING -->
+                                <td>
+
+                                    <div class="rating-box">
+
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <span class="@(i <= f.Rating
+                                                                                                ? "star-filled"
+                                                                                                : "star-empty")">
+                                        ★
+                                    </span>
+                                }
+
+                                <span class="rating-number">
+                                    @f.Rating / 5
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <!-- COMMENTS -->
+                        <td>
+
+                            <div class="feedback-comments">
+
+                                @if (!string.IsNullOrWhiteSpace(f.Comments))
+                                {
+                                    @f.Comments
+                                }
+                                else
+                                {
+                                    <span class="text-muted">
+                                        No comments provided
+                                    </span>
+                                }
+
+                            </div>
+
+                        </td>
+
+
+                        <!-- DATE -->
+                        <td>
+
+                            <div>
+
+                                @(f.SubmittedAt
+                                    .ToLocalTime()
+                                    .ToString("dd MMM yyyy"))
+
+                            </div>
+
+                            <small class="text-muted">
+
+                                @(f.SubmittedAt
+                                    .ToLocalTime()
+                                    .ToString("hh:mm tt"))
+
+                            </small>
+
+                        </td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+}
+
+</div>
+
+</div>

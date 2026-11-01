@@ -1,0 +1,331 @@
+@model Hostel_hub.Models.MaintenanceStaff
+
+@{
+    ViewData["Title"] = "Staff Details";
+    bool canManage = ViewBag.CanManage is bool b && b;
+}
+
+<style>
+    .staff-details-page {
+        padding: 35px 0 60px;
+    }
+
+    .staff-details-header {
+        margin-bottom: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .staff-details-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .staff-details-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .details-card {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .details-card-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .details-card-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .details-card-body {
+        padding: 28px;
+    }
+
+    .detail-item {
+        padding: 14px 0;
+        border-bottom: 1px solid #f0f2f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+
+    .detail-label {
+        color: #8a94a3;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .detail-value {
+        color: #273142;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .status-badge-lg {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .status-active {
+        background: #d1e7dd;
+        color: #0f5132;
+        border: 1px solid #badbcc;
+    }
+
+    .status-inactive {
+        background: #f8d7da;
+        color: #842029;
+        border: 1px solid #f5c2c7;
+    }
+
+    .specialization-badge {
+        display: inline-block;
+        background: #f1f3f5;
+        color: #495057;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+    }
+
+    .hostel-badge {
+        display: inline-block;
+        background: #eef4ff;
+        color: #4f46e5;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+    }
+
+    .card-actions {
+        padding: 20px 26px;
+        background: #fbfcfe;
+        border-top: 1px solid #edf0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+</style>
+
+<div class="staff-details-page">
+
+    <div class="staff-details-header">
+        <div>
+            <h2>Staff Details</h2>
+            <p>View maintenance staff profile, specialization, and account status.</p>
+        </div>
+
+        <div>
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                &larr; Back to Staff List
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["StaffSuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["StaffSuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["StaffErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["StaffErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="details-card">
+        <div class="details-card-header">
+            <div>
+                <h5>@Model.FullName</h5>
+            </div>
+            <div>
+                @if (Model.IsActive)
+                {
+                    <span class="status-badge-lg status-active">Status: Active</span>
+                }
+                else
+                {
+                    <span class="status-badge-lg status-inactive">Status: Inactive</span>
+                }
+            </div>
+        </div>
+
+        <div class="details-card-body">
+            <div class="detail-item">
+                <span class="detail-label">Full Name</span>
+                <span class="detail-value">@Model.FullName</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Email Address</span>
+                <span class="detail-value">@(Model.User?.Email ?? "N/A")</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Phone Number</span>
+                <span class="detail-value">@(Model.PhoneNumber ?? "N/A")</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Specialization</span>
+                <span class="detail-value">
+                    <span class="specialization-badge">@Model.Specialization</span>
+                </span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Assigned Hostel</span>
+                <span class="detail-value">
+                    @if (Model.Hostel != null)
+                    {
+                        <span class="hostel-badge">@Model.Hostel.Name</span>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Unassigned</span>
+                    }
+                </span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Account Status</span>
+                <span class="detail-value">
+                    @if (Model.IsActive)
+                    {
+                        <span class="text-success fw-bold">Active &bull; Available for assignments</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger fw-bold">Inactive &bull; Deactivated (No new assignments)</span>
+                    }
+                </span>
+            </div>
+        </div>
+
+        <div class="card-actions">
+            <div>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    Back to Staff List
+                </a>
+            </div>
+
+            @if (canManage)
+            {
+                <div class="d-flex gap-2">
+                    @if (Model.IsActive)
+                    {
+                        <a asp-action="Edit" asp-route-id="@Model.MaintenanceStaffId" class="btn btn-primary">
+                            Edit Staff
+                        </a>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deactivateModal">
+                            Deactivate
+                        </button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reactivateModal">
+                            Reactivate
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@if (canManage)
+{
+    if (Model.IsActive)
+    {
+        <!-- Deactivate Confirmation Modal -->
+        <div class="modal fade" id="deactivateModal" tabindex="-1" aria-labelledby="deactivateModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deactivateModalLabel">Confirm Deactivation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p class="mb-2">Are you sure you want to deactivate this maintenance staff member?</p>
+                        <p class="fw-bold mb-3 text-danger">@Model.FullName (@Model.Specialization)</p>
+                        <div class="alert alert-warning py-2 mb-0 small">
+                            The staff member record will be preserved. Historical complaints will remain intact, but this staff member will no longer receive new assignments or be able to log in.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <form asp-action="Deactivate" asp-route-id="@Model.MaintenanceStaffId" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-danger">Deactivate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- Reactivate Confirmation Modal -->
+        <div class="modal fade" id="reactivateModal" tabindex="-1" aria-labelledby="reactivateModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reactivateModalLabel">Confirm Reactivation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p class="mb-2">Reactivate this maintenance staff member?</p>
+                        <p class="fw-bold mb-3 text-success">@Model.FullName (@Model.Specialization)</p>
+                        <div class="alert alert-info py-2 mb-0 small">
+                            This staff member will become Active, regain login access, and be available for new complaint assignments.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <form asp-action="Reactivate" asp-route-id="@Model.MaintenanceStaffId" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-success">Reactivate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,641 @@
+@using Hostel_hub.ViewModels
+@model List<Hostel_hub.Models.Complaint>
+
+@{
+    ViewData["Title"] = "My Complaints";
+    var filter = (ComplaintFilterViewModel?)ViewBag.Filter ?? new ComplaintFilterViewModel();
+
+    int totalComplaints = Model.Count;
+
+    int pendingComplaints =
+        Model.Count(c =>
+            c.Status.ToString() == "Pending" ||
+            c.Status.ToString() == "Assigned");
+
+    int inProgressComplaints =
+        Model.Count(c =>
+            c.Status.ToString() == "InProgress" ||
+            c.Status.ToString() == "In Progress");
+
+    int resolvedComplaints =
+        Model.Count(c =>
+            c.Status.ToString() == "Resolved");
+}
+
+<style>
+    .assigned-page {
+        padding: 35px 0 60px;
+    }
+
+    .assigned-header {
+        margin-bottom: 28px;
+    }
+
+    .assigned-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .assigned-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .summary-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+
+    .summary-label {
+        color: #7c8798;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .summary-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .complaints-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .complaints-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .complaints-card-header h5 {
+        color: #172033;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+
+    .complaints-table {
+        margin-bottom: 0;
+    }
+
+    .complaints-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        text-transform: uppercase;
+        font-size: 0.74rem;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .complaints-table tbody td {
+        padding: 17px 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .complaint-title {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .category-badge {
+        display: inline-block;
+        background: #eef4ff;
+        color: #4f46e5;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .priority-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .priority-high {
+        background: #f8d7da;
+        color: #b02a37;
+    }
+
+    .priority-medium {
+        background: #fff3cd;
+        color: #997404;
+    }
+
+    .priority-low {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .priority-default {
+        background: #eceff3;
+        color: #6c757d;
+    }
+
+    .status-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .status-pending {
+        background: #fff3cd;
+        color: #997404;
+    }
+
+    .status-assigned {
+        background: #eef2ff;
+        color: #4f46e5;
+    }
+
+    .status-progress {
+        background: #cff4fc;
+        color: #087990;
+    }
+
+    .status-resolved {
+        background: #d1e7dd;
+        color: #146c43;
+    }
+
+    .status-default {
+        background: #eceff3;
+        color: #6c757d;
+    }
+
+    .view-btn {
+        border-radius: 7px;
+        font-weight: 600;
+        min-width: 90px;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .empty-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .filter-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        padding: 24px;
+        margin-top: 26px;
+    }
+
+    .filter-label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .filter-control {
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .filter-control:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.12);
+    }
+
+    @@media (max-width: 767px) {
+        .assigned-page {
+            padding-top: 20px;
+        }
+
+        .assigned-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="assigned-page">
+
+    <!-- HEADER -->
+    <div class="assigned-header">
+
+        <h2>My Assigned Complaints</h2>
+
+        <p>
+            View maintenance tasks assigned to you and track their current status.
+        </p>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+    <div class="row g-3">
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Assigned
+                </div>
+
+                <p class="summary-number">
+                    @totalComplaints
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Pending / Assigned
+                </div>
+
+                <p class="summary-number text-warning">
+                    @pendingComplaints
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    In Progress
+                </div>
+
+                <p class="summary-number text-info">
+                    @inProgressComplaints
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Resolved
+                </div>
+
+                <p class="summary-number text-success">
+                    @resolvedComplaints
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH & FILTER -->
+    <div class="filter-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold mb-0" style="color: #172033; font-size: 1.15rem;">
+                Search &amp; Filter Assigned Tasks
+            </h5>
+            @if (filter.HasActiveFilters)
+            {
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2">
+                    Active Filters
+                </span>
+            }
+        </div>
+
+        @if (ViewBag.DateErrorMessage != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                @ViewBag.DateErrorMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form method="get" asp-action="AssignedComplaints">
+            <div class="row g-3">
+                <!-- SEARCH -->
+                <div class="col-lg-6 col-md-12">
+                    <label class="filter-label">Search</label>
+                    <input type="text"
+                           name="Search"
+                           value="@filter.Search"
+                           class="form-control filter-control"
+                           placeholder="Search by complaint ID, title or description..." />
+                </div>
+
+                <!-- STATUS -->
+                <div class="col-lg-3 col-md-6">
+                    <label class="filter-label">Status</label>
+                    <select name="Status"
+        class="form-select filter-control">
+
+    <option value="">
+        All Statuses
+    </option>
+
+    <option value="@Hostel_hub.Models.ComplaintStatus.Assigned"
+            selected="@(filter.Status == Hostel_hub.Models.ComplaintStatus.Assigned)">
+        Assigned
+    </option>
+
+    <option value="@Hostel_hub.Models.ComplaintStatus.InProgress"
+            selected="@(filter.Status == Hostel_hub.Models.ComplaintStatus.InProgress)">
+        In Progress
+    </option>
+
+    <option value="@Hostel_hub.Models.ComplaintStatus.Resolved"
+            selected="@(filter.Status == Hostel_hub.Models.ComplaintStatus.Resolved)">
+        Resolved
+    </option>
+
+</select>
+                </div>
+
+
+                <!-- PRIORITY -->
+                <div class="col-lg-4 col-md-6">
+                    <label class="filter-label">Priority</label>
+                    <select name="Priority" class="form-select filter-control">
+                        <option value="">All Priorities</option>
+                        @foreach (var p in Enum.GetValues<Hostel_hub.Models.ComplaintPriority>())
+                        {
+                            <option value="@p" selected="@(filter.Priority == p)">
+                                @p.ToString()
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                <!-- FROM DATE -->
+                <div class="col-lg-4 col-md-6">
+                    <label class="filter-label">From Date</label>
+                    <input type="date"
+                           name="FromDate"
+                           value="@(filter.FromDate?.ToString("yyyy-MM-dd"))"
+                           class="form-control filter-control" />
+                </div>
+
+                <!-- TO DATE -->
+                <div class="col-lg-4 col-md-6">
+                    <label class="filter-label">To Date</label>
+                    <input type="date"
+                           name="ToDate"
+                           value="@(filter.ToDate?.ToString("yyyy-MM-dd"))"
+                           class="form-control filter-control" />
+                </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="d-flex gap-2 justify-content-end mt-3 pt-3 border-top">
+                @if (filter.HasActiveFilters)
+                {
+                    <a asp-action="AssignedComplaints" class="btn btn-outline-secondary">
+                        Clear Filters
+                    </a>
+                }
+                <button type="submit" class="btn btn-primary">
+                    Search / Apply Filters
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- COMPLAINT LIST -->
+    <div class="complaints-card">
+
+        <div class="complaints-card-header">
+
+            <div>
+                <h5>Assigned Maintenance Tasks</h5>
+                <span class="text-muted small">
+                    @Model.Count complaint(s) found
+                </span>
+            </div>
+
+            @if (filter.HasActiveFilters)
+            {
+                <a asp-action="AssignedComplaints" class="btn btn-sm btn-outline-secondary">
+                    Clear Filters
+                </a>
+            }
+
+        </div>
+
+
+        @if (!Model.Any())
+        {
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    MC
+                </div>
+
+                <h5>No assigned complaints</h5>
+
+                <p>
+                    You currently have no maintenance complaints assigned to you.
+                </p>
+
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+
+                <table data-enhance-table class="table table-hover complaints-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Complaint</th>
+                            <th>Category</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th class="text-end">Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var c in Model)
+                        {
+                            string priority =
+                                c.Priority.ToString();
+
+                            string status =
+                                c.Status.ToString();
+
+
+                            <tr>
+
+                                <!-- TITLE -->
+                                <td>
+
+                                    <span class="complaint-title">
+                                        @c.Title
+                                    </span>
+
+                                </td>
+
+
+                                <!-- CATEGORY -->
+                                <td>
+
+                                    <span class="category-badge">
+                                        @c.Category
+                                    </span>
+
+                                </td>
+
+
+                                <!-- PRIORITY -->
+                                <td>
+
+                                    @if (priority == "High")
+                                    {
+                                        <span class="priority-badge priority-high">
+                                            High
+                                        </span>
+                                    }
+                                    else if (priority == "Medium")
+                                    {
+                                        <span class="priority-badge priority-medium">
+                                            Medium
+                                        </span>
+                                    }
+                                    else if (priority == "Low")
+                                    {
+                                        <span class="priority-badge priority-low">
+                                            Low
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="priority-badge priority-default">
+                                            @c.Priority
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- STATUS -->
+                                <td>
+
+                                    @if (status == "Pending")
+                                    {
+                                        <span class="status-badge status-pending">
+                                            Pending
+                                        </span>
+                                    }
+                                    else if (status == "Assigned")
+                                    {
+                                        <span class="status-badge status-assigned">
+                                            Assigned
+                                        </span>
+                                    }
+                                    else if (
+                                        status == "InProgress" ||
+                                        status == "In Progress")
+                                    {
+                                        <span class="status-badge status-progress">
+                                            In Progress
+                                        </span>
+                                    }
+                                    else if (status == "Resolved")
+                                    {
+                                        <span class="status-badge status-resolved">
+                                            Resolved
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="status-badge status-default">
+                                            @c.Status
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- ACTION -->
+                                <td class="text-end">
+
+                                    <a asp-action="ComplaintDetails"
+                                       asp-route-id="@c.ComplaintId"
+                                       class="btn btn-outline-primary btn-sm view-btn">
+
+                                        View Details
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+</div>

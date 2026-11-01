@@ -1,0 +1,542 @@
+@model List<Hostel_hub.Models.Announcement>
+
+@{
+    ViewData["Title"] = "Manage Announcements";
+
+    int totalAnnouncements = Model.Count;
+    int activeAnnouncements = Model.Count(a => a.IsActive);
+    int importantAnnouncements = Model.Count(a => a.IsImportant && a.IsActive);
+    int globalAnnouncements = Model.Count(a => !a.HostelId.HasValue);
+}
+
+<style>
+    .announcement-page {
+        padding: 35px 0 60px;
+    }
+
+    .announcement-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .announcement-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 5px;
+    }
+
+    .announcement-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .create-announcement-btn {
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .summary-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+
+    .summary-label {
+        color: #7c8798;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .summary-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 0;
+    }
+
+    .announcement-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+        overflow: hidden;
+        margin-top: 26px;
+    }
+
+    .announcement-card-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .announcement-card-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 3px;
+    }
+
+    .announcement-table {
+        margin-bottom: 0;
+    }
+
+    .announcement-table thead th {
+        background: #f8f9fc;
+        color: #657084;
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .announcement-table tbody td {
+        padding: 17px 18px;
+        vertical-align: middle;
+        border-color: #f0f2f5;
+    }
+
+    .announcement-title {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .scope-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+        background: #eef4ff;
+        color: #4f46e5;
+    }
+
+    .global-badge {
+        background: #eef2ff;
+        color: #3730a3;
+    }
+
+    .important-badge {
+        display: inline-block;
+        background: #f8d7da;
+        color: #b02a37;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .normal-badge {
+        display: inline-block;
+        background: #f1f3f5;
+        color: #6c757d;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .status-active {
+        display: inline-block;
+        background: #d1e7dd;
+        color: #146c43;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .status-removed {
+        display: inline-block;
+        background: #eceff3;
+        color: #6c757d;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 0.76rem;
+        font-weight: 600;
+    }
+
+    .date-text {
+        color: #495057;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .action-buttons .btn {
+        border-radius: 7px;
+        font-weight: 600;
+    }
+
+    .empty-state {
+        padding: 55px 20px;
+        text-align: center;
+    }
+
+    .empty-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf2ff;
+        color: #4f46e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-weight: 700;
+    }
+
+    .empty-state h5 {
+        color: #172033;
+        font-weight: 700;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .announcement-page {
+            padding-top: 20px;
+        }
+
+        .announcement-header h2 {
+            font-size: 1.7rem;
+        }
+    }
+</style>
+
+
+<div class="announcement-page">
+
+    <!-- HEADER -->
+    <div class="announcement-header">
+
+        <div>
+
+            <h2>Manage Announcements</h2>
+
+            <p>
+                Publish important updates and notices for hostel students.
+            </p>
+
+        </div>
+
+
+        <a asp-action="Create"
+           class="btn btn-primary create-announcement-btn">
+
+            + Create Announcement
+
+        </a>
+
+    </div>
+
+
+    <!-- ERROR MESSAGE -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+
+            @TempData["ErrorMessage"]
+
+        </div>
+    }
+
+
+    <!-- SUMMARY -->
+    <div class="row g-3">
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Total Announcements
+                </div>
+
+                <p class="summary-number">
+                    @totalAnnouncements
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Active
+                </div>
+
+                <p class="summary-number text-success">
+                    @activeAnnouncements
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Important
+                </div>
+
+                <p class="summary-number text-danger">
+                    @importantAnnouncements
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+
+            <div class="summary-card">
+
+                <div class="summary-label">
+                    Global
+                </div>
+
+                <p class="summary-number text-primary">
+                    @globalAnnouncements
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ANNOUNCEMENT LIST -->
+    <div class="announcement-card">
+
+        <div class="announcement-card-header">
+
+            <h5>Announcement Directory</h5>
+
+            <span class="text-muted small">
+                Manage published hostel communications
+            </span>
+
+        </div>
+
+
+        @if (!Model.Any())
+        {
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    AN
+                </div>
+
+                <h5>No announcements found</h5>
+
+                <p>
+                    Create an announcement to communicate updates
+                    with students.
+                </p>
+
+
+                <a asp-action="Create"
+                   class="btn btn-primary">
+
+                    Create First Announcement
+
+                </a>
+
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+
+                <table data-enhance-table class="table table-hover announcement-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Title</th>
+                            <th>Scope</th>
+                            <th>Publish</th>
+                            <th>Expiry</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var a in Model)
+                        {
+                            <tr>
+
+                                <!-- TITLE -->
+                                <td>
+
+                                    <span class="announcement-title">
+                                        @a.Title
+                                    </span>
+
+                                </td>
+
+
+                                <!-- HOSTEL / SCOPE -->
+                                <td>
+
+                                    @if (a.HostelId.HasValue)
+                                    {
+                                        <span class="scope-badge">
+
+                                            @(a.Hostel?.Name ?? "Hostel")
+
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="scope-badge global-badge">
+
+                                            Global · All Hostels
+
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- PUBLISH DATE -->
+                                <td>
+
+                                    <span class="date-text">
+
+                                        @(a.PublishDate.ToString("dd MMM yyyy"))
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- EXPIRY DATE -->
+                                <td>
+
+                                    <span class="date-text">
+
+                                        @(a.ExpiryDate.ToString("dd MMM yyyy"))
+
+                                    </span>
+
+                                </td>
+
+
+                                <!-- IMPORTANT -->
+                                <td>
+
+                                    @if (a.IsImportant)
+                                    {
+                                        <span class="important-badge">
+                                            Important
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="normal-badge">
+                                            Normal
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- STATUS -->
+                                <td>
+
+                                    @if (a.IsActive)
+                                    {
+                                        <span class="status-active">
+                                            Active
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="status-removed">
+                                            Removed
+                                        </span>
+                                    }
+
+                                </td>
+
+
+                                <!-- ACTIONS -->
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <a asp-action="Edit"
+                                           asp-route-id="@a.AnnouncementId"
+                                           class="btn btn-outline-primary btn-sm">
+
+                                            Edit
+
+                                        </a>
+
+
+                                        @if (a.IsActive)
+                                        {
+                                            <form asp-action="Deactivate"
+                                                  asp-route-id="@a.AnnouncementId"
+                                                  method="post"
+                                                  class="d-inline">
+
+                                                <button type="submit"
+                                                        class="btn btn-outline-danger btn-sm"
+                                                        onclick="return confirm('Remove this announcement from student view?');">
+
+                                                    Remove
+
+                                                </button>
+
+                                            </form>
+                                        }
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+</div>

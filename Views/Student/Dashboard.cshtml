@@ -1,0 +1,302 @@
+@model Hostel_hub.ViewModels.StudentDashboardViewModel
+
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-header-title">Welcome, @Model.FullName</h1>
+        <p class="page-header-subtitle">
+            Your hostel residency overview, room allocation, daily meals &amp; complaints
+        </p>
+    </div>
+    <div class="page-header-actions">
+        <span class="role-pill">
+            <span class="status-dot status-dot-resolved"></span>
+            Student Resident
+        </span>
+        <a asp-action="CreateComplaint" class="btn btn-sm btn-primary">
+            + New Complaint
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- LEFT COLUMN -->
+    <div class="col-lg-6">
+
+        <!-- ROOM CARD -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0">My Room Allocation</h5>
+                    <small class="text-muted">Current living quarters &amp; occupancy</small>
+                </div>
+                <a asp-action="Profile" class="btn btn-sm btn-outline-secondary">
+                    View Profile
+                </a>
+            </div>
+
+            <div class="card-body">
+
+                @if (Model.RoomNumber != null)
+                {
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 border rounded-3 bg-light">
+                                <small class="text-muted text-uppercase fw-semibold">Hostel</small>
+                                <div class="fs-5 fw-bold text-dark mt-1">
+                                    @Model.HostelName
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 border rounded-3 bg-light">
+                                <small class="text-muted text-uppercase fw-semibold">Room Number</small>
+                                <div class="fs-5 fw-bold text-primary mt-1">
+                                    @Model.RoomNumber
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 border rounded-3 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="text-secondary fw-semibold small">Room Occupancy</span>
+                            <span class="badge bg-light text-primary border">
+                                @(Model.RoomCurrentOccupancy ?? 0) of @(Model.RoomCapacity ?? 0) Beds Filled
+                            </span>
+                        </div>
+                        <div class="progress mt-2" style="height: 6px;">
+                            @{
+                                int cap = Model.RoomCapacity.GetValueOrDefault(1);
+                                if (cap <= 0) { cap = 1; }
+                                int occ = Model.RoomCurrentOccupancy.GetValueOrDefault(0);
+                                int capPct = (int)Math.Round((double)occ / cap * 100);
+                            }
+                            <div class="progress-bar bg-primary"
+                                 role="progressbar"
+                                 style="width: @(capPct)%;"
+                                 aria-valuenow="@capPct"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-warning mb-0">
+                        <span>ℹ️ You are not currently allocated to a room. Please contact your hostel warden.</span>
+                    </div>
+                }
+
+
+                @if (Model.PendingRoomChangeRequest != null)
+                {
+                    <div class="alert alert-info mt-3 mb-0 d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Pending Transfer:</strong> You have an active room change request under review.
+                        </div>
+                        <a asp-action="RoomChangeRequests" class="btn btn-sm btn-outline-info ms-2">
+                            Check Status
+                        </a>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        <!-- MESS CARD -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0">Today's Meals</h5>
+                    <small class="text-muted">Meal options &amp; participation</small>
+                </div>
+                <a asp-action="Mess" class="btn btn-sm btn-outline-primary">
+                    Open Mess Menu
+                </a>
+            </div>
+
+            <div class="card-body">
+
+                @if (Model.TodayMenu == null)
+                {
+                    <div class="alert alert-secondary mb-0">
+                        <span>No menu has been published for today yet.</span>
+                    </div>
+                }
+                else
+                {
+                    <div class="row g-3">
+                        @foreach (var meal in new[]
+                        {
+                            Hostel_hub.Models.MealType.Breakfast,
+                            Hostel_hub.Models.MealType.Lunch,
+                            Hostel_hub.Models.MealType.Dinner
+                        })
+                        {
+                            Model.TodaySelections.TryGetValue(meal, out var status);
+
+                            <div class="col-md-4">
+                                <div class="border rounded-3 p-3 text-center h-100 bg-white">
+                                    <div class="fw-semibold text-secondary mb-2">
+                                        @meal
+                                    </div>
+
+                                    @if (Model.TodaySelections.ContainsKey(meal))
+                                    {
+                                        if (status == Hostel_hub.Models.MealSelectionStatus.Take)
+                                        {
+                                            <span class="status-badge status-resolved">
+                                                ✓ Taking
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="status-badge status-default">
+                                                ✕ Skipped
+                                            </span>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span class="status-badge status-pending">
+                                            Not Selected
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-lg-6">
+
+        <!-- COMPLAINT CARD -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0">My Complaints</h5>
+                    <small class="text-muted">Maintenance requests status</small>
+                </div>
+                <div class="d-flex gap-2">
+                    <a asp-action="CreateComplaint" class="btn btn-sm btn-primary">
+                        + New
+                    </a>
+                    <a asp-action="Complaints" class="btn btn-sm btn-outline-secondary">
+                        View All
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="p-3 border rounded-3 bg-light text-center mb-3">
+                    <small class="text-muted fw-semibold text-uppercase">Active Issues</small>
+                    <div class="fs-2 fw-bold text-dark mt-1">
+                        @Model.ActiveComplaints.Count
+                    </div>
+                </div>
+
+                @if (Model.LatestComplaint != null)
+                {
+                    <div class="p-3 border rounded-3 bg-white">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <small class="text-muted fw-semibold">Latest Submitted Complaint</small>
+                                <h6 class="mt-1 mb-1 fw-bold text-dark">
+                                    @Model.LatestComplaint.Title
+                                </h6>
+                                <small class="text-muted">
+                                    Submitted on @Model.LatestComplaint.CreatedAt.ToString("dd MMM yyyy")
+                                </small>
+                            </div>
+                            <div>
+                                @{
+                                    string badgeClass = Model.LatestComplaint.Status.ToString() switch
+                                    {
+                                        "Pending" => "status-pending",
+                                        "Assigned" => "status-assigned",
+                                        "InProgress" => "status-progress",
+                                        "Resolved" => "status-resolved",
+                                        _ => "status-default"
+                                    };
+                                }
+                                <span class="status-badge @badgeClass">
+                                    @Model.LatestComplaint.Status
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="empty-state p-3">
+                        <p class="text-muted mb-0">No complaints logged yet. Everything running smoothly!</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- ANNOUNCEMENTS CARD -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0">Recent Announcements</h5>
+                    <small class="text-muted">Official hostel notices</small>
+                </div>
+                <a asp-action="Announcements" class="btn btn-sm btn-outline-secondary">
+                    View All
+                </a>
+            </div>
+
+            <div class="card-body">
+                @if (!Model.RecentAnnouncements.Any())
+                {
+                    <div class="empty-state p-3">
+                        <p class="text-muted mb-0">No active announcements at this time.</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="list-group list-group-flush">
+                        @foreach (var announcement in Model.RecentAnnouncements)
+                        {
+                            <div class="list-group-item px-0 py-2 border-bottom">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="fw-semibold text-dark">
+                                            @announcement.Title
+                                        </div>
+                                        <small class="text-muted">
+                                            @announcement.PostedAt.ToString("dd MMM yyyy")
+                                        </small>
+                                    </div>
+                                    @if (announcement.IsImportant)
+                                    {
+                                        <span class="status-badge priority-high">
+                                            Important
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

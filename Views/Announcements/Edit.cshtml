@@ -1,0 +1,422 @@
+﻿@model Hostel_hub.ViewModels.AnnouncementViewModel
+
+@{
+    ViewData["Title"] = "Edit Announcement";
+}
+
+<style>
+    .edit-announcement-page {
+        padding: 35px 0 60px;
+    }
+
+    .edit-announcement-header {
+        margin-bottom: 28px;
+    }
+
+    .edit-announcement-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 6px;
+    }
+
+    .edit-announcement-header p {
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    .announcement-form-card {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        overflow: hidden;
+    }
+
+    .announcement-form-header {
+        padding: 22px 26px;
+        background: #fbfcfe;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .announcement-form-header h5 {
+        font-weight: 700;
+        color: #172033;
+        margin-bottom: 4px;
+    }
+
+    .announcement-form-header p {
+        color: #7b8494;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .announcement-form-body {
+        padding: 28px;
+    }
+
+    .scope-box {
+        background: #eef5ff;
+        border-left: 4px solid #4f46e5;
+        border-radius: 9px;
+        padding: 16px 18px;
+        margin-bottom: 24px;
+    }
+
+    .scope-label {
+        color: #6d7b91;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+    }
+
+    .scope-value {
+        color: #172033;
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    .form-label-custom {
+        display: block;
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 8px;
+    }
+
+    .announcement-input {
+        min-height: 48px;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .announcement-textarea {
+        min-height: 150px;
+        resize: vertical;
+        border-radius: 9px;
+        border: 1px solid #dce1e8;
+    }
+
+    .announcement-input:focus,
+    .announcement-textarea:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229,0.12);
+    }
+
+    .date-card {
+        background: #f8f9fc;
+        border: 1px solid #edf0f5;
+        border-radius: 12px;
+        padding: 18px;
+        height: 100%;
+    }
+
+    .date-card-title {
+        color: #172033;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .date-card-help {
+        color: #8a94a3;
+        font-size: 0.8rem;
+        margin-bottom: 13px;
+    }
+
+    .important-box {
+        background: #fff8e1;
+        border: 1px solid #ffe69c;
+        border-radius: 12px;
+        padding: 17px 18px;
+    }
+
+    .important-box .form-check {
+        margin-bottom: 0;
+    }
+
+    .important-box .form-check-label {
+        font-weight: 600;
+        color: #594b1b;
+    }
+
+    .important-help {
+        color: #83733d;
+        font-size: 0.82rem;
+        margin-top: 6px;
+        margin-left: 24px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .form-actions .btn {
+        min-width: 130px;
+        padding: 10px 18px;
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    .validation-summary-errors {
+        background: #fff3f3;
+        border: 1px solid #f5c2c7;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .validation-summary-errors ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .edit-announcement-page {
+            padding-top: 20px;
+        }
+
+        .edit-announcement-header h2 {
+            font-size: 1.7rem;
+        }
+
+        .announcement-form-body {
+            padding: 22px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<div class="edit-announcement-page">
+
+    <!-- PAGE HEADER -->
+    <div class="edit-announcement-header">
+
+        <h2>Edit Announcement</h2>
+
+        <p>
+            Update the announcement content, active dates and priority.
+        </p>
+
+    </div>
+
+
+    <div class="announcement-form-card">
+
+        <!-- CARD HEADER -->
+        <div class="announcement-form-header">
+
+            <h5>Update Announcement</h5>
+
+            <p>
+                Modify the published announcement information.
+            </p>
+
+        </div>
+
+
+        <div class="announcement-form-body">
+
+            <!-- CURRENT SCOPE -->
+            <div class="scope-box">
+
+                <div class="scope-label">
+                    Posted For
+                </div>
+
+                <p class="scope-value">
+
+                    @ViewBag.HostelLabel
+
+                </p>
+
+            </div>
+
+
+            <form asp-action="Edit"
+                  asp-route-id="@ViewBag.AnnouncementId"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+
+
+                <!-- TITLE -->
+                <div class="mb-4">
+
+                    <label asp-for="Title"
+                           class="form-label-custom">
+
+                        Announcement Title
+
+                    </label>
+
+
+                    <input asp-for="Title"
+                           class="form-control announcement-input"
+                           placeholder="Enter announcement title" />
+
+
+                    <span asp-validation-for="Title"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- CONTENT -->
+                <div class="mb-4">
+
+                    <label asp-for="Content"
+                           class="form-label-custom">
+
+                        Announcement Content
+
+                    </label>
+
+
+                    <textarea asp-for="Content"
+                              class="form-control announcement-textarea"
+                              placeholder="Write the announcement message here..."></textarea>
+
+
+                    <span asp-validation-for="Content"
+                          class="text-danger small">
+                    </span>
+
+                </div>
+
+
+                <!-- DATES -->
+                <div class="row g-4 mb-4">
+
+
+                    <!-- PUBLISH DATE -->
+                    <div class="col-md-6">
+
+                        <div class="date-card">
+
+                            <div class="date-card-title">
+                                Publish Date
+                            </div>
+
+                            <div class="date-card-help">
+                                Date from which students can see this announcement.
+                            </div>
+
+
+                            <input asp-for="PublishDate"
+                                   class="form-control announcement-input" />
+
+
+                            <span asp-validation-for="PublishDate"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPIRY DATE -->
+                    <div class="col-md-6">
+
+                        <div class="date-card">
+
+                            <div class="date-card-title">
+                                Expiry Date
+                            </div>
+
+                            <div class="date-card-help">
+                                Date after which this announcement is no longer relevant.
+                            </div>
+
+
+                            <input asp-for="ExpiryDate"
+                                   class="form-control announcement-input" />
+
+
+                            <span asp-validation-for="ExpiryDate"
+                                  class="text-danger small">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMPORTANT -->
+                <div class="important-box">
+
+                    <div class="form-check">
+
+                        <input asp-for="IsImportant"
+                               class="form-check-input" />
+
+                        <label asp-for="IsImportant"
+                               class="form-check-label">
+
+                            Mark as important announcement
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="important-help">
+                        Important announcements are highlighted for students.
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
